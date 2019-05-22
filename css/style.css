@@ -1,0 +1,19 @@
+/* Importamos la librería Normalize */
+@import "normalize.css";
+/* Importamos los iconos */
+@import url('https://use.fontawesome.com/releases/v5.8.1/css/all.css');
+
+/* --------------------------------------------------------------------------------- GENERALES */
+*{
+  box-sizing: border-box;
+}
+
+body{
+  max-width: 1200px;
+}
+
+ul, ol {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
