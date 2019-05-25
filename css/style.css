@@ -17,3 +17,100 @@ ul, ol {
 	margin: 0;
 	padding: 0;
 }
+/* --------------------------------------------------------------------------------- LOGIN */
+.containerLogIn{
+  display: flex;
+  justify-content: center;
+}
+
+/* Style Formulario */
+form {
+  border: 3px;
+  solid #f1f1f1;
+}
+
+.container {
+  padding: 16px;
+}
+
+/* Style Imagen en formulario */
+.imgcontainer {
+  text-align: center;
+  margin: 24px 0 12px 0;
+}
+
+img.avatar {
+  width: 40%;
+  border-radius: 50%;
+}
+
+/* inputs en formuario */
+input[type=email], input[type=password] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+span.psw {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+/* Botones en formulario */
+.btnForm{
+  background-color:#f1f1f1;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+button{
+  display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+  color: white;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+}
+
+.btnLogin {
+  background-color: #4CAF50;
+  padding: 14px 20px;
+  width: 45%;
+}
+
+.cancelbtn {
+  width: 20%;
+  padding: 10px 18px;
+  background-color: #f44336;
+}
+
+/* --------------------------------------------------------------------------------- MEDIA QUERYs */
+/* Phones Landscape */
+@media (min-width:480px){
+}
+/* Tablets */
+@media (min-width:768px){
+}
+/* Desktops */
+@media (min-width:992px){
+  .btnLogin {
+  width: 100%;
+  }
+  .btnLogin:hover{
+    opacity: 0.8;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+  }
+  .cancelbtn{
+    display: none;
+  }
+}
+/* Widescreen */
+@media (min-width:1200px){
+}
