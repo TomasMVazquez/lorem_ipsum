@@ -15,14 +15,14 @@
     <!-- ACA PONER INCLUDE HEADER -->
 
     <div class="containerRegister">
-      <!-- EMPIEZA FORMULARIO -->
+      <!-- TITULO DE LA PAG -->
       <div class="container registerHeader">
         <h1>Registro</h1>
         <header>
           Favor de completar el formulario para crear una cuenta
         </header>
       </div>
-
+      <!-- EMPIEZA FORMULARIO -->
       <form action="index.php" >
         <div class="container">
 
@@ -43,15 +43,27 @@
 
           <!-- SWITCH PARA QUE QUIERO VER -->
           <div class="container containerSwitch">
-            <?php foreach ($categorias as $unaCategoria) : ?>
-              <div class="containerUnSwitchCat col-6">
-                <label class="switch">
-                  <input type="checkbox" checked>
-                  <span class="slider round"></span>
-                </label>
-                <em><?= $unaCategoria ?></em>
-              </div>
-            <?php endforeach; ?>
+            <?php if (count($categorias)>5): ?>
+              <?php foreach ($categorias as $unaCategoria) : ?>
+                <div class="containerUnSwitchCat col-4">
+                  <label class="switch">
+                    <input type="checkbox" checked>
+                    <span class="slider round"></span>
+                  </label>
+                  <em><?= $unaCategoria ?></em>
+                </div>
+              <?php endforeach; ?>
+              <?php else: ?>
+                <?php foreach ($categorias as $unaCategoria) : ?>
+                  <div class="containerUnSwitchCat col-6">
+                    <label class="switch">
+                      <input type="checkbox" checked>
+                      <span class="slider round"></span>
+                    </label>
+                    <em class="switchText"><?= $unaCategoria ?></em>
+                  </div>
+                <?php endforeach; ?>
+            <?php endif; ?>
           </div>
           <!-- SWITCH PARA QUE QUIERO RECIBIR -->
           <div class="container containerSwitch">
@@ -61,7 +73,7 @@
                   <input type="checkbox" checked>
                   <span class="slider round"></span>
                 </label>
-                <em>Quiero recibir <?= $unaNotificacion ?></em>
+                <em class="switchText">Quiero recibir <?= $unaNotificacion ?></em>
               </div>
             <?php endforeach; ?>
           </div>
@@ -80,7 +92,7 @@
           <p>Al crearse una cuenta, usted acepta nuestros <a href="#" style="color:dodgerblue">Terminos & Condiciones</a>.</p>
           <div class="btnForm">
             <button class="cancelbtn" type="button" >Cancel</button>
-            <button class="btnLogin" type="submit">Sign Up</button>
+            <button class="btnLogin" type="submit">Registrar</button>
           </div>
         </div>
       </form>

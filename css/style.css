@@ -188,6 +188,63 @@ input:checked + .slider:before {
 .slider.round:before {
   border-radius: 50%;
 }
+
+.switchText{
+  margin-left: 10px;
+}
+/* --------------------------------------------------------------------------------- PROFILE */
+.containerProfile{
+  border: 1px dotted red;
+
+}
+.containerAside{
+  background-color: #f1f1f1;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+.containerMain{
+  /* display: inline-block; */
+  background-color: rgba(246, 175, 235, 0.5);
+}
+.boxFav{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+}
+.boxUnFav{
+  border: 1px solid rgb(19, 101, 162);
+  background-color: rgba(18, 210, 230, 0.5);
+  width: 33%;
+  height: 250px;
+  margin-bottom: 20px;
+}
+.boxGranFav{
+  border: 1px solid rgb(19, 101, 162);
+  background-color: rgba(18, 210, 230, 0.5);
+  width: 90%;
+  height: 150px;
+}
+
+.containerUnSwitch{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-start;
+  font-size: 18px;
+}
+
+.btnEdit {
+  background-color: #4CAF50;
+  padding: 14px 20px;
+  width: 100%;
+}
+
 /* --------------------------------------------------------------------------------- MEDIA QUERYs */
 /* Phones Landscape */
 @media (min-width:480px){

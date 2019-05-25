@@ -1,4 +1,4 @@
-<?php $title="Lorem ipsum | LogIn" ?>
+<?php $title="Lorem ipsum | LogIn"; ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
