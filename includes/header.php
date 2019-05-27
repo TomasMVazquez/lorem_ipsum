@@ -1,11 +1,8 @@
 <!DOCTYPE html>
 <html lang="es" dir="ltr">
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="title" content="Titulo">
-    <meta name="description" content="Descripción de la empresa">
-    <link rel="stylesheet" href="css/style.css">
+    <?php include("./head.php") ?>
+    <link rel="stylesheet" href="../css/style.css">
 
     <title></title>
 
@@ -17,13 +14,15 @@
       <nav class="navbar navbar-expand-md bg-light navbar-light">
         <!-- Brand -->
 
-        <a class="navbar-brand" href="#"><img src="imgs/logo.png" alt=""> </a>
+        <a class="navbar-brand" href="#"><img src="../imgs/logo.png" alt=""> </a>
 
         <div class="mainHeader">
 
           <ul class="socialMedia">
+
             <li><a href="http://www.facebook.com"><i class="fab fa-facebook-f"></i></a></li>
             <li><a href="http://www.instagram.com"><i class="fab fa-instagram m-1"></i></a></li>
+            <li><div class="btn btn-info ml-3"> ¡INGRESA!</div></li>
           </ul>
 
 
@@ -53,6 +52,9 @@
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#">FAQs</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Registrate!</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#">Contacto</a>

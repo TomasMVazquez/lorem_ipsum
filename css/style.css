@@ -1,5 +1,6 @@
 /* Importamos la librería Normalize */
-@import "normalize.css";
+@import url('normalize.css');
+@import url('bootstrap.css');
 /* Importamos los iconos */
 @import url('https://use.fontawesome.com/releases/v5.8.1/css/all.css');
 
@@ -9,7 +10,8 @@
 }
 
 body{
-  max-width: 1200px;
+ /*Le saque el ancho este porque se veía feo  el menu. Lo charlamos según el diseño
+  max-width: 1200px; */
 }
 
 ul, ol {
@@ -245,12 +247,89 @@ input:checked + .slider:before {
   width: 100%;
 }
 
+/* --------------------------------------------------------------------------------- HEADER */
+
+  .mainHeader{
+    width: 100%;
+  }
+
+  .socialMedia{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+
+    align-items: center;
+}
+  .socialMedia li{
+    font-size: 1rem;
+    margin: 5px;
+  }
+
+  .socialMedia li a{
+    background: #666;
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .navbar-toggler{
+    margin: 10px auto;
+    border: none;
+  }
+
+  .navbar-brand {
+
+    width:100%;
+    margin-right: 0;
+    text-align: center;
+}
+  .navbar-brand img{
+    width: 40%;
+
+  }
+
+/* --------------------------------------------------------------------------------- FAQ */
+
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 /* --------------------------------------------------------------------------------- MEDIA QUERYs */
 /* Phones Landscape */
 @media (min-width:480px){
+
+  /* --------------------------------------------------------------------------------- HEADER */
+
+  .navbar-brand img{
+  width: 30%;
+
+}
 }
 /* Tablets */
 @media (min-width:768px){
+
+  /* --------------------------------------------------------------------------------- HEADER */
+
+  .navbar-expand-md {
+    -ms-flex-flow: column nowrap;
+    flex-flow: column nowrap;
+}
+  .navbar-brand img{
+    width: 20%;
+
+}
+
+.navbar-expand-md .navbar-collapse {
+    justify-content: center;
+}
+
+
 }
 /* Desktops */
 @media (min-width:992px){
@@ -265,6 +344,50 @@ input:checked + .slider:before {
   }
   .cancelbtn{
     display: none;
+  }
+
+/* --------------------------------------------------------------------------------- HEADER */
+
+.navbar-brand {
+  width:auto;
+  margin-right: 0;
+  text-align: left;
+}
+
+.navbar-brand img{
+  width: 30%;
+
+}
+
+.mainHeader {
+    width: 100%;
+    justify-content: flex-end;
+    align-items: flex-end;
+    display: flex;
+    flex-direction: column;
+}
+
+.socialMedia {
+    width: auto;
+    justify-content: flex-end;
+}
+
+.navbar-expand-md {
+  -ms-flex-flow: column nowrap;
+  flex-flow: row nowrap;
+}
+
+
+/* --------------------------------------------------------------------------------- FAQ */
+
+  .main {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .card-header {
+    padding: 0.05rem 1.25rem;
   }
 }
 /* Widescreen */
