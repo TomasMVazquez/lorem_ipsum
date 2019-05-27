@@ -1,0 +1,123 @@
+/* Importamos la librería Normalize */
+@import "normalize.css";
+/* Importamos los iconos */
+@import url('https://use.fontawesome.com/releases/v5.8.1/css/all.css');
+/* Tipos */
+@import url('https://fonts.googleapis.com/css?family=Quattrocento+Sans|Reenie+Beanie&display=swap');
+
+/* --------------------------------------------------------------------------------- GENERALES */
+
+*{
+  box-sizing: border-box;
+}
+
+body{
+  max-width: 1200px;
+}
+
+ul, ol {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+/* --------------------------------------------------------------------------------- PRODUCTOS */
+
+.tipografia {
+  font-family: 'Quattrocento Sans', sans-serif;
+  font-size: 1.5em;
+  text-transform: uppercase;
+  letter-spacing: 0.8em;
+
+}
+
+.banner {
+  background-color: #F9F7F7;
+  max-width: 100%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+
+}
+
+.imgbanner {
+  width: 100%;
+}
+
+.listado-productos {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.producto {
+  max-width: 100%;
+  margin: 10px auto 0px auto;
+
+}
+
+.banner-seccion-producto {
+  position: relative;
+  width: auto;
+  margin: 0 auto;
+  display: inline-block;
+}
+
+h2.titseccion {
+  line-height: 0;
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  text-align: center;
+  left: 0;
+  margin: 0;
+  padding: 0;
+  color: white;
+  font-family: 'Reenie Beanie', cursive;
+  font-size: 8em;
+
+}
+
+.img-producto {
+  max-width: 100%;
+
+}
+
+.detalle {
+  padding: 20px;
+  border-top: 1px solid rgba(0,0,0,.125);
+  background-color: #F9F7F7;
+}
+
+.ordenar {
+  padding: 20px;
+  border-top: 1px solid rgba(0,0,0,.125);
+
+}
+
+/* --------------------------------------------------------------------------------- MEDIA QUERYs */
+/* Phones Landscape */
+@media (min-width:480px){
+}
+/* Tablets */
+@media (min-width:768px){
+}
+/* Desktops */
+@media (min-width:992px){
+
+  /* BOTNONES EN EL FORMULARIO */
+  .btnLogin {
+  width: 100%;
+  }
+  .btnLogin:hover{
+    opacity: 0.8;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+  }
+  .cancelbtn{
+    display: none;
+  }
+}
+/* Widescreen */
+@media (min-width:1200px){
+}
