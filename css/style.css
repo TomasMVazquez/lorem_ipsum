@@ -1,6 +1,7 @@
 /* Importamos la librería Normalize */
 @import url('normalize.css');
 @import url('bootstrap.css');
+
 /* Importamos los iconos */
 @import url('https://use.fontawesome.com/releases/v5.8.1/css/all.css');
 
@@ -294,7 +295,7 @@ input:checked + .slider:before {
 
 /* --------------------------------------------------------------------------------- FAQ */
 
-.main {
+.mainFaqs {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -380,11 +381,7 @@ input:checked + .slider:before {
 
 /* --------------------------------------------------------------------------------- FAQ */
 
-  .main {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-  }
+
 
   .card-header {
     padding: 0.05rem 1.25rem;

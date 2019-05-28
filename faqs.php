@@ -1,16 +1,15 @@
 <!DOCTYPE html>
 <html lang="es" dir="ltr">
   <head>
-    <meta charset="utf-8">
-    <title></title>
-    <?php include("./head.php") ?>
+
+    <?php include("includes/head.php") ?>
 
   </head>
   <body>
 
-    <?php include("./header.php") ?>
+    <?php include("includes/header.php") ?>
 
-   <div class="main">
+   <div class="mainFaqs">
 
 
      <section class="col-12 col-md-10 col-lg-8 text-center p-0">
@@ -163,6 +162,8 @@
           </div>
       </section>
     </div>
+
+    <?php include("includes/footer.php") ?>
 
   </body>
 </html>
