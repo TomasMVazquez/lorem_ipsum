@@ -1,0 +1,27 @@
+/* Importamos la librería Normalize */
+@import url('normalize.css');
+@import url('bootstrap.css');
+
+/* Importamos los iconos */
+@import url('https://use.fontawesome.com/releases/v5.8.1/css/all.css');
+
+/* --------------------------------------------------------------------------------- GENERALES */
+*{
+  box-sizing: border-box;
+}
+
+body{
+  background-color: #FFAACC;
+}
+ol {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+img .cosmetica1 , .cosmetica2, .cosmetica3{
+  width: 75%;
+}
+
+.carousel-caption{
+  position: absolute;
+}

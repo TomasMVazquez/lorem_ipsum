@@ -1,7 +1,8 @@
 /* Importamos la librería Normalize */
 @import url('normalize.css');
 @import url('bootstrap.css');
-
+/*importe las fuentes*/
+@import url('https://fonts.googleapis.com/css?family=Muli|Titillium+Web&display=swap');
 /* Importamos los iconos */
 @import url('https://use.fontawesome.com/releases/v5.8.1/css/all.css');
 
@@ -13,7 +14,22 @@
 body{
  /*Le saque el ancho este porque se veía feo  el menu. Lo charlamos según el diseño
   max-width: 1200px; */
+font-family: 'Muli','Titillium Web', sans-serif;
 }
+/*desde aca va el estilo del index*/
+.textoimg{
+  font-family: "Muli", sans-serif;
+  font-size: 40px;
+  color: rgba(0, 0, 0, 0.5);
+}
+.textoimg2{
+  font-family: "Titillium", sans-serif;
+  font-size: 25px;
+  color: rgba(0, 0, 0, 0.5);
+}
+/*hasta aca va el estilo del index*/
+
+
 
 ul, ol {
 	list-style: none;
