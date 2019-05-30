@@ -3,7 +3,7 @@
     "Quienes Somos" => "nosotros.php",
     "Productos" => "productos.php",
     "Faqs" => "faq.php",
-    "Registrate!" => "register.php",
+    "Logueate" => "log_in.php",
     "Contacto" => "contacto.php"
   ]
  ?>
@@ -36,7 +36,7 @@
           <div class="collapse navbar-collapse" id="collapsibleNavbar">
             <ul class="navbar-nav text-center">
               <?php foreach ($menu as $boton => $seccion): ?>
-                <li class="nav-item"><a class="nav-link" href="../<?php echo $seccion?>"><?php echo $boton ?></a></li>                </li>
+                <li class="nav-item"><a class="nav-link" href="<?php echo $seccion?>"><?php echo $boton ?></a></li>                </li>
               <?php endforeach; ?>
 
 

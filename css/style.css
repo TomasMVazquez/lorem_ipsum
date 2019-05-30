@@ -1,6 +1,9 @@
 /* Importamos la librería Normalize */
 @import url('normalize.css');
 @import url('bootstrap.css');
+@import url('andre.css');
+@import url('gaby.css');
+
 /*importe las fuentes*/
 @import url('https://fonts.googleapis.com/css?family=Muli|Titillium+Web&display=swap');
 /* Importamos los iconos */
@@ -405,4 +408,5 @@ input:checked + .slider:before {
 }
 /* Widescreen */
 @media (min-width:1200px){
+  
 }

@@ -21,14 +21,11 @@ $profile = [
  ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title><?= $title ?></title>
-    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/style.css">
-  </head>
+  <?php require_once("includes/head.php") ?>
   <body>
     <!-- ACA PONER INCLUDE HEADER -->
+    <?php require_once("includes/header.php") ?>
+    <br>
     <div class="containerProfile">
       <!-- COMIENZA EL PROFILE -->
       <div class="row no-gutters">
@@ -109,7 +106,8 @@ $profile = [
       </div>
       <!-- TERMINA EL PROFILE -->
     </div>
-
+    <br>
+    <?php require_once("includes/footer.php") ?>
     <!-- ACA PONER INCLUDE FOOTER -->
   </body>
 </html>

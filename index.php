@@ -1,16 +1,11 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title>LOREM-IPSUM | Bienvenidos</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="css/style.css">
-
-  </head>
+  <?php require_once("includes/head.php") ?>
   <body>
-  <?php
-      include("./header.php");
-   ?>
+
+    <?php require_once("includes/header.php") ?>
+    <br>
+    
     <div id="myCarousel" class="carousel slide" data-ride="carousel">
       <!-- Indicators -->
       <ol class="carousel-indicators">
@@ -57,12 +52,9 @@
       </a>
     </div>
 
+    <br>
 
-
-  <?php
-        include("./footer.php");
-  ?>
-
+  <?php require_once("includes/footer.php") ?>
 
   </body>
 </html>

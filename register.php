@@ -5,15 +5,11 @@
 ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title><?= $title ?></title>
-    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/style.css">
-  </head>
+  <?php require_once("includes/head.php") ?>
   <body>
     <!-- ACA PONER INCLUDE HEADER -->
-
+    <?php require_once("includes/header.php") ?>
+    <br>
     <div class="containerRegister">
       <!-- TITULO DE LA PAG -->
       <div class="container registerHeader">
@@ -98,7 +94,8 @@
       </form>
       <!-- TERMINA FORMULARIO -->
     </div>
-
+    <br>
+    <?php require_once("includes/footer.php") ?>
     <!-- ACA PONER INCLUDE FOOTER -->
   </body>
 </html>

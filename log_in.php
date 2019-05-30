@@ -1,16 +1,12 @@
 <?php $title="Lorem ipsum | LogIn"; ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title><?= $title ?></title>
-    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/style.css">
-  </head>
+  <?php require_once("includes/head.php") ?>
   <body>
 
     <!-- ACA PONER INCLUDE HEADER -->
-
+    <?php require_once("includes/header.php") ?>
+    <br>
     <div class="containerLogIn">
       <!-- EMPIEZA FORMULARIO -->
       <form action="index.php">
@@ -46,8 +42,8 @@
       </form>
       <!-- TERMINA FORMULARIO -->
     </div>
-
+    <br>
     <!-- ACA PONER INCLUDE FOOTER -->
-
+    <?php require_once("includes/footer.php") ?>
   </body>
 </html>

@@ -3,5 +3,4 @@
 <meta name="title" content="Titulo">
 <meta name="description" content="Descripción de la empresa">
 <link rel="stylesheet" href="css/style.css">
-<link rel="stylesheet" href="css/andre.css">
-<title></title>
+<title><?= $title ?></title>

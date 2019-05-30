@@ -3,18 +3,11 @@ $title="Lorem ipsum | Productos";
 ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title><?= $title ?></title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/productos-style.css">
-
-
-  </head>
+  <?php require_once("includes/head.php") ?>
   <body>
     <!-- ACA PONER INCLUDE HEADER -->
+    <?php require_once("includes/header.php") ?>
+    <br>
     <div class="container">
       <h1 class="tipografia">Productos</h1>
       <div class="row banner">
@@ -138,6 +131,8 @@ $title="Lorem ipsum | Productos";
   </div><!-- row.// -->
   </div><!-- container.// -->
 
+    <br>
+    <?php require_once("includes/footer.php") ?>
     <!-- ACA PONER INCLUDE FOOTER -->
   </body>
 </html>
