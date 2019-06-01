@@ -18,10 +18,13 @@
     <header class="bg-dark">
 
 
+
       <nav class="col-12 col-md-10 navbar navbar-expand-md navbar-dark">
 
         <!-- Marca - La puse en texto - Habría que modificarla -->
-        <a class="navbar-brand text-white" href="#">Lorem ipsum </a>
+        <a class="navbar-brand" href="#">
+        <img src="imgs/logo-loremipsum.png" alt="">
+      </a>
 
         <div class="mainHeader">
 
@@ -36,7 +39,7 @@
               </div>
             </div>
             <img src="imgs/img_avatar4.png" alt="">
-            
+
           </div>
 
           <!--<ul class="socialMedia">

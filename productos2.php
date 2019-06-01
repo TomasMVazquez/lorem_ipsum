@@ -7,9 +7,11 @@ $title="Lorem ipsum | Productos";
 <?php require_once("includes/listado.php"); ?>
 
   <body>
+    <?php require_once("includes/header.php"); ?>
+
+
 
     <div class="container">
-      <?php require_once("includes/header.php"); ?>
 
       <div class="row">
         <div class="col-12">
@@ -25,7 +27,7 @@ $title="Lorem ipsum | Productos";
 
   <div class="row listado-productos">
     <?php foreach ($listadoProductos as $unProducto): ?>
-      <div class="col-md-6 col-lg-3">
+      <div class="col-md-6 col-lg-4">
         <div class="card producto">
         <img src="<?=$unProducto["imagen-principal"]?>" class="card-img-top" alt="Esta es la imagen 1">
         <div class="card-body">
