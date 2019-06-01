@@ -1,4 +1,4 @@
-<footer class="text-center">
+<footer class="text-center bg-dark" id="contacto-aqui">
   <h2 class="text-uppercase mb-3">¡Contactanos!</h2>
   <div class="mainFooter">
     <div class="col-lg-3 text-lg-left mt-3">
@@ -26,3 +26,5 @@
   </div>
   <p class="mt-4">Copyright 2019</p>
 </footer>
+
+<?php require_once("includes/js.php") ?>

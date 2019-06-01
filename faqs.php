@@ -1,13 +1,16 @@
+<?php
+$title="Lorem ipsum | FAQs";
+?>
 <!DOCTYPE html>
 <html lang="es" dir="ltr">
   <head>
 
-    <?php include("includes/head.php") ?>
+    <?php require_once("includes/head.php") ?>
 
   </head>
   <body>
 
-    <?php include("includes/header.php") ?>
+    <?php require_once("includes/header.php") ?>
 
    <div class="mainFaqs">
 
@@ -163,7 +166,7 @@
       </section>
     </div>
 
-    <?php include("includes/footer.php") ?>
+    <?php require_once("includes/footer.php") ?>
 
   </body>
 </html>

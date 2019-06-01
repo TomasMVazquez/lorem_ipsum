@@ -6,6 +6,7 @@
 
 /*importe las fuentes*/
 @import url('https://fonts.googleapis.com/css?family=Muli|Titillium+Web&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Quattrocento+Sans|Reenie+Beanie&display=swap');
 /* Importamos los iconos */
 @import url('https://use.fontawesome.com/releases/v5.8.1/css/all.css');
 
@@ -39,6 +40,15 @@ ul, ol {
 	margin: 0;
 	padding: 0;
 }
+
+.bg-dark {
+  background-color: #000 !important;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+  color: rgba(255, 255, 255, 1);
+}
+
 
 /* --------------------------------------------------------------------------------- LOGIN */
 .containerLogIn{
@@ -272,6 +282,11 @@ input:checked + .slider:before {
   .mainHeader{
     width: 100%;
   }
+  .perfilHeader{
+    display: none;
+  }
+
+
 
   .socialMedia{
     display: flex;
@@ -302,10 +317,12 @@ input:checked + .slider:before {
   }
 
   .navbar-brand {
-
     width:100%;
     margin-right: 0;
+    font-family: 'Reenie Beanie', cursive;
+    font-size: 3em;
     text-align: center;
+    padding: 0;
 }
   .navbar-brand img{
     width: 40%;
@@ -318,6 +335,7 @@ input:checked + .slider:before {
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 20px 0;
 }
 
 /* --------------------------------------------------------------------------------- MEDIA QUERYs */
@@ -335,6 +353,18 @@ input:checked + .slider:before {
 @media (min-width:768px){
 
   /* --------------------------------------------------------------------------------- HEADER */
+  .perfilHeader{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+
+  .perfilHeader img{
+    width: 40px;
+    height: auto;
+    border-radius: 50%;
+  }
 
   .navbar-expand-md {
     -ms-flex-flow: column nowrap;
@@ -408,5 +438,5 @@ input:checked + .slider:before {
 }
 /* Widescreen */
 @media (min-width:1200px){
-  
+
 }

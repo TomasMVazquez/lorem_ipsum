@@ -5,6 +5,7 @@ header{
   justify-content: center;
 }
 
+
 .loginBtn {
   display: none;
 }
@@ -29,6 +30,8 @@ header{
     padding-right: 0.8rem;
     padding-left: 0.8rem;
 }
+
+
 
 /* --------------------------------------------------------------------------------- FOOTER */
 
