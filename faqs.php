@@ -182,7 +182,7 @@ $title="Lorem ipsum | FAQs";
                 <div class="card">
                   <div class="card-header" id="headingTwo">
                     <h2 class="mb-0">
-                      <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                      <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo"  aria-expanded="false" aria-controls="collapseTwo">
                         Pregunta 2
                       </button>
                     </h2>

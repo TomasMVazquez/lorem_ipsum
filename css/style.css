@@ -515,6 +515,9 @@ footer .map{
     display: flex;
     flex-direction: row;
     justify-content: center;
+    background: url("../imgs/faqs.jpg") center center;
+    background-size: cover;
+    color: #fff;
   }
 
   #accordionMobile{
