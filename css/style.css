@@ -1,7 +1,6 @@
 /* Importamos la librería Normalize */
 @import url('normalize.css');
 @import url('bootstrap.css');
-@import url('andre.css');
 @import url('gaby.css');
 
 /*importe las fuentes*/
@@ -279,6 +278,11 @@ input:checked + .slider:before {
 
 /* --------------------------------------------------------------------------------- HEADER */
 
+  header{
+    display: flex;
+    justify-content: center;
+  }
+
   .mainHeader{
     width: 100%;
   }
@@ -329,6 +333,15 @@ input:checked + .slider:before {
 
   }
 
+  .navbar-light .navbar-nav .nav-link {
+      color: rgba(0, 0, 0, 1);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-size: 0.8rem;
+      padding-right: 0.8rem;
+      padding-left: 0.8rem;
+  }
+
 /* --------------------------------------------------------------------------------- FAQ */
 
 .mainFaqs {
@@ -338,6 +351,61 @@ input:checked + .slider:before {
   padding: 20px 0;
 }
 
+#accordionDesktop{
+  display: none;
+}
+
+/* --------------------------------------------------------------------------------- FOOTER */
+
+footer{
+  background: #666;
+  color: #fff;
+  padding: 20px 0;
+  font-size: 0.7rem;
+}
+
+footer h2{
+  font-size: 1.3rem;
+  letter-spacing: 2px;
+}
+
+footer .mainFooter{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  font-size: 0.9rem;
+}
+
+footer .map{
+  width: 100%;
+  height: 30vh;
+}
+
+footer form{
+  align-self: center;
+}
+
+
+footer .form-control {
+    display: block;
+    width: 100%;
+    height: calc(1.5em + 0.75rem + 2px);
+    padding: 0.25rem 0.25rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #fff;
+    background-color: transparent;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: 1.5rem;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+
+
 /* --------------------------------------------------------------------------------- MEDIA QUERYs */
 /* Phones Landscape */
 @media (min-width:480px){
@@ -346,8 +414,14 @@ input:checked + .slider:before {
 
   .navbar-brand img{
   width: 30%;
-
 }
+
+  /* --------------------------------------------------------------------------------- FOOTER */
+
+  footer .map{
+    width: 100%;
+    height: 60vh;
+  }
 }
 /* Tablets */
 @media (min-width:768px){
@@ -377,6 +451,13 @@ input:checked + .slider:before {
 
 .navbar-expand-md .navbar-collapse {
     justify-content: center;
+}
+
+/* --------------------------------------------------------------------------------- FOOTER */
+
+footer .map{
+  width: 100%;
+  height: 40vh;
 }
 
 
@@ -428,12 +509,54 @@ input:checked + .slider:before {
 }
 
 
-/* --------------------------------------------------------------------------------- FAQ */
+/* --------------------------------------------------------------------------------- FAQS */
+
+  .mainFaqs {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  #accordionMobile{
+    display: none;
+  }
+
+  .faqDesktop{
+    display: flex;
+    justify-content: space-between;
+  }
+
+  #accordionDesktop, .faqs-rtas{
+    display: block;
+    width: 48%;
+  }
+
+
 
 
 
   .card-header {
     padding: 0.05rem 1.25rem;
+  }
+
+  /* --------------------------------------------------------------------------------- FOOTER */
+
+  footer .mainFooter{
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-around;
+    align-items: flex-start;
+    width: 100%;
+    font-size: 0.9rem;
+  }
+
+  footer form{
+    align-self: flex-start;
+  }
+
+  footer .map{
+    height: 60vh;
+
   }
 }
 /* Widescreen */
