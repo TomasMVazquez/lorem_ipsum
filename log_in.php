@@ -7,8 +7,7 @@
     <!-- ACA PONER INCLUDE HEADER -->
     <?php require_once("includes/header.php") ?>
     <br>
-    <div class="mainContainer justify-content-center">
-      <div class="row justify-content-center">
+      <div class="mainContainer">
         <div class="col-12 col-md-8 col-xl-6 justify-content-center">
           <!-- EMPIEZA FORMULARIO -->
           <form class="" action="index.php">
@@ -40,7 +39,6 @@
         <!-- TERMINA FORMULARIO -->
         </div>
       </div>
-    </div>
     <br>
     <!-- ACA PONER INCLUDE FOOTER -->
     <?php require_once("includes/footer.php") ?>

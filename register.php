@@ -10,7 +10,7 @@
     <!-- ACA PONER INCLUDE HEADER -->
     <?php require_once("includes/header.php") ?>
     <br>
-    <div class="row justify-content-center">
+    <div class="mainContainer">
       <!-- TITULO DE LA PAG -->
       <div class="col-12 col-md-11 col-xl-10">
         <h1 class="titulo">Registro</h1>
@@ -21,7 +21,7 @@
       <!-- FIN TITULO DE LA PAG -->
     </div>
 
-    <div class="row justify-content-center">
+    <div class="mainContainer">
         <!-- EMPIEZA FORMULARIO -->
         <form class="col-12 col-md-11 col-xl-10" action="index.php" >
           <div class="container containerRegister">
@@ -119,7 +119,7 @@
         <!-- TERMINA FORMULARIO -->
     </div>
     <br>
-    <?php require_once("includes/footer.php") ?>
     <!-- ACA PONER INCLUDE FOOTER -->
+    <?php require_once("includes/footer.php") ?>
   </body>
 </html>

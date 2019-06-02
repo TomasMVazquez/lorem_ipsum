@@ -202,6 +202,10 @@ h4 {
 .container {
   padding: 8px;
 }
+.mainContainer{
+  display: flex;
+  justify-content: center;
+}
 /* ------------------  Style Formulario ------------------  */
 form {
   align-self: center;
@@ -537,6 +541,7 @@ footer .form-control {
   /* --------------------------------------------------------------------------------- Log_in */
   form {
     border: 1px solid #000000;
+    margin: 0 5px;
   }
 
   /* --------------------------------------------------------------------------------- Register */
@@ -560,9 +565,11 @@ footer .form-control {
     flex-direction: row;
     flex-wrap: wrap;
   }
-
-  img.avatar {
-    width: 30%;
+.imgContainerProfile img.avatar{
+  width: 40%;
+}
+img.avatar {
+    width: 100%;
 }
   /* --------------------------------------------------------------------------------- HEADER */
   .perfilHeader{
