@@ -8,6 +8,13 @@
 @import url('https://fonts.googleapis.com/css?family=Quattrocento+Sans|Reenie+Beanie&display=swap');
 /* Importamos los iconos */
 @import url('https://use.fontawesome.com/releases/v5.8.1/css/all.css');
+/* Importamos jquerys*/
+@import url('https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js');
+@import url('https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js');
+
+
+
 
 /* --------------------------------------------------------------------------------- GENERALES */
 *{
@@ -20,15 +27,23 @@ body{
 font-family: 'Muli','Titillium Web', sans-serif;
 }
 /*desde aca va el estilo del index*/
-.textoimg{
+
+.carousel-inner img {
+    width: 100%;
+    max-height: 50%;
+}
+
+.carousel-caption{
   font-family: "Muli", sans-serif;
   font-size: 40px;
   color: rgba(0, 0, 0, 0.5);
+  text-align: center;
 }
-.textoimg2{
+.carousel-caption p{
   font-family: "Titillium", sans-serif;
   font-size: 25px;
   color: rgba(0, 0, 0, 0.5);
+  text-align: center;
 }
 /*hasta aca va el estilo del index*/
 
@@ -422,7 +437,7 @@ footer .form-control {
     width: 100%;
     height: 60vh;
   }
-}
+
 /* Tablets */
 @media (min-width:768px){
 
