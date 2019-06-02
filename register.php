@@ -1,7 +1,7 @@
 <?php
   $title="Lorem ipsum | Registro";
-  $categorias = ["Maquillajes","Labiales","Shampoos","Cremas"];
-  $notificaciones = ["noticias","promociones"];
+  $categorias = ["Maquillajes","Labiales","Shampoos","Cremas","Maquillajes","Labiales","Shampoos","Cremas"];
+  $notificaciones = ["noticias"];
 ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
@@ -10,89 +10,113 @@
     <!-- ACA PONER INCLUDE HEADER -->
     <?php require_once("includes/header.php") ?>
     <br>
-    <div class="containerRegister">
+    <div class="row justify-content-center">
       <!-- TITULO DE LA PAG -->
-      <div class="container registerHeader">
-        <h1>Registro</h1>
-        <header>
+      <div class="col-12 col-md-11 col-xl-10">
+        <h1 class="titulo">Registro</h1>
+        <p>
           Favor de completar el formulario para crear una cuenta
-        </header>
+        </p>
       </div>
-      <!-- EMPIEZA FORMULARIO -->
-      <form action="index.php" >
-        <div class="container">
+      <!-- FIN TITULO DE LA PAG -->
+    </div>
 
-          <label for="name"><b>Nombre</b></label>
-          <input type="text" placeholder="Ingresar Nombre" name="name" required>
+    <div class="row justify-content-center">
+        <!-- EMPIEZA FORMULARIO -->
+        <form class="col-12 col-md-11 col-xl-10" action="index.php" >
+          <div class="container containerRegister">
+            <!-- CONTENEDOR IMAGEN AVATAR -->
+            <div class="imgcontainer col-12 col-md-4 col-xl-4">
+              <label for="avatar"><b>Imagen de Perfil</b></label>
+              <a href="#">
+                <img src="imgs/img_avatar4.png" alt="Avatar" class="avatar">
+              </a>
+            </div>
+            <!-- FIN CONTENEDOR IMAGEN AVATAR -->
+            <div class="container col-12 col-md-8 col-xl-8">
+              <label for="name"><b>Nombre</b></label>
+              <input type="text" placeholder="Ingresar Nombre" name="name" required>
 
-          <label for="lastName"><b>Apellido</b></label>
-          <input type="text" placeholder="Ingresar Apellido" name="lastName" required>
+              <label for="lastName"><b>Apellido</b></label>
+              <input type="text" placeholder="Ingresar Apellido" name="lastName" required>
 
-          <label for="email"><b>Email</b></label>
-          <input type="email" placeholder="Ingresar Email" name="email" required>
+              <label for="email"><b>Email</b></label>
+              <input type="email" placeholder="Ingresar Email" name="email" required>
 
-          <label for="address"><b>Dirección</b></label>
-          <input type="text" placeholder="Ingresar Dirección" name="address" required>
-
-          <label for="city"><b>Ciudad</b></label>
-          <input type="text" placeholder="Ingresar Ciudad" name="city" required>
-
-          <!-- SWITCH PARA QUE QUIERO VER -->
-          <div class="container containerSwitch">
-            <?php if (count($categorias)>5): ?>
-              <?php foreach ($categorias as $unaCategoria) : ?>
-                <div class="containerUnSwitchCat col-4">
-                  <label class="switch">
-                    <input type="checkbox" checked>
-                    <span class="slider round"></span>
-                  </label>
-                  <em><?= $unaCategoria ?></em>
-                </div>
-              <?php endforeach; ?>
-              <?php else: ?>
-                <?php foreach ($categorias as $unaCategoria) : ?>
-                  <div class="containerUnSwitchCat col-6">
+            </div>
+          </div>
+          <hr>
+          <div class="">
+            <div class="col-12">
+              <!-- SWITCH PARA QUE QUIERO VER -->
+              <label for="categorias"><b>Categorias</b></label>
+              <div class="container containerSwitch">
+                <?php if (count($categorias)>5): ?>
+                  <?php foreach ($categorias as $unaCategoria) : ?>
+                    <div class="containerUnSwitchCat col-6 col-md-4 col-xl-4">
+                      <label class="switch">
+                        <input type="checkbox" checked>
+                        <span class="slider round"></span>
+                      </label>
+                      <em><?= $unaCategoria ?></em>
+                    </div>
+                  <?php endforeach; ?>
+                <?php else: ?>
+                  <?php foreach ($categorias as $unaCategoria) : ?>
+                    <div class="containerUnSwitchCat col-6 col-md-4 col-xl-6">
+                      <label class="switch">
+                        <input type="checkbox" checked>
+                        <span class="slider round"></span>
+                      </label>
+                      <em class="switchText"><?= $unaCategoria ?></em>
+                    </div>
+                  <?php endforeach; ?>
+                <?php endif; ?>
+              </div>
+              <!-- FIN SWITCH PARA QUE QUIERO VER -->
+              <!-- SWITCH PARA QUE QUIERO RECIBIR -->
+              <div class="container containerSwitch">
+                <?php foreach ($notificaciones as $unaNotificacion) : ?>
+                  <div class="containerUnSwitchNot col-12">
                     <label class="switch">
                       <input type="checkbox" checked>
                       <span class="slider round"></span>
                     </label>
-                    <em class="switchText"><?= $unaCategoria ?></em>
+                    <em class="switchText">Quiero recibir <?= $unaNotificacion ?></em>
                   </div>
                 <?php endforeach; ?>
-            <?php endif; ?>
-          </div>
-          <!-- SWITCH PARA QUE QUIERO RECIBIR -->
-          <div class="container containerSwitch">
-            <?php foreach ($notificaciones as $unaNotificacion) : ?>
-              <div class="containerUnSwitchNot col-12">
-                <label class="switch">
-                  <input type="checkbox" checked>
-                  <span class="slider round"></span>
-                </label>
-                <em class="switchText">Quiero recibir <?= $unaNotificacion ?></em>
               </div>
-            <?php endforeach; ?>
+              <!-- FIN SWITCH PARA QUE QUIERO RECIBIR -->
+            </div>
+            <hr>
+            <div class="container col-12 col-md-12 col-xl-8">
+              <label for="psw"><b>Contraseña</b></label>
+              <input type="password" placeholder="Ingresar Contraseña" name="psw" required>
+
+              <label for="psw-repeat"><b>Repetir Contraseña</b></label>
+              <input type="password" placeholder="Repetir Contraseña" name="psw-repeat" required>
+
+              <label>
+                <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Recordarme
+              </label>
+
+              <p>
+                Al crearse una cuenta, usted acepta nuestros
+                <a href="#" style="color:dodgerblue">Terminos & Condiciones</a>
+                .
+              </p>
+            </div>
           </div>
 
-          <label for="psw"><b>Contraseña</b></label>
-          <input type="password" placeholder="Ingresar Contraseña" name="psw" required>
-
-          <label for="psw-repeat"><b>Repetir Contraseña</b></label>
-          <input type="password" placeholder="Repetir Contraseña" name="psw-repeat" required>
-
-          <label>
-            <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Recordarme
-          </label>
-
-
-          <p>Al crearse una cuenta, usted acepta nuestros <a href="#" style="color:dodgerblue">Terminos & Condiciones</a>.</p>
-          <div class="btnForm">
-            <button class="cancelbtn" type="button" >Cancel</button>
-            <button class="btnLogin" type="submit">Registrar</button>
+          <div class="container">
+            <div class="btnForm">
+              <button class="btn-secondary volver" type="button" >Volver</button>
+              <button class="btn-primary" type="submit">Registrar</button>
+            </div>
           </div>
-        </div>
-      </form>
-      <!-- TERMINA FORMULARIO -->
+
+        </form>
+        <!-- TERMINA FORMULARIO -->
     </div>
     <br>
     <?php require_once("includes/footer.php") ?>

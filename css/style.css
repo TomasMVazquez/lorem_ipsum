@@ -1,6 +1,8 @@
 /* Importamos la librería Normalize */
 @import url('normalize.css');
+/* Importamos la librería bootstrap*/
 @import url('bootstrap.css');
+/* Importamos la librería personalizadas */
 @import url('gaby.css');
 
 /*importe las fuentes*/
@@ -14,34 +16,39 @@
 @import url('https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js');
 
 
-
-
 /* --------------------------------------------------------------------------------- GENERALES */
 * {
   box-sizing: border-box;
 }
+
 a {
   text-decoration: none;
 }
 
-body{
- /*Le saque el ancho este porque se veía feo  el menu. Lo charlamos según el diseño
-  max-width: 1200px; */
-font-family: 'Muli','Titillium Web', sans-serif;
+ul, ol {
+	list-style: none;
+	margin: 0;
+	padding: 0;
 }
 
-/* El contenedor que no va a ir al borde y contiene información tiene que tener estas caracteristics col-12 col-md-11 col-xl-10 */
+body{
+  font-family: 'Muli','Titillium Web', sans-serif;
+}
+
+/* El contenedor que no va a ir al borde y contiene información tiene que
+tener estas caracteristics col-12 col-md-11 col-xl-10 */
 .mainContainer{
 
 }
-/*Titulo principal*/
+
+/* ------------------  Titulo principal ------------------  */
 h1{
     font-size: 1.5em;
     text-transform: uppercase;
     letter-spacing: 0.8em;
 }
 
-/* Para titulos y banners especial. Tipografía manuscritos */
+/*------------------  Para titulos y banners especial. Tipografía manuscritos ------------------ */
 
 h2.titseccion {
   line-height: 0;
@@ -57,7 +64,7 @@ h2.titseccion {
   font-size: 8em;
 }
 
-/* Subtitulos -  */
+/* ------------------  Subtitulos ------------------   */
 
 h3 {
   font-size: 2em;
@@ -65,39 +72,10 @@ h3 {
   letter-spacing: 0.8em;
 }
 
-/* Nombre de productos */
+/* ------------------  Nombre de productos ------------------  */
 
 h4 {
   font-size: 2em;
-}
-
-/*desde aca va el estilo del index*/
-
-.carousel-inner img {
-    width: 100%;
-    max-height: 50%;
-}
-
-.carousel-caption{
-  font-family: "Muli", sans-serif;
-  font-size: 40px;
-  color: rgba(0, 0, 0, 0.5);
-  text-align: center;
-}
-.carousel-caption p{
-  font-family: "Titillium", sans-serif;
-  font-size: 25px;
-  color: rgba(0, 0, 0, 0.5);
-  text-align: center;
-}
-/*hasta aca va el estilo del index*/
-
-
-
-ul, ol {
-	list-style: none;
-	margin: 0;
-	padding: 0;
 }
 
 .bg-dark {
@@ -111,6 +89,7 @@ ul, ol {
   letter-spacing: 0.1em;
 }
 
+/* ------------------ Estilo de Botones ------------------ */
 .btn {
   text-transform: uppercase;
   border-radius: 0rem;
@@ -185,43 +164,62 @@ ul, ol {
   box-shadow: 0 0 0 0.2rem rgba(130, 138, 145, 0.5);
 }
 
-
-/* --------------------------------------------------------------------------------- LOGIN */
-.containerLogIn{
-  display: flex;
-  justify-content: center;
+.btn-light {
+  color: #666;
+  background-color: #fff;
+  font-size: 0.5em;
+  margin: 0.5em;
 }
 
-/* Style Formulario */
+.btn-light:hover {
+  color: #000;
+  background-color: #fff;
+}
+
+
+/* ---------------------------------------------------------------------------------  INDEX */
+
+.carousel-inner img {
+    width: 100%;
+    max-height: 50%;
+}
+
+.carousel-caption{
+  font-family: "Muli", sans-serif;
+  font-size: 40px;
+  color: rgba(0, 0, 0, 0.5);
+  text-align: center;
+}
+.carousel-caption p{
+  font-family: "Titillium", sans-serif;
+  font-size: 25px;
+  color: rgba(0, 0, 0, 0.5);
+  text-align: center;
+}
+/*hasta aca va el estilo del index*/
+
+/* --------------------------------------------------------------------------------- LOGIN */
+.container {
+  padding: 8px;
+}
+/* ------------------  Style Formulario ------------------  */
 form {
-  border: 3px solid #f1f1f1;
-  max-width: 720px;
   align-self: center;
 }
 
-.container {
-  padding: 16px;
-}
-
-/* Style Imagen en formulario */
-.imgcontainer {
-  text-align: center;
-  margin: 24px 0 12px 0;
-}
-
-img.avatar {
-  width: 40%;
-  border-radius: 50%;
-}
-
-/* inputs en formuario */
+/* ------------------  inputs en formuario  ------------------  */
 input[type=text], input[type=email], input[type=password] {
   width: 100%;
   padding: 12px 20px;
   margin: 8px 0;
   display: inline-block;
-  border: 1px solid #ccc;
+  border: 1px solid #000000;
   box-sizing: border-box;
+}
+
+input[type=text]:focus, input[type=email]:focus, input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
 }
 
 span.psw {
@@ -229,53 +227,36 @@ span.psw {
   flex-direction: row-reverse;
 }
 
-/* Botones en formulario */
+/* ------------------  Botones en formulario ------------------  */
 .btnForm{
-  background-color:#f1f1f1;
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
   justify-content: space-between;
 }
 
-button{
-  display: flex;
-	flex-wrap: wrap;
-	justify-content: center;
-	align-items: center;
-  color: white;
-  margin: 8px 0;
-  border: none;
-  cursor: pointer;
+form button{
+  padding: 0.5em 2em;
 }
 
-.btnLogin {
-  background-color: #4CAF50;
-  padding: 14px 20px;
-  width: 45%;
-}
-
-.cancelbtn {
-  width: 20%;
-  padding: 10px 18px;
-  background-color: #f44336;
-}
 /* --------------------------------------------------------------------------------- REGISTER */
+
 .containerRegister{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  display: block;
 }
-input[type=text]:focus, input[type=email]:focus, input[type=password]:focus {
-  background-color: #ddd;
-  outline: none;
+
+/* ------------------  Style Imagen en formulario ------------------  */
+.imgcontainer {
+  text-align: center;
+  margin: 12px 0 12px 0;
 }
-.registerHeader{
-  display: flex;
-  flex-direction: column;
-  align-self: center;
-  align-items: center;
+
+img.avatar {
+  width: 80%;
+  border-radius: 50%;
+  border: 3px solid black;
 }
+/* ------------------  Style Switch ------------------  */
 
 .containerSwitch{
   display: flex;
@@ -284,10 +265,9 @@ input[type=text]:focus, input[type=email]:focus, input[type=password]:focus {
 }
 .containerUnSwitchCat{
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
+  align-items: left;
   font-size: 18px;
 }
 .containerUnSwitchNot{
@@ -336,11 +316,11 @@ input[type=text]:focus, input[type=email]:focus, input[type=password]:focus {
 }
 
 input:checked + .slider {
-  background-color: #2196F3;
+  background-color: #000;
 }
 
 input:focus + .slider {
-  box-shadow: 0 0 1px #2196F3;
+  box-shadow: 0 0 1px #000;
 }
 
 input:checked + .slider:before {
@@ -348,7 +328,7 @@ input:checked + .slider:before {
   -ms-transform: translateX(26px);
   transform: translateX(26px);
 }
-/* Rounded sliders */
+/* ---------------- Rounded sliders ---------------- */
 .slider.round {
   border-radius: 34px;
 }
@@ -360,42 +340,18 @@ input:checked + .slider:before {
 .switchText{
   margin-left: 10px;
 }
-/* --------------------------------------------------------------------------------- PROFILE */
-.containerProfile{
-  border: 1px dotted red;
 
+/* --------------------------------------------------------------------------------- PROFILE */
+.imgContainerProfile {
+  text-align: center;
+  margin: 12px 0 12px 0;
 }
 .containerAside{
-  background-color: #f1f1f1;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-}
-.containerMain{
-  /* display: inline-block; */
-  background-color: rgba(246, 175, 235, 0.5);
-}
-.boxFav{
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-around;
-}
-.boxUnFav{
-  border: 1px solid rgb(19, 101, 162);
-  background-color: rgba(18, 210, 230, 0.5);
-  width: 33%;
-  height: 250px;
-  margin-bottom: 20px;
-}
-.boxGranFav{
-  border: 1px solid rgb(19, 101, 162);
-  background-color: rgba(18, 210, 230, 0.5);
-  width: 90%;
-  height: 150px;
 }
 
 .containerUnSwitch{
@@ -407,11 +363,26 @@ input:checked + .slider:before {
   font-size: 18px;
 }
 
-.btnEdit {
-  background-color: #4CAF50;
+.profile .btnForm button{
   padding: 14px 20px;
   width: 100%;
 }
+
+.tituloCardFav{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0 5px;
+}
+.buttonsCard{
+}
+.tituloCardFav .corazon{
+    align-self: center;
+}
+.card-title{
+  text-align: center;
+}
+
 
 /* --------------------------------------------------------------------------------- HEADER */
 
@@ -549,7 +520,7 @@ footer .form-control {
 
   /* --------------------------------------------------------------------------------- HEADER */
 
-  .navbar-brand img{
+.navbar-brand img{
   width: 50%;
 }
 
@@ -563,6 +534,36 @@ footer .form-control {
 /* Tablets */
 @media (min-width:768px){
 
+  /* --------------------------------------------------------------------------------- Log_in */
+  form {
+    border: 1px solid #000000;
+  }
+
+  /* --------------------------------------------------------------------------------- Register */
+
+  .containerRegister{
+    display: flex;
+    flex-direction: row;
+  }
+
+  .containerUnSwitchCat{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: left;
+    font-size: 18px;
+  }
+  /* --------------------------------------------------------------------------------- Perfil */
+
+  .imgContainerProfile {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  img.avatar {
+    width: 30%;
+}
   /* --------------------------------------------------------------------------------- HEADER */
   .perfilHeader{
     width: 100%;
@@ -602,17 +603,17 @@ footer .map{
 /* Desktops */
 @media (min-width:992px){
 
-  /* BOTNONES EN EL FORMULARIO */
-  .btnLogin {
-  width: 100%;
-  }
-  .btnLogin:hover{
-    opacity: 0.8;
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
-  }
-  .cancelbtn{
-    display: none;
-  }
+/* --------------------------------------------------------------------------------- LOG IN */
+
+form button{
+  width: 100%
+}
+
+form button.volver{
+  display: none;
+}
+
+/* --------------------------------------------------------------------------------- Register */
 
 /* --------------------------------------------------------------------------------- HEADER */
 
@@ -671,10 +672,6 @@ footer .map{
     width: 48%;
   }
 
-
-
-
-
   .card-header {
     padding: 0.05rem 1.25rem;
   }
@@ -696,7 +693,6 @@ footer .map{
 
   footer .map{
     height: 60vh;
-
   }
 }
 /* Widescreen */
