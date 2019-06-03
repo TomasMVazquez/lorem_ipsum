@@ -164,6 +164,24 @@ h4 {
   box-shadow: 0 0 0 0.2rem rgba(130, 138, 145, 0.5);
 }
 
+
+.btn-link {
+  font-weight: 400;
+  color: #fff;
+  text-decoration: none;
+}
+
+.btn-link:hover {
+  color: #f9f9f9;
+  text-decoration: underline;
+}
+
+.btn-link:focus, .btn-link.focus {
+  text-decoration: none;
+  box-shadow: none;
+  color: #ccc;
+}
+
 .btn-light {
   color: #666;
   background-color: #fff;
@@ -390,69 +408,73 @@ input:checked + .slider:before {
 
 /* --------------------------------------------------------------------------------- HEADER */
 
-  header{
-    display: flex;
-    justify-content: center;
-  }
-
-  .mainHeader{
-    width: 100%;
-  }
-  .perfilHeader{
-    display: none;
-  }
-
-
-
-  .socialMedia{
-    display: flex;
-    width: 100%;
-    justify-content: center;
-
-    align-items: center;
+header{
+  display: flex;
+  justify-content: center;
 }
-  .socialMedia li{
-    font-size: 1rem;
-    margin: 5px;
-  }
 
-  .socialMedia li a{
-    background: #666;
-    border-radius: 50%;
-    width: 25px;
-    height: 25px;
-    color: #fff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .navbar-toggler{
-    margin: 10px auto;
-    border: none;
-  }
-
-  .navbar-brand {
-    width:100%;
-    margin-right: 0;
-    font-family: 'Reenie Beanie', cursive;
-    font-size: 3em;
-    text-align: center;
-    padding: 0;
+.mainHeader{
+  width: 100%;
+  text-align: center;
 }
-  .navbar-brand img{
-    width: 60%;
 
-  }
 
-  .navbar-light .navbar-nav .nav-link {
-      color: rgba(0, 0, 0, 1);
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      font-size: 0.8rem;
-      padding-right: 0.8rem;
-      padding-left: 0.8rem;
-  }
+.perfilHeader{
+  display: none;
+}
+
+
+
+.socialMedia{
+  display: flex;
+  width: 100%;
+  justify-content: center;
+
+  align-items: center;
+}
+.socialMedia li{
+  font-size: 1rem;
+  margin: 5px;
+}
+
+.socialMedia li a{
+  background: #666;
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.navbar-toggler{
+  margin: 10px auto;
+  border: none;
+}
+
+.navbar-brand {
+  width:100%;
+  margin-right: 0;
+  font-family: 'Reenie Beanie', cursive;
+  font-size: 3em;
+  text-align: center;
+  padding: 0;
+}
+.navbar-brand img{
+  width: 60%;
+
+}
+
+.navbar-light .navbar-nav .nav-link {
+    color: rgba(0, 0, 0, 1);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.8rem;
+    padding-right: 0.8rem;
+    padding-left: 0.8rem;
+}
+
 
 /* --------------------------------------------------------------------------------- FAQ */
 
@@ -465,6 +487,24 @@ input:checked + .slider:before {
 
 #accordionDesktop{
   display: none;
+}
+
+.mainFaqs .card {
+  background-color: #fff;
+  background-clip: border-box;
+
+  border-bottom: 1px solid rgba(255, 255, 255, 1);
+  border-radius: 0;
+}
+
+.mainFaqs .card-header {
+  padding: 0.5rem 0.75rem;
+  background-color: rgba(0, 0, 0, 1);
+  border-bottom: 1px solid rgba(255, 255, 255, 1);
+}
+
+.card-header:first-child {
+    border-radius: 0;
 }
 
 /* --------------------------------------------------------------------------------- FOOTER */
@@ -488,52 +528,86 @@ footer .mainFooter{
   align-items: center;
   width: 100%;
   font-size: 0.9rem;
+  color: #fff;
 }
 
-footer .map{
-  width: 100%;
-  height: 30vh;
+footer a{
+  color: #fff!important;
 }
 
-footer form{
-  align-self: center;
+footer a:hover{
+  color:#ccc;
+  text-decoration: none;
 }
-
-
-footer .form-control {
-    display: block;
-    width: 100%;
-    height: calc(1.5em + 0.75rem + 2px);
-    padding: 0.25rem 0.25rem;
-    font-size: 1rem;
-    font-weight: 400;
-    line-height: 1.5;
-    color: #fff;
-    background-color: transparent;
-    background-clip: padding-box;
-    border: 1px solid #ced4da;
-    border-radius: 1.5rem;
-    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-}
-
-
 
 /* --------------------------------------------------------------------------------- MEDIA QUERYs */
 /* Phones Landscape */
 @media (min-width:480px){
 
   /* --------------------------------------------------------------------------------- HEADER */
+  .navbar-brand img{
+    width: 60%;
+  }
 
-.navbar-brand img{
-  width: 50%;
-}
+  .mainHeader {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .navbar-toggler{
+    margin: 20px 0 0 0;
+    border: none;
+  }
+
+  .clmLogo{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 15px 20px;
+
+  }
+
+  .clmPerfil{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    color: #fff;
+    justify-content: space-between!important;
+    padding: 15px 20px;
+
+  }
+
+  .perfilHeader{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+
+  .perfilHeader img{
+    width: 40px;
+    height: auto;
+    border-radius: 50%;
+  }
+
+  .navbar-brand {
+  text-align: left;
+  }
+
+  .navbar {
+      align-items: normal!important;
+  }
+
+  .navbar-nav {
+    -ms-flex-direction: row;
+    flex-direction: row;
+    justify-content: space-around;
+    margin: 0 20px;
+
+  }
 
   /* --------------------------------------------------------------------------------- FOOTER */
-
-  footer .map{
-    width: 100%;
-    height: 60vh;
-  }
 
 /* Tablets */
 @media (min-width:768px){
@@ -572,38 +646,74 @@ img.avatar {
     width: 100%;
 }
   /* --------------------------------------------------------------------------------- HEADER */
-  .perfilHeader{
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
+
+    .mainHeader {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .navbar-toggler{
+      margin: 20px 0 0 0;
+      border: none;
+    }
+
+    .clmLogo{
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: space-between;
+      padding: 20px;
+    }
+
+    .clmPerfil{
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      color: #fff;
+      justify-content: space-between;
+      padding: 20px;
+    }
+
+    .perfilHeader{
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+    }
+
+    .perfilHeader img{
+      width: 40px;
+      height: auto;
+      border-radius: 50%;
+    }
+
+    .navbar-brand {
+    text-align: left;
   }
 
-  .perfilHeader img{
-    width: 40px;
-    height: auto;
-    border-radius: 50%;
+    .navbar-nav {
+      -ms-flex-direction: row;
+      flex-direction: row;
+      justify-content: space-between;
   }
 
-  .navbar-expand-md {
-    -ms-flex-flow: column nowrap;
-    flex-flow: column nowrap;
-}
+  .navbar-expand-md .navbar-collapse {
+      justify-content: center;
+  }
+
   .navbar-brand img{
     width: 50%;
 
-}
+  }
 
-.navbar-expand-md .navbar-collapse {
-    justify-content: center;
-}
+  /*
+    .navbar-expand-md {
+      -ms-flex-flow: column nowrap;
+      flex-flow: column nowrap;
+  }
 
 /* --------------------------------------------------------------------------------- FOOTER */
 
-footer .map{
-  width: 100%;
-  height: 40vh;
-}
 
 
 }
@@ -631,27 +741,37 @@ form button.volver{
 }
 
 .navbar-brand img{
-  width: 40%;
+  width: 70%;
 
 }
-
+/*
 .mainHeader {
     width: 100%;
     justify-content: flex-end;
     align-items: flex-end;
     display: flex;
     flex-direction: column;
+}*/
+.clmLogo{
+  padding: 10px 0 0 0;
 }
+
+.clmPerfil {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: flex-start;
+ }
+
 
 .socialMedia {
     width: auto;
     justify-content: flex-end;
 }
 
-.navbar-expand-md {
-  -ms-flex-flow: column nowrap;
-  flex-flow: row nowrap;
+.navbar-expand-md .navbar-collapse {
+    justify-content: flex-end;
 }
+
 
 
 /* --------------------------------------------------------------------------------- FAQS */
@@ -674,9 +794,28 @@ form button.volver{
     justify-content: space-between;
   }
 
-  #accordionDesktop, .faqs-rtas{
+  #accordionDesktop{
+    display: flex;
+    width: 100%;
+  }
+
+  .faqs-preguntas, .faqs-rtas{
     display: block;
     width: 48%;
+  }
+
+  .mainFaqs .card {
+    background-color: rgba(255, 255, 255, 0);;
+    background-clip: border-box;
+    border-bottom: 1px solid rgba(255, 255, 255, 1);
+    border-radius: 0;
+  }
+
+  .mainFaqs .card-header {
+    padding: 0.5rem 0.75rem;
+    background-color: rgba(0, 0, 0, 0);
+    border-bottom: 2px solid rgba(255, 255, 255, 1);
+    text-align: left;
   }
 
   .card-header {
@@ -685,22 +824,15 @@ form button.volver{
 
   /* --------------------------------------------------------------------------------- FOOTER */
 
-  footer .mainFooter{
-    display: flex;
-    flex-direction: row-reverse;
-    justify-content: space-around;
-    align-items: flex-start;
-    width: 100%;
-    font-size: 0.9rem;
-  }
 
-  footer form{
-    align-self: flex-start;
-  }
-
-  footer .map{
-    height: 60vh;
-  }
+    footer .mainFooter{
+      display: flex;
+      flex-direction: row-reverse;
+      justify-content: space-around;
+      align-items: flex-start;
+      width: 100%;
+      font-size: 0.9rem;
+    }
 }
 /* Widescreen */
 @media (min-width:1200px){

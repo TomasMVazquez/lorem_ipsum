@@ -2,8 +2,8 @@
   $menu = [
     "Quienes Somos" => "index.php",
     "Productos" => [
-      "Categoria A" => "cosmetica1.php",
-      "Categoria B" => "cosmetica2.php",
+      "Categoria A" => "productos2.php",
+      "Categoria B" => "productos2.php",
     ],
     "Faqs" => "faqs.php",
     "Logueate" => "log_in.php",
@@ -15,71 +15,66 @@
   ]
  ?>
 
-    <header class="bg-dark">
 
 
+ <header class="bg-dark">
 
-      <nav class="col-12 col-md-10 navbar navbar-expand-md navbar-dark">
+   <nav class="navbar navbar-expand-md mainHeader container col-12 col-md-11 col-lg-10 navbar-dark">
 
-        <!-- Marca - La puse en texto - Habría que modificarla -->
-        <a class="navbar-brand" href="#">
-        <img src="imgs/logo-loremipsum.png" alt="">
-      </a>
+     <div class="clmLogo col-12 col-sm-6 col-md-6 col-lg-3">
+        <a class="navbar-brand" href="index.php"><img src="imgs/logo-loremipsum.png" alt=""></a>
 
-        <div class="mainHeader">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+     </div>
 
-          <div class="perfilHeader">
+     <div class="clmPerfil col-12 col-sm-6 col-md-6 col-lg-9">
 
-            <div class="dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">Bienvenido Fulanito</a>
-              <div class="dropdown-menu ">
-                <a class="dropdown-item" href="#">Modificar tu cuenta</a>
-                <a class="dropdown-item" href="#">Ver Favoritos</a>
-                <a class="dropdown-item" href="#">Cambiar tu foto de perfil</a>
-              </div>
-            </div>
-            <img src="imgs/img_avatar4.png" alt="">
+       <div class="perfilHeader">
+         <div class="dropdown">
+           <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">Bienvenido Fulanito</a>
+           <div class="dropdown-menu ">
+             <a class="dropdown-item" href="#">Modificar tu cuenta</a>
+             <a class="dropdown-item" href="#">Ver Favoritos</a>
+             <a class="dropdown-item" href="#">Cambiar tu foto de perfil</a>
+           </div>
+         </div>
+         <img src="imgs/img_avatar4.png" alt="">
+       </div>
 
-          </div>
+       <div class="">
+         Buscador
+       </div>
 
-          <!--<ul class="socialMedia">
+     </div>
 
-            <li><a href="http://www.facebook.com"><i class="fab fa-facebook-f"></i></a></li>
-            <li><a href="http://www.instagram.com"><i class="fab fa-instagram m-1"></i></a></li>
-            <li><a href="#"><i class="fas fa-user"></i></a></li>
+     <!-- Navbar links con submenu -->
+     <div class="collapse navbar-collapse" id="collapsibleNavbar">
+       <ul class="navbar-nav mt-3">
+         <?php foreach ($menu as $boton => $seccion): ?>
 
-          </ul>-->
+           <?php if (is_array($seccion)): ?>
+             <li class="nav-item dropdown">
+               <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                 <?= $boton ?>
+               </a>
 
-          <!-- Toggler / Menu hamburguesa -->
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-            <span class="navbar-toggler-icon"></span>
-          </button>
+               <div class="dropdown-menu  text-center">
+                 <?php foreach ($seccion as $suboton => $subseccion): ?>
+                 <a class="dropdown-item" href="<?= $subseccion?>"><?= $suboton ?></a>
+                 <?php endforeach; ?>
+               </div>
+             </li>
 
-          <!-- Navbar links con submenu -->
-          <div class="collapse navbar-collapse" id="collapsibleNavbar">
-            <ul class="navbar-nav">
-              <?php foreach ($menu as $boton => $seccion): ?>
+             <?php else: ?>
+               <li class="nav-item"><a class="nav-link" href="<?= $seccion?>"><?= $boton ?></a></li>
 
-                <?php if (is_array($seccion)): ?>
-                  <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
-                      <?= $boton ?>
-                    </a>
+           <?php endif; ?>
+         <?php endforeach; ?>
+       </ul>
+     </div>
 
-                    <div class="dropdown-menu  text-center">
-                      <?php foreach ($seccion as $suboton => $subseccion): ?>
-                      <a class="dropdown-item" href="<?= $subseccion?>"><?= $suboton ?></a>
-                      <?php endforeach; ?>
-                    </div>
-                  </li>
 
-                  <?php else: ?>
-                    <li class="nav-item"><a class="nav-link" href="<?= $seccion?>"><?= $boton ?></a></li>
-
-                <?php endif; ?>
-              <?php endforeach; ?>
-            </ul>
-          </div>
-        </div>
-      </nav>
-    </header>
+  </nav>
+</header>
