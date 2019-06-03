@@ -1,7 +1,44 @@
 <?php
   $title="Lorem ipsum | Registro";
-  $categorias = ["Maquillajes","Labiales","Shampoos","Cremas","Maquillajes","Labiales","Shampoos","Cremas"];
+  $categorias = ["Maquillajes","Labiales","Shampoos","Cremas","Mascaras","Tonificadores","Algo","Otros"];
   $notificaciones = ["noticias"];
+
+  // Traigo las funciones que controlan mi sistema de Registro y Login
+  require_once 'register-controller.php';
+
+  if ($_POST) {
+
+    $nameInPost = trim($_POST['name']);
+    $lastNameInPost = trim($_POST['lastName']);
+    $emailInPost = trim($_POST['email']);
+    $pswInPost = trim($_POST['psw']);
+    $pswRepeatInPost = trim($_POST['psw-repeat']);
+
+
+    $errorsRegister = registerValidate();
+
+    if (!$errorsRegister) {
+      if (isset($_FILES['avatar'])) {
+        $imgName = saveImage($_FILES['avatar']);
+        $_POST['imgProfile'] = $imgName;
+      }else {
+        $_POST['imgProfile'] = 'imgs/img_avatar4.png';
+      }
+
+      saveUser();
+
+      session_start();
+      $user[] = getUserData($emailInPost);
+      
+      // $_SESSION('name')=$user['name']
+      // $_SESSION('img')=$user['imgProfile']
+
+      header('location: index.php');
+      exit;
+    }
+
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
@@ -9,7 +46,6 @@
   <body>
     <!-- ACA PONER INCLUDE HEADER -->
     <?php require_once("includes/header.php") ?>
-    <br>
     <div class="mainContainer">
       <!-- TITULO DE LA PAG -->
       <div class="col-12 col-md-11 col-xl-10">
@@ -23,25 +59,42 @@
 
     <div class="mainContainer">
         <!-- EMPIEZA FORMULARIO -->
-        <form class="col-12 col-md-11 col-xl-10" action="index.php" >
+        <form class="col-12 col-md-11 col-xl-10" method="post" enctype="multipart/form-data">
           <div class="container containerRegister">
             <!-- CONTENEDOR IMAGEN AVATAR -->
             <div class="imgcontainer col-12 col-md-4 col-xl-4">
-              <label for="avatar"><b>Imagen de Perfil</b></label>
-              <a href="#">
-                <img src="imgs/img_avatar4.png" alt="Avatar" class="avatar">
-              </a>
+              <label for="avatar"><b>Imagen de Perfil</b>
+                <img src="imgs/img_avatar4.png" alt="Avatar" class="avatar" style="cursor:pointer">
+              </label>
+              <input id="avatar" type="file" name="avatar" class="custom-file-input">
+              <?php if ( isset($errorsRegister['inAvatar']) ) : ?>
+								<div class="alert alert-danger">
+									<?= $errorsInRegister['inAvatar']; ?>
+								</div>
+							<?php endif; ?>
             </div>
             <!-- FIN CONTENEDOR IMAGEN AVATAR -->
             <div class="container col-12 col-md-8 col-xl-8">
               <label for="name"><b>Nombre</b></label>
-              <input type="text" placeholder="Ingresar Nombre" name="name" required>
+              <input type="text" placeholder="Ingresar Nombre" name="name" value="<?= isset($nameInPost) ? $nameInPost : ''; ?>">
 
               <label for="lastName"><b>Apellido</b></label>
-              <input type="text" placeholder="Ingresar Apellido" name="lastName" required>
+              <input type="text" placeholder="Ingresar Apellido" name="lastName" value="<?= isset($lastNameInPost) ? $lastNameInPost : ''; ?>">
+
+              <?php if ( isset($errorsRegister['inName']) ) : ?>
+              <div class="alert alert-danger">
+                <?= $errorsRegister['inName'] ?>
+              </div>
+              <?php endif; ?>
 
               <label for="email"><b>Email</b></label>
-              <input type="email" placeholder="Ingresar Email" name="email" required>
+              <input type="email" placeholder="Ingresar Email" name="email" value="<?= isset($emailInPost) ? $emailInPost : ''; ?>">
+
+              <?php if ( isset($errorsRegister['inEmail']) ) : ?>
+              <div class="alert alert-danger">
+                <?= $errorsRegister['inEmail'] ?>
+              </div>
+              <?php endif; ?>
 
             </div>
           </div>
@@ -55,7 +108,7 @@
                   <?php foreach ($categorias as $unaCategoria) : ?>
                     <div class="containerUnSwitchCat col-6 col-md-4 col-xl-4">
                       <label class="switch">
-                        <input type="checkbox" checked>
+                        <input type="checkbox" name="categorias[]" value="<?= $unaCategoria ?>" checked>
                         <span class="slider round"></span>
                       </label>
                       <em><?= $unaCategoria ?></em>
@@ -65,7 +118,7 @@
                   <?php foreach ($categorias as $unaCategoria) : ?>
                     <div class="containerUnSwitchCat col-6 col-md-4 col-xl-6">
                       <label class="switch">
-                        <input type="checkbox" checked>
+                        <input type="checkbox" name="categorias[]" value="<?= $unaCategoria ?>" checked>
                         <span class="slider round"></span>
                       </label>
                       <em class="switchText"><?= $unaCategoria ?></em>
@@ -79,7 +132,7 @@
                 <?php foreach ($notificaciones as $unaNotificacion) : ?>
                   <div class="containerUnSwitchNot col-12">
                     <label class="switch">
-                      <input type="checkbox" checked>
+                      <input type="checkbox" name="notificaciones[]" value="<?= $unaNotificacion ?>" checked>
                       <span class="slider round"></span>
                     </label>
                     <em class="switchText">Quiero recibir <?= $unaNotificacion ?></em>
@@ -91,10 +144,22 @@
             <hr>
             <div class="container col-12 col-md-12 col-xl-8">
               <label for="psw"><b>Contraseña</b></label>
-              <input type="password" placeholder="Ingresar Contraseña" name="psw" required>
+              <input type="password" placeholder="Ingresar Contraseña" name="psw">
+
+              <?php if ( isset($errorsRegister['inPsw']) ) : ?>
+								<div class="alert alert-danger">
+									<?= $errorsRegister['inPsw']; ?>
+								</div>
+							<?php endif; ?>
 
               <label for="psw-repeat"><b>Repetir Contraseña</b></label>
-              <input type="password" placeholder="Repetir Contraseña" name="psw-repeat" required>
+              <input type="password" placeholder="Repetir Contraseña" name="psw-repeat">
+
+              <?php if ( isset($errorsRegister['inPswRepeat']) ) : ?>
+								<div class="alert alert-danger">
+									<?= $errorsRegister['inPswRepeat']; ?>
+								</div>
+							<?php endif; ?>
 
               <label>
                 <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Recordarme
@@ -118,7 +183,6 @@
         </form>
         <!-- TERMINA FORMULARIO -->
     </div>
-    <br>
     <!-- ACA PONER INCLUDE FOOTER -->
     <?php require_once("includes/footer.php") ?>
   </body>

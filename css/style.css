@@ -227,6 +227,7 @@ h4 {
 /* ------------------  Style Formulario ------------------  */
 form {
   align-self: center;
+  margin: 10px 0;
 }
 
 /* ------------------  inputs en formuario  ------------------  */
@@ -721,6 +722,11 @@ img.avatar {
 @media (min-width:992px){
 
 /* --------------------------------------------------------------------------------- LOG IN */
+
+.mainContainer {
+  /* background: url("../imgs/login2.jpg") center center; */
+  /* background-size: cover; */
+}
 
 form button{
   width: 100%
