@@ -38,7 +38,7 @@ if ($_POST) {
           <!-- CONTENEDOR CAMPOS A COMPLETAR -->
           <div class="container">
             <label for="email"><b>Email</b></label>
-            <input type="email" placeholder="Ingresar Email" name="email" value="<?= isset($emailInPost) ? $emailInPost : ''; ?> required>
+            <input type="email" placeholder="Ingresar Email" name="email" value="<?= isset($emailInPost) ? $emailInPost : ''; ?> " required>
 
             <!-- MENSAJE ERROR MAIL -->
             <?php if ( isset($errorsInLogIn['inEmail']) ) : ?>

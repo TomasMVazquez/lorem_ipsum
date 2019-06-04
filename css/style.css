@@ -877,6 +877,7 @@ img.avatar {
 .mainContainer {
   /* background: url("../imgs/login2.jpg") center center; */
   /* background-size: cover; */
+  margin: 10px 0;
 }
 
 form button{
