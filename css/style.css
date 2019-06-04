@@ -165,22 +165,35 @@ h4 {
 }
 
 
-.btn-link {
-  font-weight: 400;
+.btn-info {
   color: #fff;
-  text-decoration: none;
+  background-color: transparent;
+  border-color: #fff;
 }
 
-.btn-link:hover {
+.btn-info:hover {
   color: #f9f9f9;
-  text-decoration: underline;
+  background-color: transparent;
+  border-color: #f9f9f9;
 }
 
-.btn-link:focus, .btn-link.focus {
-  text-decoration: none;
-  box-shadow: none;
-  color: #ccc;
+.btn-info:focus, .btn-info.focus {
+  box-shadow: 0 0 0 0.2rem rgba(255, 255, 255, 0.5);
 }
+
+.btn-info.disabled, .btn-info:disabled {
+  color: #f9f9f9;
+  background-color: transparent;
+  border-color: #f9f9f9;
+}
+
+.btn-info:not(:disabled):not(.disabled):active, .btn-info:not(:disabled):not(.disabled).active,
+.show > .btn-info.dropdown-toggle {
+  color: #fff;
+  background-color: #117a8b;
+  border-color: #10707f;
+}
+
 
 .btn-light {
   color: #666;
@@ -425,7 +438,7 @@ header{
 }
 
 
-
+/*
 .socialMedia{
   display: flex;
   width: 100%;
@@ -447,6 +460,23 @@ header{
   display: flex;
   align-items: center;
   justify-content: center;
+}*/
+
+.searchHeader{
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  align-self: flex-start!important;
+  justify-content: center;
+}
+
+.searchHeader .form-control{
+  border-radius: 0px;
+  margin: 0;
+}
+
+.searchHeader .input {
+  border: none!important;
 }
 
 .navbar-toggler{
@@ -547,7 +577,7 @@ footer a:hover{
 
   /* --------------------------------------------------------------------------------- HEADER */
   .navbar-brand img{
-    width: 60%;
+    width: 70%;
   }
 
   .mainHeader {
@@ -587,9 +617,7 @@ footer a:hover{
   }
 
   .perfilHeader img{
-    width: 40px;
-    height: auto;
-    border-radius: 50%;
+    display: none;
   }
 
   .navbar-brand {
@@ -606,6 +634,10 @@ footer a:hover{
     justify-content: space-around;
     margin: 0 20px;
 
+  }
+
+  .searchHeader {
+    align-self: flex-end!important;
   }
 
   /* --------------------------------------------------------------------------------- FOOTER */
@@ -682,11 +714,7 @@ img.avatar {
       justify-content: flex-end;
     }
 
-    .perfilHeader img{
-      width: 40px;
-      height: auto;
-      border-radius: 50%;
-    }
+
 
     .navbar-brand {
     text-align: left;
@@ -750,14 +778,12 @@ form button.volver{
   width: 70%;
 
 }
-/*
+
 .mainHeader {
-    width: 100%;
-    justify-content: flex-end;
-    align-items: flex-end;
-    display: flex;
-    flex-direction: column;
-}*/
+
+    justify-content: space-between;
+
+}
 .clmLogo{
   padding: 10px 0 0 0;
 }
@@ -768,6 +794,17 @@ form button.volver{
     align-items: flex-start;
  }
 
+
+ .perfilHeader img{
+        display: block;
+        width: 40px;
+        height: auto;
+        border-radius: 50%;
+ }
+
+ .searchHeader {
+     align-self: flex-start!important;
+ }
 
 .socialMedia {
     width: auto;
