@@ -21,34 +21,31 @@
 
    <nav class="navbar navbar-expand-md mainHeader container col-12 col-md-11 col-lg-10 navbar-dark">
 
-     <div class="clmLogo col-12 col-sm-5 col-md-6 col-lg-3">
+     <div class="clmLogo col-12 col-sm-6 col-md-6 col-lg-3">
         <a class="navbar-brand" href="index.php"><img src="imgs/logo-loremipsum.png" alt=""></a>
 
-        <button class="navbar-toggler p-0" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
           <span class="navbar-toggler-icon"></span>
         </button>
      </div>
 
-     <div class="clmPerfil col-12 col-sm-7 col-md-6 col-lg-8">
+     <div class="clmPerfil col-12 col-sm-6 col-md-6 col-lg-9">
 
-       <div class="col-7 perfilHeader">
+       <div class="perfilHeader">
          <div class="dropdown">
-           <a class="nav-link dropdown-toggle p-0"  href="#" id="navbardrop" data-toggle="dropdown">Bienvenido Fulanito</a>
+           <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">Bienvenido Fulanito</a>
            <div class="dropdown-menu ">
-             <a class="dropdown-item" href="perfil.php">Editar tu cuenta</a>
-             <a class="dropdown-item" href="perfil.php">Ver Favoritos</a>
-             <a class="dropdown-item" href="#">Cerrar Sesión</a>
+             <a class="dropdown-item" href="#">Modificar tu cuenta</a>
+             <a class="dropdown-item" href="#">Ver Favoritos</a>
+             <a class="dropdown-item" href="#">Cambiar tu foto de perfil</a>
            </div>
          </div>
          <img src="imgs/img_avatar4.png" alt="">
        </div>
 
-
-          <form class="searchHeader" action="/action_page.php">
-            <input class="col-lg-11 form-control mr-sm-2" type="text" placeholder="¡Quiero encontrarlo!">
-            <button class="btn btn-info" type="submit"><i class="fas fa-search"></i></button>
-          </form>
-
+       <div class="">
+         Buscador
+       </div>
 
      </div>
 

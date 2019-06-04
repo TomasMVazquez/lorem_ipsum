@@ -1,5 +1,6 @@
 <?php
 $title="Lorem ipsum | Perfil";
+
 $profile = [
   "name" => "Fulano",
   "lastName" => "DeTal",
