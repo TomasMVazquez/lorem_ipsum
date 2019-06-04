@@ -31,10 +31,10 @@ $title="Lorem ipsum | Productos";
     <?php foreach ($listadoProductos as $unProducto): ?>
       <div class="col-md-6 col-lg-4 col-producto">
         <div class="card producto">
-        <a href="detalle_producto2.php?<?="id=" . $unProducto["id"]?>"><img src="<?=$unProducto["imagen-principal"]?>" class="card-img-top" alt="<?=$unProducto["nombre"]?>"></a>
+        <a href="detalle_producto.php?<?="id=" . $unProducto["id"]?>"><img src="<?=$unProducto["imagen-principal"]?>" class="card-img-top" alt="<?=$unProducto["nombre"]?>"></a>
         <div class="card-body detalle-producto">
             <div class="encabezado-producto">
-              <h5 class="card-title nombre-producto" style="text-align:left;"><a href="detalle_producto2.php?<?="id=" . $unProducto["id"]?>"><?=$unProducto["nombre"]?></a></h5>
+              <h5 class="card-title nombre-producto" style="text-align:left;"><a href="detalle_producto.php?<?="id=" . $unProducto["id"]?>"><?=$unProducto["nombre"]?></a></h5>
               <div><ul class="corazon">
                 <li style="width:20%"><i class="far fa-heart"></i></li>
               </ul></div>
@@ -47,7 +47,7 @@ $title="Lorem ipsum | Productos";
               <p class="col-2"><i class="fas fa-share-alt"></i></p>
             </div>
             <div class="boton-detalle">
-              <a class="btn btn-primary btn-block" href="detalle_producto2.php?<?="id=" . $unProducto["id"]?>" role="button">Ver detalle</a>
+              <a class="btn btn-primary btn-block" href="detalle_producto.php?<?="id=" . $unProducto["id"]?>" role="button">Ver detalle</a>
             </div>
           </div>
         </div>
