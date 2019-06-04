@@ -21,7 +21,7 @@ $title="Lorem ipsum | FAQs";
 
         </div>
 
-        <h3 class="mt-4">Preguntas Frecuentes</h3>
+        <h1 class="mt-4">Preguntas Frecuentes</h1>
         <p class="m-5">¿Tenes dudas sobre cómo adquirir nuestros productos?  Compartimos 10 FAQs que tenés que saber para comprar los productos de pirulito!. Si tu consulta no se encuentra en este listado, no dudes en contactarnos.
         </p>
         <div class="accordion mt-3" id="accordionMobile">

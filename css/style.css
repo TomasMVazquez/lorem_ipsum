@@ -551,6 +551,14 @@ header{
 }
 /* --------------------------------------------------------------------------------- FAQ */
 
+.mt-4{
+margin-top: 0.2em;
+margin-bottom: 0em;
+    font-size:5em;
+    text-align: center;
+    font-family: 'Reenie Beanie', cursive;
+}
+
 .mainFaqs {
   display: flex;
   flex-direction: column;
@@ -596,6 +604,14 @@ header{
 
 .card-header:first-child {
     border-radius: 0;
+}
+/*productos*/
+.tit-productos {
+  margin-top: 0.2em;
+  margin-bottom: 0em;
+  font-size:5em;
+  text-align: left;
+  font-family: 'Reenie Beanie', cursive;
 }
 
 /* --------------------------------------------------------------------------------- FOOTER */
@@ -715,8 +731,6 @@ footer a:hover{
       text-align: center;
       font-family: 'Reenie Beanie', cursive;
   }
-
-
     .aboutp{
       margin-left: 55px;
       margin-right: 55px;
@@ -725,9 +739,6 @@ footer a:hover{
       text-align: justify;
       text-align: left;
     }*/
-
-
-
   .aboutp{
     margin-left: 55px;
     margin-right: 55px;
