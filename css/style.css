@@ -75,9 +75,9 @@ h2.titseccion {
 /* ------------------  Subtitulos ------------------   */
 
 h3 {
-  font-size: 2em;
+  font-size: 1.5em;
   text-transform: uppercase;
-  letter-spacing: 0.8em;
+  letter-spacing: 0.3em;
 }
 
 /* ------------------  Nombre de productos ------------------  */
@@ -501,7 +501,7 @@ header{
   display: flex;
   flex-flow: row nowrap;
   align-items: center;
-  align-self: flex-start!important;
+  align-self: center;
   justify-content: center;
 }
 
@@ -522,11 +522,11 @@ header{
 .navbar-brand {
   width:100%;
   margin-right: 0;
-  font-family: 'Reenie Beanie', cursive;
   font-size: 3em;
-  text-align: center;
+  text-align: center!important;
   padding: 0;
 }
+
 .navbar-brand img{
   width: 60%;
 
@@ -555,7 +555,7 @@ header{
   font-weight: 400;
   color: #fff;
   text-decoration: none;
-  text-align: left;
+  text-align: center;
 }
 
 .mainFaqs .btn-link:hover {
@@ -636,6 +636,7 @@ footer a:hover{
   .mainHeader {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
   }
 
   .navbar-toggler{
@@ -646,7 +647,7 @@ footer a:hover{
   .clmLogo{
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     justify-content: space-between;
     padding: 15px 20px;
 
@@ -662,7 +663,7 @@ footer a:hover{
     padding: 15px 20px;
 
   }
-
+/*
   .perfilHeader{
     width: 100%;
     display: flex;
@@ -676,7 +677,7 @@ footer a:hover{
 
   .navbar-brand {
   text-align: left;
-  }
+  }*/
 
   .navbar {
       align-items: normal!important;
@@ -690,9 +691,6 @@ footer a:hover{
 
   }
 
-  .searchHeader {
-    align-self: flex-end!important;
-  }
 
   /*---------------INDEX----------------------------------------------------------------------*/
   .about{
@@ -754,24 +752,24 @@ img.avatar {
     width: 100%;
 }
   /* --------------------------------------------------------------------------------- HEADER */
-
+/*
     .mainHeader {
       display: flex;
       flex-wrap: wrap;
     }
-
+*/
     .navbar-toggler{
       margin: 20px 0 0 0;
       border: none;
     }
 
-    .clmLogo{
+  /*  .clmLogo{
       display: flex;
       flex-direction: column;
       align-items: flex-start;
       justify-content: space-between;
       padding: 20px;
-    }
+    }*/
 
     .clmPerfil{
       display: flex;
@@ -789,11 +787,10 @@ img.avatar {
       justify-content: flex-end;
     }
 
-
-
     .navbar-brand {
     text-align: left;
-  }
+    }
+
 
     .navbar-nav {
       -ms-flex-direction: row;
@@ -839,7 +836,11 @@ img.avatar {
 }
 /* Desktops */
 @media (min-width:992px){
-
+  h3 {
+    font-size: 2em;
+    text-transform: uppercase;
+    letter-spacing: 0.8em;
+  }
 
   .about{
       font-size: 25px;
@@ -936,6 +937,10 @@ form button.volver{
     background: url("../imgs/faqs.jpg") center center;
     background-size: cover;
     color: #fff;
+  }
+
+  .mainFaqs .btn-link {
+      text-align: left;
   }
 
   #accordionMobile{
