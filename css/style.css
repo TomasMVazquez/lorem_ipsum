@@ -530,6 +530,24 @@ header{
   padding: 20px 0;
 }
 
+.mainFaqs .btn-link {
+  font-weight: 400;
+  color: #fff;
+  text-decoration: none;
+  text-align: left;
+}
+
+.mainFaqs .btn-link:hover {
+  color: #f9f9f9;
+  text-decoration: underline;
+}
+
+.mainFaqs .btn-link:focus, .btn-link.focus {
+  text-decoration: none;
+  box-shadow: none;
+  color: #ccc;
+}
+
 #accordionDesktop{
   display: none;
 }
