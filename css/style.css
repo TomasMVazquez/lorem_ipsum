@@ -29,7 +29,7 @@ a {
 
 a:hover {
   color: inherit;
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 
@@ -1041,7 +1041,7 @@ form button.volver{
   }
 
   /* --------------------------------------------------------------------------------- FOOTER */
-    
+
 
     footer .mainFooter{
       display: flex;
