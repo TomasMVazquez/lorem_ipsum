@@ -2,7 +2,7 @@
   $menu = [
     "Quienes Somos" => "index.php#nosotres",
     "Productos" => [
-      "Cósmetica Capilar" => "productos2.php",
+      "Cósmetica Capilar" => "productos.php",
       "Corporales" => "corporales.php",
     ],
     "Faqs" => "faqs.php",
