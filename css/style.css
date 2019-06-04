@@ -10,10 +10,6 @@
 @import url('https://fonts.googleapis.com/css?family=Quattrocento+Sans|Reenie+Beanie&display=swap');
 /* Importamos los iconos */
 @import url('https://use.fontawesome.com/releases/v5.8.1/css/all.css');
-/* Importamos jquerys*/
-@import url('https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js');
-@import url('https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js');
-@import url('https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js');
 
 
 /* --------------------------------------------------------------------------------- GENERALES */
@@ -784,6 +780,10 @@ footer a:hover{
     font-size: 18px;
   }
   /* --------------------------------------------------------------------------------- Perfil */
+  .containerProfile{
+    display: flex;
+    justify-content: center;
+  }
 
   .imgContainerProfile {
     display: flex;
