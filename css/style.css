@@ -229,16 +229,20 @@ h4 {
     max-height: 50%;
 }
 
-.carousel-caption{
+.carousel-caption h3{
   font-family: "Muli", sans-serif;
-  font-size: 40px;
-  color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(255, 255, 255, 0.5);
   text-align: center;
+  font-size: 30px;
+  color: black;
 }
+
+
 .carousel-caption p{
   font-family: "Titillium", sans-serif;
-  font-size: 25px;
-  color: rgba(0, 0, 0, 0.5);
+  font-size: 20px;
+  color: black;
+  background-color:rgba(255, 255, 255, 0.5);
   text-align: center;
 }
 /*hasta aca va el estilo del index*/
@@ -611,6 +615,8 @@ footer a:hover{
   .navbar-brand img{
     width: 70%;
   }
+  .wide{
+    display: none;
 
   .mainHeader {
     display: flex;
@@ -631,6 +637,7 @@ footer a:hover{
 
   }
 
+}
   .clmPerfil{
     display: flex;
     flex-direction: column;
@@ -677,6 +684,9 @@ footer a:hover{
 /* Tablets */
 @media (min-width:768px){
 
+  .wide{
+    display: none;
+  }
   /* --------------------------------------------------------------------------------- Log_in */
   form {
     border: 1px solid #000000;
@@ -781,6 +791,12 @@ img.avatar {
 /* Desktops */
 @media (min-width:992px){
 
+  .wide{
+    display: block;
+  }
+  .mobile{
+    display: none;
+  }
 /* --------------------------------------------------------------------------------- LOG IN */
 
 .mainContainer {
@@ -911,5 +927,8 @@ form button.volver{
 }
 /* Widescreen */
 @media (min-width:1200px){
+  .mobile{
+    display: none;
+  }
 
 }
