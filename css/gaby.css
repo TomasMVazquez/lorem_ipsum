@@ -88,6 +88,8 @@ h2.titseccion {
   padding-left: 10px;
 }
 
+/* ------------------------------------------------------------------------------- DETALLE PRODUCTOS */
+
 .detalle-producto {
   display: flex;
   flex-direction: column;
@@ -98,6 +100,9 @@ h2.titseccion {
   margin-top: 10px;
 }
 
+.nombre-producto-detalle {
+  font-size: 2em;
+}
 
 .detalle {
   padding: 20px;

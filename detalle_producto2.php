@@ -15,12 +15,15 @@ $title="Lorem ipsum | Detalle Producto";
 
     <div class="row justify-content-center"  style="margin:5px 0">
       <div class="col-12 col-md-11 col-xl-10">
+      <!--Barra de navegacion -->
       <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="productos2.php">Productos</a></li>
           <li class="breadcrumb-item active" aria-current="page"><?=$productoDetallado["nombre"]?></li>
         </ol>
       </nav>
+      <!--Fin Barra de navegacion -->
+      <!--Producto detallado -->
       <section class="producto-detallado">
         <div class="card">
           <div class="row">
@@ -36,7 +39,7 @@ $title="Lorem ipsum | Detalle Producto";
             <div class="col-md-7">
             <div class="card-body">
               <div class="encabezado-producto">
-                <h5 class="card-title nombre-producto" style="text-align:left;"><?=$productoDetallado["nombre"]?></h5>
+                <h5 class="card-title nombre-producto-detalle" style="text-align:left;"><?=$productoDetallado["nombre"]?></h5>
                 <div class="corazon">
                   <i class="far fa-heart"></i>
                 </div>
@@ -62,6 +65,7 @@ $title="Lorem ipsum | Detalle Producto";
                 <p class="col-2" style="text-align:center;"><i class="fas fa-share-alt"></i></p>
               </div>
               <br>
+              <!-- Acordeon con info -->
               <div class="accordion" id="accordionExample">
               <div class="card">
                 <div class="card-header" id="headingOne">
@@ -107,6 +111,7 @@ $title="Lorem ipsum | Detalle Producto";
                 </div>
               </div>
             </div>
+            <!-- Fin Acordeon con info -->
 
 
             </div>
@@ -116,7 +121,7 @@ $title="Lorem ipsum | Detalle Producto";
         </div>
 
       </section>
-
+      <!--Fin Producto detallado -->
 
     </div>
     </div>
