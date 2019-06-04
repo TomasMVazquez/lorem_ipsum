@@ -235,6 +235,7 @@ h4 {
   text-align: center;
   font-size: 30px;
   color: black;
+
 }
 
 
@@ -244,6 +245,13 @@ h4 {
   color: black;
   background-color:rgba(255, 255, 255, 0.5);
   text-align: center;
+
+}
+.about, .aboutp{
+  margin-left: 115px;
+  text-align: center, justify;
+  margin-right: 115px;
+
 }
 /*hasta aca va el estilo del index*/
 

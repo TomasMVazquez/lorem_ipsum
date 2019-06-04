@@ -8,7 +8,6 @@ $title="Lorem ipsum | Home";
   <body>
 
     <?php require_once("includes/header.php") ?>
-    <br>
 <!-- Mobile first-->
 
 <div class="mobile">
@@ -105,10 +104,9 @@ $title="Lorem ipsum | Home";
 <!--hasta aca va el carousel wide -->
 
   <br>
-  <br>
 
-  <h3>Nosotres</h3>
-  <p>Lorem Ipsum nace para darle belleza y cuidado a tu pelo y tu piel.
+  <h3 class="about">Nosotres</h3>
+  <p class="aboutp">Lorem Ipsum nace para darle belleza y cuidado a tu pelo y tu piel.
     Todos nuestros productos son hipoalergénicos y están testeados dermatológiccmente con alternativas libres de crueldad.
     Descubrí la riqueza y los beneficios de nuestros productos.
   </p>
