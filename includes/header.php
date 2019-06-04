@@ -2,8 +2,8 @@
   $menu = [
     "Quienes Somos" => "index.php#nosotres",
     "Productos" => [
-      "Categoria A" => "productos2.php",
-      "Categoria B" => "productos2.php",
+      "Cósmetica Capilar" => "productos2.php",
+      "Corporales" => "corporales.php",
     ],
     "Faqs" => "faqs.php",
     "Logueate" => "log_in.php",
