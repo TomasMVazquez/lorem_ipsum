@@ -28,7 +28,7 @@ $title="Lorem ipsum | Detalle Producto";
               <img class="card-img-top" src="<?=$productoDetallado["imagen-principal"]?>" alt="Imagen Producto 1">
               <div class="img-min">
                 <?php foreach ($productoDetallado["imagenes-secundarias"] as $unaImagen): ?>
-                  <img src="<?=$unaImagen?>" alt="">
+                  <img src="<?=$unaImagen?>" alt="<?=$productoDetallado["nombre"]?>">
                 <?php endforeach; ?>
               </div>
             </div>

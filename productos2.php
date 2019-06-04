@@ -31,7 +31,7 @@ $title="Lorem ipsum | Productos";
     <?php foreach ($listadoProductos as $unProducto): ?>
       <div class="col-md-6 col-lg-4 col-producto">
         <div class="card producto">
-        <img src="<?=$unProducto["imagen-principal"]?>" class="card-img-top" alt="Esta es la imagen 1">
+        <img src="<?=$unProducto["imagen-principal"]?>" class="card-img-top" alt="<?=$unProducto["nombre"]?>">
         <div class="card-body detalle-producto">
             <div class="encabezado-producto">
               <h5 class="card-title nombre-producto" style="text-align:left;"><?=$unProducto["nombre"]?></h5>
@@ -55,6 +55,7 @@ $title="Lorem ipsum | Productos";
       <?php endforeach; ?>
 
     </div>
+    <!-- fin listado de articulos-->
 
     </div>
   </div>
