@@ -728,9 +728,11 @@ footer a:hover{
   /* --------------------------------------------------------------------------------- Log_in */
   form {
     border: 1px solid #000000;
-    margin: 0 5px;
   }
 
+  .mainContainer {
+    margin: 10px 0;
+  }
   /* --------------------------------------------------------------------------------- Register */
 
   .containerRegister{
@@ -873,12 +875,6 @@ img.avatar {
     display: none;
   }
 /* --------------------------------------------------------------------------------- LOG IN */
-
-.mainContainer {
-  /* background: url("../imgs/login2.jpg") center center; */
-  /* background-size: cover; */
-  margin: 10px 0;
-}
 
 form button{
   width: 100%
