@@ -23,7 +23,15 @@
 
 a {
   text-decoration: none;
+  color: inherit;
 }
+
+
+a:hover {
+  color: inherit;
+  text-decoration: underline;
+}
+
 
 ul, ol {
 	list-style: none;
@@ -205,6 +213,12 @@ h4 {
 .btn-light:hover {
   color: #000;
   background-color: #fff;
+}
+
+.dropdown-menu {
+    border: 1px solid rgba(0, 0, 0, 0);
+    border-radius: 0rem;
+    box-shadow: 0px 2px 2px #ccc;
 }
 
 
