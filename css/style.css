@@ -52,8 +52,7 @@ tener estas caracteristics col-12 col-md-11 col-xl-10 */
 /* ------------------  Titulo principal ------------------  */
 h1{
     font-size: 1.5em;
-    text-transform: uppercase;
-    letter-spacing: 0.8em;
+    font-family: 'Reanie Beanie', cursive;
 }
 
 /*------------------  Para titulos y banners especial. Tipografía manuscritos ------------------ */
@@ -76,8 +75,6 @@ h2.titseccion {
 
 h3 {
   font-size: 1.5em;
-  text-transform: uppercase;
-  letter-spacing: 0.3em;
 }
 
 /* ------------------  Nombre de productos ------------------  */
@@ -251,16 +248,19 @@ h4 {
   display: none;
 }
 .about{
-    font-size: 25px;
+margin-top: 0.2em;
+margin-bottom: 0em;
+    font-size:5em;
     text-align: center;
+    font-family: 'Reenie Beanie', cursive;
 }
 
 .aboutp{
-  font-size: 20px;
+  font-size: 4em;
   margin-left: 20px;
-  text-align: justify;
+  margin-top: 0em;
+  text-align: left;
   margin-right: 20px;
-
 }
 /*hasta aca va el estilo del index*/
 
@@ -701,30 +701,51 @@ footer a:hover{
 
   /*---------------INDEX----------------------------------------------------------------------*/
   .about{
-      font-size: 25px;
+    margin-top: 0.2em;
+    margin-bottom: 0em;
+        font-size:5em;
+        text-align: center;
+        font-family: 'Reenie Beanie', cursive;
+    }
+
+  /*.about{
+  margin-top: 0.2em;
+  margin-bottom: 0em;
+      font-size:5em;
       text-align: center;
+      font-family: 'Reenie Beanie', cursive;
   }
 
-  .aboutp{
-    font-size: 20px;
-    margin-left: 55px;
-    text-align: justify;
-    margin-right: 55px;
 
+    .aboutp{
+      margin-left: 55px;
+      margin-right: 55px;
+      margin-top: 0em;
+      font-size: 2em;
+      text-align: justify;
+      text-align: left;
+    }*/
+
+
+
+  .aboutp{
+    margin-left: 55px;
+    margin-right: 55px;
+    margin-top: 0em;
+    font-size: 1.2em;
+    text-align: justify;
+    text-align: left;
   }
 
   .wide{
     display: none;
   }
-
+/*hasta aca va el estilo del index*/
   /* --------------------------------------------------------------------------------- FOOTER */
 
 /* Tablets */
 @media (min-width:768px){
 
-  .wide{
-    display: none;
-  }
   /* --------------------------------------------------------------------------------- Log_in */
   form {
     border: 1px solid #000000;
@@ -829,17 +850,21 @@ img.avatar {
 
 /* --------------------------------------------------------------------------------- FOOTER */
 .about{
-    font-size: 25px;
+    margin-top: 0.2em;
+    margin-bottom: 0em;
+    font-size:5em;
     text-align: center;
+    font-family: 'Reenie Beanie', cursive;
 }
 
-.aboutp{
-  font-size: 20px;
-  margin-left: 55px;
-  text-align: justify;
-  margin-right: 55px;
 
-}
+  .aboutp{
+    margin-left: 55px;
+    margin-right: 55px;
+    margin-top: 0em;
+    font-size: 1.2em;
+    text-align: justify;
+  }
 
 .wide{
   display: none;
@@ -857,17 +882,21 @@ img.avatar {
   }
 
   .about{
-      font-size: 25px;
+      margin-top: 0.2em;
+      margin-bottom: 0em;
+      font-size:5em;
       text-align: center;
+      font-family: 'Reenie Beanie', cursive;
   }
 
-  .aboutp{
-    font-size: 20px;
-    margin-left: 100px;
-    text-align: justify;
-    margin-right: 100px;
 
-  }
+    .aboutp{
+      margin-left: 55px;
+      margin-right: 55px;
+      margin-top: 0em;
+      font-size: 1.2em;
+      text-align: justify;
+    }
   .wide{
     display: block;
   }
@@ -1005,17 +1034,21 @@ form button.volver{
 @media (min-width:1200px){
 
 
-    .about{
-        font-size: 25px;
-        text-align: center;
-    }
+  .about{
+      margin-top: 0.2em;
+      margin-bottom: 0em;
+      font-size:5em;
+      text-align: center;
+      font-family: 'Reenie Beanie', cursive;
+  }
+
 
     .aboutp{
-      font-size: 20px;
-      margin-left: 100px;
+      margin-left: 55px;
+      margin-right: 55px;
+      margin-top: 0em;
+      font-size: 1.2em;
       text-align: justify;
-      margin-right: 100px;
-
     }
     .wide{
       display: block;

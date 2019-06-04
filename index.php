@@ -103,9 +103,7 @@ $title="Lorem ipsum | Home";
 
 <!--hasta aca va el carousel wide -->
 
-  <br>
-
-  <h3 class="about">Nosotres</h3>
+  <h1 class="about">Nosotres</h1>
   <p class="aboutp">Lorem Ipsum nace para darle belleza y cuidado a tu pelo y tu piel.
     Todos nuestros productos son hipoalergénicos y están testeados dermatológiccmente con alternativas libres de crueldad.
     Descubrí la riqueza y los beneficios de nuestros productos.
