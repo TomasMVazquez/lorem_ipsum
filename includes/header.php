@@ -1,6 +1,6 @@
 <?php
   $menu = [
-    "Quienes Somos" => "index.php",
+    "Quienes Somos" => "index.php#nosotres",
     "Productos" => [
       "Categoria A" => "productos2.php",
       "Categoria B" => "productos2.php",
@@ -8,10 +8,7 @@
     "Faqs" => "faqs.php",
     "Logueate" => "log_in.php",
     "Contacto" => "#contacto-aqui",
-    "Novedades" => [
-      "Eventos" => "cosmetica1.php",
-      "Lanzamientos" => "cosmetica2.php",
-    ],
+
   ]
  ?>
 
@@ -21,7 +18,7 @@
 
    <nav class="navbar navbar-expand-md mainHeader container col-12 col-md-11 col-lg-10 navbar-dark">
 
-     <div class="clmLogo col-12 col-sm-5 col-md-6 col-lg-3">
+     <div class="clmLogo col-12 col-sm-7 col-md-6 col-lg-3">
         <a class="navbar-brand" href="index.php"><img src="imgs/logo-loremipsum.png" alt=""></a>
 
         <button class="navbar-toggler p-0" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">

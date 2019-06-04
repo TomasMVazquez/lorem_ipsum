@@ -465,13 +465,12 @@ header{
 .mainHeader{
   width: 100%;
   text-align: center;
+  padding: 10px 0;
 }
-
 
 .perfilHeader{
   display: none;
 }
-
 
 /*
 .socialMedia{
@@ -529,7 +528,6 @@ header{
 
 .navbar-brand img{
   width: 60%;
-
 }
 
 .navbar-light .navbar-nav .nav-link {
@@ -540,8 +538,17 @@ header{
     padding-right: 0.8rem;
     padding-left: 0.8rem;
 }
-
-
+.navbar-nav {
+  -ms-flex-direction: column;
+  flex-direction: column;
+  justify-content: space-around;
+  margin: 0!important;
+}
+.dropdown-menu {
+    border: none;
+    border-radius: 0rem;
+    box-shadow: 0px;
+}
 /* --------------------------------------------------------------------------------- FAQ */
 
 .mainFaqs {
@@ -684,8 +691,8 @@ footer a:hover{
   }
 
   .navbar-nav {
-    -ms-flex-direction: row;
-    flex-direction: row;
+    -ms-flex-direction: column;
+    flex-direction: column;
     justify-content: space-around;
     margin: 0 20px;
 
@@ -763,13 +770,14 @@ img.avatar {
       border: none;
     }
 
-  /*  .clmLogo{
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      justify-content: space-between;
-      padding: 20px;
-    }*/
+  .clmLogo{
+      padding: 15px 0 0 0;
+    }
+
+    .searchHeader {
+    align-self: flex-end;
+    }
+
 
     .clmPerfil{
       display: flex;
@@ -787,10 +795,17 @@ img.avatar {
       justify-content: flex-end;
     }
 
-    .navbar-brand {
-    text-align: left;
+    .perfilHeader img{
+      display: none;
     }
 
+    .navbar-brand {
+    text-align: left!important;
+    }
+
+    .navbar-brand img{
+      width: 50%;
+    }
 
     .navbar-nav {
       -ms-flex-direction: row;
@@ -802,10 +817,7 @@ img.avatar {
       justify-content: center;
   }
 
-  .navbar-brand img{
-    width: 50%;
 
-  }
 
   /*
     .navbar-expand-md {
