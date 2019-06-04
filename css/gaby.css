@@ -1,38 +1,9 @@
-/* Importamos la librería Normalize */
-@import "normalize.css";
-/* Importamos los iconos */
-@import url('https://use.fontawesome.com/releases/v5.8.1/css/all.css');
-/* Tipos */
-@import url('https://fonts.googleapis.com/css?family=Reenie+Beanie&display=swap');
-
-/* --------------------------------------------------------------------------------- GENERALES */
-
-*{
-  box-sizing: border-box;
-}
-
-body{
-  /* max-width: 1200px; */
-}
-
-ul, ol {
-	list-style: none;
-	margin: 0;
-	padding: 0;
-}
-
-
-
 /* --------------------------------------------------------------------------------- PRODUCTOS */
 .row-sin-margen {
   margin-left: 0;
   margin-right: 0;
 }
 
-.tit-productos {
-  padding-top: 20px;
-  padding-left:15px;
-}
 
 .encabezado {
   background-color: #F9F7F7;
@@ -106,7 +77,8 @@ h2.titseccion {
 }
 
 .nombre-producto {
-  font-size: 2em;
+  font-size: 1.2em;
+  font-weight: bold;
 }
 
 
@@ -115,6 +87,8 @@ h2.titseccion {
   color: #000;
   padding-left: 10px;
 }
+
+/* ------------------------------------------------------------------------------- DETALLE PRODUCTOS */
 
 .detalle-producto {
   display: flex;
@@ -126,6 +100,9 @@ h2.titseccion {
   margin-top: 10px;
 }
 
+.nombre-producto-detalle {
+  font-size: 2em;
+}
 
 .detalle {
   padding: 20px;

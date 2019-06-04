@@ -10,10 +10,6 @@
 @import url('https://fonts.googleapis.com/css?family=Quattrocento+Sans|Reenie+Beanie&display=swap');
 /* Importamos los iconos */
 @import url('https://use.fontawesome.com/releases/v5.8.1/css/all.css');
-/* Importamos jquerys*/
-@import url('https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js');
-@import url('https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js');
-@import url('https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js');
 
 
 /* --------------------------------------------------------------------------------- GENERALES */
@@ -29,7 +25,7 @@ a {
 
 a:hover {
   color: inherit;
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 
@@ -51,8 +47,8 @@ tener estas caracteristics col-12 col-md-11 col-xl-10 */
 
 /* ------------------  Titulo principal ------------------  */
 h1{
-    font-size: 1.5em;
-    font-family: 'Reanie Beanie', cursive;
+    font-size: 5em;
+    font-family: 'Reenie Beanie', cursive;
 }
 
 /*------------------  Para titulos y banners especial. Tipografía manuscritos ------------------ */
@@ -504,6 +500,7 @@ header{
   justify-content: center;
 }
 
+
 .searchHeader .form-control{
   border-radius: 0px;
   margin: 0;
@@ -613,6 +610,14 @@ margin-bottom: 0em;
   text-align: left;
   font-family: 'Reenie Beanie', cursive;
 }
+/* --------------------------------------------------------------------------------- EN CONSTRUCCION */
+
+.mainConstrucccion {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 0;
+}
 
 /* --------------------------------------------------------------------------------- FOOTER */
 
@@ -652,19 +657,12 @@ footer a:hover{
 @media (min-width:480px){
 
   /* --------------------------------------------------------------------------------- HEADER */
-  .navbar-brand img{
-    width: 70%;
-  }
+
 
   .mainHeader {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-  }
-
-  .navbar-toggler{
-    margin: 20px 0 0 0;
-    border: none;
   }
 
   .clmLogo{
@@ -673,10 +671,8 @@ footer a:hover{
     align-items: center;
     justify-content: space-between;
     padding: 15px 20px;
-
   }
 
-}
   .clmPerfil{
     display: flex;
     flex-direction: column;
@@ -684,7 +680,6 @@ footer a:hover{
     color: #fff;
     justify-content: space-between!important;
     padding: 15px 20px;
-
   }
 /*
   .perfilHeader{
@@ -697,10 +692,12 @@ footer a:hover{
   .perfilHeader img{
     display: none;
   }
+*/
 
-  .navbar-brand {
-  text-align: left;
-  }*/
+  .navbar-toggler{
+    margin: 20px 0 0 0;
+    border: none;
+  }
 
   .navbar {
       align-items: normal!important;
@@ -711,7 +708,10 @@ footer a:hover{
     flex-direction: column;
     justify-content: space-around;
     margin: 0 20px;
+  }
 
+  .navbar-brand img{
+    width: 70%;
   }
 
 
@@ -780,6 +780,10 @@ footer a:hover{
     font-size: 18px;
   }
   /* --------------------------------------------------------------------------------- Perfil */
+  .containerProfile{
+    display: flex;
+    justify-content: center;
+  }
 
   .imgContainerProfile {
     display: flex;
@@ -799,19 +803,10 @@ img.avatar {
       flex-wrap: wrap;
     }
 */
-    .navbar-toggler{
-      margin: 20px 0 0 0;
-      border: none;
-    }
 
-  .clmLogo{
+    .clmLogo{
       padding: 15px 0 0 0;
     }
-
-    .searchHeader {
-    align-self: flex-end;
-    }
-
 
     .clmPerfil{
       display: flex;
@@ -820,6 +815,10 @@ img.avatar {
       color: #fff;
       justify-content: space-between;
       padding: 20px;
+    }
+
+    .searchHeader {
+    align-self: flex-end;
     }
 
     .perfilHeader{
@@ -847,11 +846,13 @@ img.avatar {
       justify-content: space-between;
   }
 
-  .navbar-expand-md .navbar-collapse {
-      justify-content: center;
-  }
-
-
+    .navbar-expand-md .navbar-collapse {
+        justify-content: center;
+    }
+    .navbar-toggler{
+      margin: 20px 0 0 0;
+      border: none;
+    }
 
   /*
     .navbar-expand-md {
@@ -928,6 +929,10 @@ form button.volver{
 
 /* --------------------------------------------------------------------------------- HEADER */
 
+.mainHeader {
+    justify-content: space-between;
+}
+
 .navbar-brand {
   width:auto;
   margin-right: 0;
@@ -936,14 +941,8 @@ form button.volver{
 
 .navbar-brand img{
   width: 70%;
-
 }
 
-.mainHeader {
-
-    justify-content: space-between;
-
-}
 .clmLogo{
   padding: 10px 0 0 0;
 }
@@ -952,29 +951,41 @@ form button.volver{
     display: flex;
     flex-direction: row-reverse;
     align-items: flex-start;
+    padding: 20px 0;
  }
+.perfilHeader {
+  padding: 0 8px;
+}
 
-
- .perfilHeader img{
+.perfilHeader img{
         display: block;
         width: 40px;
         height: auto;
         border-radius: 50%;
+        margin: 0 0 0 15px;
  }
 
  .searchHeader {
      align-self: flex-start!important;
+     margin: 0;
  }
 
-.socialMedia {
-    width: auto;
-    justify-content: flex-end;
-}
+
 
 .navbar-expand-md .navbar-collapse {
     justify-content: flex-end;
 }
+/* --------------------------------------------------------------------------------- En Construccion */
 
+  .mainConstruccion {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    background: url("../imgs/img-construccion.jpg") center center;
+    background-size: cover;
+    color: #fff;
+    min-height: 60vh;
+  }
 
 
 /* --------------------------------------------------------------------------------- FAQS */

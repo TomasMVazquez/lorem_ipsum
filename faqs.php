@@ -17,10 +17,7 @@ $title="Lorem ipsum | FAQs";
 
      <section class="col-12 col-md-10 col-lg-8 text-center p-0">
 
-        <div class="header">
-
-        </div>
-
+        
         <h1 class="mt-4">Preguntas Frecuentes</h1>
         <p class="m-5">¿Tenes dudas sobre cómo adquirir nuestros productos?  Compartimos 10 FAQs que tenés que saber para comprar los productos de pirulito!. Si tu consulta no se encuentra en este listado, no dudes en contactarnos.
         </p>
