@@ -8,7 +8,8 @@ $title="Lorem ipsum | Home";
   <body>
 
     <?php require_once("includes/header.php") ?>
-<!-- Mobile first-->
+
+<!-- Carousel mobile-->
 
 <div class="mobile">
   <div id="demo" class="carousel slide" data-ride="carousel">
@@ -44,7 +45,7 @@ $title="Lorem ipsum | Home";
         </div>
       </div>
     </div>
-    <!-- Left and right controls -->
+    <!-- controles! -->
 
     <a class="carousel-control-prev" href="#demo" data-slide="prev">
       <span class="carousel-control-prev-icon"></span>
@@ -110,7 +111,7 @@ $title="Lorem ipsum | Home";
   </p>
 
 
-
+<!--ver de sumar "Los favoritos de la semana"  -->
 
   <br>
   <?php require_once("includes/footer.php") ?>

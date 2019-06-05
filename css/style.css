@@ -984,7 +984,7 @@ form button.volver{
     background: url("../imgs/img-construccion.jpg") center center;
     background-size: cover;
     color: #fff;
-    min-height: 60vh;
+    min-height: 60vh; /* solución temporal - corregir posición footer - */
   }
 
 
