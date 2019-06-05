@@ -18,7 +18,7 @@ $title="Lorem ipsum | Detalle Producto";
       <!--Barra de navegacion -->
       <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="productos2.php">Productos</a></li>
+          <li class="breadcrumb-item"><a href="productos.php">Productos</a></li>
           <li class="breadcrumb-item active" aria-current="page"><?=$productoDetallado["nombre"]?></li>
         </ol>
       </nav>
