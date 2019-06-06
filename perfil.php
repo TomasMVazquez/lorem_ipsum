@@ -1,23 +1,8 @@
 <?php
 $title="Lorem ipsum | Perfil";
+$categorias = ["Maquillajes","Labiales","Shampoos","Cremas","Mascaras","Tonificadores","Algo","Otros"];
+$notificaciones = ["noticias"];
 
-$profile = [
-  "name" => "Fulano",
-  "lastName" => "DeTal",
-  "email" => "fulanodetal@gmail.com",
-  "address" => "calle false 123",
-  "city" => "Springfield",
-  "categorias" => [
-    "Maquillajes" => true,
-    "Labiales" => false,
-    "Shampoos" => true,
-    "Cremas" => false
-  ],
-  "notificaciones" => [
-    "noticias" => false
-  ],
-  "favoritos" => []
-]
  ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
@@ -34,9 +19,9 @@ $profile = [
             <div class="aside">
               <!-- CONTENEDOR IMAGEN AVATAR -->
               <div class="imgContainerProfile">
-                <h1>Bienvenid@ <?= $profile["name"] ?></h1>
+                <h1>Bienvenid@ <?= $_SESSION["name"] ?></h1>
                 <a href="#">
-                  <img src="imgs/img_avatar4.png" alt="Avatar" class="avatar">
+                  <img src="<?= $_SESSION["imgProfile"] ?>" alt="Avatar" class="avatar">
                 </a>
               </div>
               <!-- FIN CONTENEDOR IMAGEN AVATAR -->
@@ -45,21 +30,28 @@ $profile = [
                 <div class="container">
 
                   <label for="name"><b>Nombre</b></label>
-                  <input type="text" placeholder="Ingresar Nombre" name="name" value="<?= $profile["name"] ?>" required>
+                  <input type="text" placeholder="Ingresar Nombre" name="name" value="<?= $_SESSION["name"] ?>" required>
 
                   <label for="lastName"><b>Apellido</b></label>
-                  <input type="text" placeholder="Ingresar Apellido" name="lastName" value="<?= $profile["lastName"] ?>" required>
+                  <input type="text" placeholder="Ingresar Apellido" name="lastName" value="<?= $_SESSION["lastName"] ?>" required>
 
                   <label for="email"><b>Email</b></label>
-                  <input type="email" placeholder="Ingresar Email" name="email" value="<?= $profile["email"] ?>" required>
+                  <input type="email" placeholder="Ingresar Email" name="email" value="<?= $_SESSION["email"] ?>" required>
 
                   <!-- SWITCH PARA QUE QUIERO VER -->
                   <div class="container containerSwitch">
-                    <?php foreach ($profile["categorias"] as $unaCategoria => $value) : ?>
+                    <?php foreach ($categorias as $unaCategoria) : ?>
                       <div class="containerUnSwitch col-12">
                         <label class="switch">
                           <input type="checkbox"
-                          <?php if ($value) : ?> checked <?php endif; ?>>
+                            <?php if (isset($_SESSION['categorias'])) : ?>
+                              <?php foreach ($_SESSION['categorias'] as $categoria) : ?>
+                                <?php if ($categoria == $unaCategoria) : ?>
+                                  checked
+                                <?php endif; ?>
+                              <?php endforeach; ?>
+                            <?php endif; ?>
+                          >
                           <span class="slider round"></span>
                         </label>
                         <em class="switchText"><?= $unaCategoria ?></em>
@@ -68,10 +60,10 @@ $profile = [
                   </div>
                   <!-- SWITCH PARA QUE QUIERO RECIBIR -->
                   <div class="container containerSwitch">
-                    <?php foreach ($profile["notificaciones"] as $unaNotificacion => $value) : ?>
+                    <?php foreach ($notificaciones as $unaNotificacion) : ?>
                       <div class="containerUnSwitch col-12">
                         <label class="switch">
-                          <input type="checkbox" <?php if ($value) : ?> checked <?php endif; ?>>
+                          <input type="checkbox" <?php if (isset($_SESSION['notificaciones'])) : ?> checked <?php endif; ?>>
                           <span class="slider round"></span>
                         </label>
                         <em class="switchText">Quiero recibir <?= $unaNotificacion ?></em>

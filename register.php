@@ -18,20 +18,17 @@
     $errorsRegister = registerValidate();
 
     if (!$errorsRegister) {
-      if (isset($_FILES['avatar'])) {
+      if ($_FILES['avatar']['name']!='') {
         $imgName = saveImage($_FILES['avatar']);
         $_POST['imgProfile'] = $imgName;
+
       }else {
         $_POST['imgProfile'] = 'imgs/img_avatar4.png';
       }
 
       saveUser();
 
-      session_start();
-      $user[] = getUserData($emailInPost);
-      
-      // $_SESSION('name')=$user['name']
-      // $_SESSION('img')=$user['imgProfile']
+      $_SESSION = getUserData($emailInPost);
 
       header('location: index.php');
       exit;

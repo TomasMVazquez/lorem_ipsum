@@ -1,4 +1,6 @@
 <?php
+  session_start();
+
   $menu = [
     "Quienes Somos" => "index.php#nosotres",
     "Productos" => [
@@ -8,7 +10,6 @@
     "Faqs" => "faqs.php",
     "Logueate" => "log_in.php",
     "Contacto" => "#contacto-aqui",
-
   ]
  ?>
 
@@ -30,7 +31,13 @@
 
        <div class="col-7 perfilHeader">
          <div class="dropdown">
-           <a class="nav-link dropdown-toggle p-0"  href="#" id="navbardrop" data-toggle="dropdown">Bienvenido Fulanito</a>
+           <a class="nav-link dropdown-toggle p-0"  href="#" id="navbardrop" data-toggle="dropdown">
+             <?php if (isset($_SESSION)) {
+               echo "Bienvenide " . $_SESSION['name'];
+             }else{
+               echo "No estas logeado";
+             } ?>
+           </a>
            <div class="dropdown-menu ">
              <a class="dropdown-item" href="perfil.php">Editar tu cuenta</a>
              <a class="dropdown-item" href="perfil.php">Ver Favoritos</a>

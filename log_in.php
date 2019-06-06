@@ -10,13 +10,8 @@ if ($_POST) {
   $errorsInLogIn = logInValidate();
 
   if (!$errorsInLogIn) {
-    session_start();
-    $user = getUserData($emailInPost);
-
-    var_dump($user);
-    // $_SESSION('user') = $user['name'];
-    // $_SESSION('email') = $user['email'];
-    // $_SESSION('img') = $user['imgProfile'];
+    
+    $_SESSION = getUserData($emailInPost);
 
     header('location: index.php');
     exit;

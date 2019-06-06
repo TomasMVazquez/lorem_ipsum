@@ -28,7 +28,7 @@
     $users = getUsers();
 		foreach ($users as $oneUser) {
 			if ($oneUser['email'] == $email) {
-				if ($oneUser['psw'] == password_hash($psw, PASSWORD_DEFAULT)){
+				if (password_verify($psw,$oneUser['psw'])){
           return true;
         }
 			}
@@ -129,6 +129,5 @@
 		// 3. Volver a guardar a todos los usuarios con éste último
 		file_put_contents('data/users.json', json_encode($usersList));
 	}
-
 
  ?>
