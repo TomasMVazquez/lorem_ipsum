@@ -1,6 +1,5 @@
 <?php
   session_start();
-
   $menu = [
     "Quienes Somos" => "index.php#nosotres",
     "Productos" => [
@@ -32,7 +31,7 @@
        <div class="col-7 perfilHeader">
          <div class="dropdown">
            <a class="nav-link dropdown-toggle p-0"  href="#" id="navbardrop" data-toggle="dropdown">
-             <?php if (isset($_SESSION)) {
+             <?php if (isset($_SESSION['name'])) {
                echo "Bienvenide " . $_SESSION['name'];
              }else{
                echo "No estas logeado";
