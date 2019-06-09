@@ -790,12 +790,17 @@ footer a:hover{
     flex-direction: row;
     flex-wrap: wrap;
   }
-.imgContainerProfile img.avatar{
-  width: 40%;
-}
-img.avatar {
-    width: 100%;
-}
+  .imgContainerProfile label{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .imgContainerProfile img.avatar{
+    width: 40%;
+  }
+  img.avatar {
+      width: 100%;
+  }
   /* --------------------------------------------------------------------------------- HEADER */
 /*
     .mainHeader {

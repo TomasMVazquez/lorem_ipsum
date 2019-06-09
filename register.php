@@ -1,9 +1,10 @@
 <?php
   $title="Lorem ipsum | Registro";
+
   $categorias = ["Maquillajes","Labiales","Shampoos","Cremas","Mascaras","Tonificadores","Algo","Otros"];
   $notificaciones = ["noticias"];
 
-  // Traigo las funciones que controlan mi sistema de Registro y Login
+  // Traigo las funciones que controlan mi sistema de Registro Login y Perfil
   require_once 'register-controller.php';
 
   if ($_POST) {

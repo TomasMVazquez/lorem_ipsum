@@ -1,5 +1,6 @@
 <?php
 $title="Lorem ipsum | LogIn";
+session_start();
 // Traigo las funciones que controlan mi sistema de Registro y Login
 require_once 'register-controller.php';
 
@@ -10,7 +11,7 @@ if ($_POST) {
   $errorsInLogIn = logInValidate();
 
   if (!$errorsInLogIn) {
-    
+
     $_SESSION = getUserData($emailInPost);
 
     header('location: index.php');

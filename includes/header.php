@@ -1,5 +1,5 @@
 <?php
-  session_start();
+
   $menu = [
     "Quienes Somos" => "index.php#nosotres",
     "Productos" => [
@@ -33,8 +33,10 @@
            <a class="nav-link dropdown-toggle p-0"  href="#" id="navbardrop" data-toggle="dropdown">
              <?php if (isset($_SESSION['name'])) {
                echo "Bienvenide " . $_SESSION['name'];
+               $imgPerfil = $_SESSION['imgProfile'];
              }else{
                echo "No estas logeado";
+               $imgPerfil = 'imgs/img_avatar4.png';
              } ?>
            </a>
            <div class="dropdown-menu ">
@@ -43,9 +45,8 @@
              <a class="dropdown-item" href="#">Cerrar Sesión</a>
            </div>
          </div>
-         <img src="imgs/img_avatar4.png" alt="">
+         <img src="<?= $imgPerfil ?>" alt="imagen de perfil del usuario logeado">
        </div>
-
 
           <form class="searchHeader" action="/action_page.php">
             <input class="col-lg-11 form-control mr-sm-2" type="text" placeholder="¡Quiero encontrarlo!">

@@ -1,9 +1,39 @@
 <?php
 $title="Lorem ipsum | Perfil";
+session_start();
+
 $categorias = ["Maquillajes","Labiales","Shampoos","Cremas","Mascaras","Tonificadores","Algo","Otros"];
 $notificaciones = ["noticias"];
 
+// Traigo las funciones que controlan mi sistema de Registro Login y Perfil
+require_once 'register-controller.php';
+
+if ($_POST) {
+
+  $nameInPost = trim($_POST['name']);
+  $lastNameInPost = trim($_POST['lastName']);
+  $emailInPost = trim($_POST['email']);
+
+  $errorsUpdate = profileUpdateValidate();
+
+  if (!$errorsUpdate) {
+    if ($_FILES['avatar']['name']!='') {
+      $imgName = saveImage($_FILES['avatar']);
+      $_POST['imgProfile'] = $imgName;
+    }else {
+      $_POST['imgProfile'] = 'imgs/img_avatar4.png';
+    }
+
+    updateUser();
+
+    $_SESSION = getUserData($emailInPost);
+
+    header('location: perfil.php');
+    exit;
+  }
+}
  ?>
+
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <?php require_once("includes/head.php") ?>
@@ -17,33 +47,43 @@ $notificaciones = ["noticias"];
           <!-- COSTADO CON EL PROFILE -->
           <aside class="containerAside col-12 col-md-6 col-lg-4">
             <div class="aside">
-              <!-- CONTENEDOR IMAGEN AVATAR -->
-              <div class="imgContainerProfile">
-                <h1>Bienvenid@ <?= $_SESSION["name"] ?></h1>
-                <a href="#">
-                  <img src="<?= $_SESSION["imgProfile"] ?>" alt="Avatar" class="avatar">
-                </a>
-              </div>
-              <!-- FIN CONTENEDOR IMAGEN AVATAR -->
+              <br>
+              <h2>Bienvenid@ <?= $_SESSION["name"] ?></h2>
+
               <!-- PONEMOS UN FORMULARIO AUTOCOMPLETADO PARA QUE SI QUIERE LO PUEDA EDITAR -->
-              <form class="profile" action="" >
+              <form class="profile" method="post" enctype="multipart/form-data">
+
+                <!-- CONTENEDOR IMAGEN AVATAR -->
+                <div class="imgContainerProfile">
+                  <label for="avatar"><b>Imagen de Perfil</b>
+                    <img src="<?= $_SESSION["imgProfile"] ?>" alt="Avatar" class="avatar" style="cursor:pointer">
+                  </label>
+                  <input id="avatar" type="file" name="avatar" class="custom-file-input">
+                  <?php if ( isset($errorsRegister['inAvatar']) ) : ?>
+    								<div class="alert alert-danger">
+    									<?= $errorsInRegister['inAvatar'] ?>
+    								</div>
+    							<?php endif; ?>
+                </div>
+                <!-- FIN CONTENEDOR IMAGEN AVATAR -->
+
                 <div class="container">
 
                   <label for="name"><b>Nombre</b></label>
-                  <input type="text" placeholder="Ingresar Nombre" name="name" value="<?= $_SESSION["name"] ?>" required>
+                  <input type="text" placeholder="Ingresar Nombre" name="name" value="<?= $_SESSION["name"] ?>">
 
                   <label for="lastName"><b>Apellido</b></label>
-                  <input type="text" placeholder="Ingresar Apellido" name="lastName" value="<?= $_SESSION["lastName"] ?>" required>
+                  <input type="text" placeholder="Ingresar Apellido" name="lastName" value="<?= $_SESSION["lastName"] ?>">
 
                   <label for="email"><b>Email</b></label>
-                  <input type="email" placeholder="Ingresar Email" name="email" value="<?= $_SESSION["email"] ?>" required>
+                  <input type="email" placeholder="Ingresar Email" name="email" value="<?= $_SESSION["email"] ?>">
 
                   <!-- SWITCH PARA QUE QUIERO VER -->
                   <div class="container containerSwitch">
                     <?php foreach ($categorias as $unaCategoria) : ?>
                       <div class="containerUnSwitch col-12">
                         <label class="switch">
-                          <input type="checkbox"
+                          <input type="checkbox" name="categorias[]" value="<?= $unaCategoria ?>"
                             <?php if (isset($_SESSION['categorias'])) : ?>
                               <?php foreach ($_SESSION['categorias'] as $categoria) : ?>
                                 <?php if ($categoria == $unaCategoria) : ?>
@@ -63,7 +103,8 @@ $notificaciones = ["noticias"];
                     <?php foreach ($notificaciones as $unaNotificacion) : ?>
                       <div class="containerUnSwitch col-12">
                         <label class="switch">
-                          <input type="checkbox" <?php if (isset($_SESSION['notificaciones'])) : ?> checked <?php endif; ?>>
+                          <input type="checkbox" name="notificaciones[]" value="<?= $unaNotificacion ?>"
+                          <?php if (isset($_SESSION['notificaciones'])) : ?> checked <?php endif; ?>>
                           <span class="slider round"></span>
                         </label>
                         <em class="switchText">Quiero recibir <?= $unaNotificacion ?></em>
@@ -118,7 +159,8 @@ $notificaciones = ["noticias"];
       </div>
 
     </div>
-    <?php require_once("includes/footer.php") ?>
+    <?php require_once("includes/footer.php"); ?>
     <!-- ACA PONER INCLUDE FOOTER -->
   </body>
+
 </html>
