@@ -1,4 +1,10 @@
 <?php
+//Empiezo la session en el header para que este en todos las pag
+session_start();
+// Traigo las funciones que controlan mi sistema
+require_once 'controller.php';
+validateCookie();
+
 
   $menu = [
     "Quienes Somos" => "index.php#nosotres",
@@ -6,8 +12,8 @@
       "Cósmetica Capilar" => "productos.php",
       "Corporales" => "corporales.php",
     ],
+    "Ingresar" => "log_in.php",
     "Faqs" => "faqs.php",
-    "Logueate" => "log_in.php",
     "Contacto" => "#contacto-aqui",
   ]
  ?>
@@ -40,9 +46,9 @@
              } ?>
            </a>
            <div class="dropdown-menu ">
-             <a class="dropdown-item" href="perfil.php">Editar tu cuenta</a>
+             <!-- <a class="dropdown-item" href="perfil.php">Editar tu cuenta</a> -->
              <a class="dropdown-item" href="perfil.php">Ver Favoritos</a>
-             <a class="dropdown-item" href="#">Cerrar Sesión</a>
+             <a class="dropdown-item" href="log_out.php">Cerrar Sesión</a>
            </div>
          </div>
          <img src="<?= $imgPerfil ?>" alt="imagen de perfil del usuario logeado">
@@ -61,6 +67,7 @@
        <ul class="navbar-nav mt-3">
          <?php foreach ($menu as $boton => $seccion): ?>
 
+           <!-- Esta parte es para el desplegable -->
            <?php if (is_array($seccion)): ?>
              <li class="nav-item dropdown">
                <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
@@ -75,8 +82,12 @@
              </li>
 
              <?php else: ?>
-               <li class="nav-item"><a class="nav-link" href="<?= $seccion?>"><?= $boton ?></a></li>
-
+               <!-- Si no es desplegable -->
+               <?php if (isset($_SESSION['name']) && $boton == "Ingresar"): ?>
+                 <li class="nav-item"><a class="nav-link" href="perfil.php">Mi cuenta</a></li>
+               <?php else: ?>
+                 <li class="nav-item"><a class="nav-link" href="<?= $seccion?>"><?= $boton ?></a></li>
+              <?php endif; ?>
            <?php endif; ?>
          <?php endforeach; ?>
        </ul>

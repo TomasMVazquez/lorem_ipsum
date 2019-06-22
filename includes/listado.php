@@ -12,9 +12,7 @@ $listadoProductos = [
       "Envase 30cc",
       "Envase 50cc"
     ],
-    "stock" => 5,
     "calificacion" => 3,
-    "comentarios" => 14,
     "imagen-principal" => "imgs/items/1.jpg",
     "imagenes-secundarias" => [
       "imgs/items/1-1-min.jpg",
@@ -32,9 +30,7 @@ $listadoProductos = [
     "presentacion" => [
       "Envase de 350grs"
     ],
-    "stock" => 78,
     "calificacion" => 4,
-    "comentarios" => 11,
     "imagen-principal" => "imgs/items/2.jpg",
     "imagenes-secundarias" => [
       "imgs/items/2-1-min.jpg",
@@ -53,9 +49,7 @@ $listadoProductos = [
       "Pote 1kg.",
       "Envase de 200grs."
     ],
-    "stock" => 50,
     "calificacion" => 5,
-    "comentarios" => 23,
     "imagen-principal" => "imgs/items/3.jpg",
     "imagenes-secundarias" => [
       "imgs/items/3-1-min.jpg",
@@ -79,9 +73,7 @@ $listadoProductos = [
       "Estuche con 2 pomos de 60grs. cada uno.",
       "Pomo individual"
     ],
-    "stock" => 5,
     "calificacion" => 3,
-    "comentarios" => 14,
     "imagen-principal" => "imgs/items/4.jpg",
     "imagenes-secundarias" => [
       "imgs/items/4-1-min.jpg",
@@ -100,9 +92,7 @@ $listadoProductos = [
       "Estuche 12 Ampollas de 15cc. cada una",
       "Estuche 24 Ampollas de 15cc. cada una",
     ],
-    "stock" => 89,
     "calificacion" => 4,
-    "comentarios" => 1,
     "imagen-principal" => "imgs/items/5.jpg",
     "imagenes-secundarias" => [
       "imgs/items/5-1-min.jpg",
@@ -121,9 +111,7 @@ $listadoProductos = [
     "presentacion" => [
       "Envase de 100cc."
     ],
-    "stock" => 32,
     "calificacion" => 4,
-    "comentarios" => 104,
     "imagen-principal" => "imgs/items/6.jpg",
     "imagenes-secundarias" => [
       "imgs/items/6-1-min.jpg",

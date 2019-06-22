@@ -1,6 +1,6 @@
 <?php
 $title="Lorem ipsum | Home";
-session_start();
+
 ?>
 
 <!DOCTYPE html>

@@ -1,10 +1,11 @@
 <?php
 $title="Lorem ipsum | Perfil";
-session_start();
 
 $categorias = ["Maquillajes","Labiales","Shampoos","Cremas","Mascaras","Tonificadores","Algo","Otros"];
 $notificaciones = ["noticias"];
 
+$paises = file_get_contents('https://restcountries.eu/rest/v2/all');
+$arrayPaises = json_decode($paises,true);
 // Traigo las funciones que controlan mi sistema de Registro Login y Perfil
 require_once 'register-controller.php';
 
@@ -78,6 +79,17 @@ if ($_POST) {
                   <label for="email"><b>Email</b></label>
                   <input type="email" placeholder="Ingresar Email" name="email" value="<?= $_SESSION["email"] ?>">
 
+                  <label for="pais"><b>Pais</b></label>
+                  <select class="custom-select" name="pais">
+                    <?php foreach ($arrayPaises as $pais): ?>
+                      <?php if ($_SESSION["pais"] == $pais["alpha2Code"]): ?>
+                        <option value="<?= $pais["alpha2Code"] ?>" selected ><?= $pais["name"] ?></option>
+                      <?php else: ?>
+                        <option value="<?= $pais["alpha2Code"] ?>"><?= $pais["name"] ?></option>
+                      <?php endif; ?>
+                    <?php endforeach; ?>
+                  </select>
+
                   <!-- SWITCH PARA QUE QUIERO VER -->
                   <div class="container containerSwitch">
                     <?php foreach ($categorias as $unaCategoria) : ?>
@@ -113,6 +125,10 @@ if ($_POST) {
                   </div>
                   <div class="btnForm">
                     <button class="btn-primary" type="submit">Actualizar</button>
+                  </div>
+                  <hr>
+                  <div class="btnForm">
+                    <button class="btn-secondary" type="button">Modificar Contraseña</button>
                   </div>
                 </div>
               </form>

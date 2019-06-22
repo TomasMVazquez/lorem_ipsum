@@ -1,18 +1,24 @@
 <?php
 $title="Lorem ipsum | LogIn";
-session_start();
+
 // Traigo las funciones que controlan mi sistema de Registro y Login
-require_once 'register-controller.php';
+require_once 'login-controller.php';
 
 if ($_POST) {
 
-  $emailInPost = trim($_POST['email']);
+  $emailOrUserInPost = trim($_POST['emailOrUser']);
 
   $errorsInLogIn = logInValidate();
 
   if (!$errorsInLogIn) {
 
-    $_SESSION = getUserData($emailInPost);
+    //seteamos la cookie si tiene Recordarme
+    if (isset($_POST['remember'])) {
+      setcookie("user",$emailOrUserInPost,time()+60*60*24*30);
+    }
+
+
+    $_SESSION = getUserData($emailOrUserInPost);
 
     header('location: index.php');
     exit;
@@ -33,19 +39,17 @@ if ($_POST) {
           <form class="" method="post">
           <!-- CONTENEDOR CAMPOS A COMPLETAR -->
           <div class="container">
-            <label for="email"><b>Email</b></label>
-            <input type="email" placeholder="Ingresar Email" name="email" value="<?= isset($emailInPost) ? $emailInPost : ''; ?> " required>
-
-            <!-- MENSAJE ERROR MAIL -->
-            <?php if ( isset($errorsInLogIn['inEmail']) ) : ?>
+            <label for="emailOrUser"><b>Email o Usuario</b></label>
+            <input type="text" placeholder="Ingresar Email o Usuario" name="emailOrUser" value="<?= isset($emailOrUserInPost) ? $emailOrUserInPost : ''; ?>" style="<?= isset($errorsInLogIn['inEmailUser']) ? 'border: solid 1px #f1b0b7;' : '' ?> " required>
+            <!-- MENSAJE ERROR MAIL USER -->
+            <?php if ( isset($errorsInLogIn['inEmailUser']) ) : ?>
             <div class="alert alert-danger">
-              <?= $errorsInLogIn['inEmail'] ?>
+              <?= $errorsInLogIn['inEmailUser'] ?>
             </div>
             <?php endif; ?>
 
             <label for="psw"><b>Password</b></label>
-            <input type="password" placeholder="Ingresar Contraseña" name="psw" required>
-
+            <input type="password" placeholder="Ingresar Contraseña" name="psw" style="<?= isset($errorsInLogIn['inPsw']) ? 'border: solid 1px #f1b0b7;' : '' ?> " required>
             <!-- MENSAJE ERROR PASS -->
             <?php if ( isset($errorsInLogIn['inPsw']) ) : ?>
             <div class="alert alert-danger">
@@ -54,7 +58,7 @@ if ($_POST) {
             <?php endif; ?>
 
             <label>
-              <input type="checkbox" checked="checked" name="remember"> Recordarme
+              <input type="checkbox" checked="checked" name="remember" value="ok"> Recordarme
             </label>
             <span class="psw">
               <a class="btn btn-light" href="#">Recuperar Contraseña</a>
