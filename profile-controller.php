@@ -59,5 +59,28 @@ require_once 'controller.php';
       file_put_contents('data/users.json', json_encode($usersList));
     }
 
+    function validateModifyPass(){
+      //Validar que la contrasena actual sea igual a la que se encuentra en el JsonSerializable
+      //Si esta ok tiene que seguir con el updatePass
+      //Sino tirar error y que lo muestre en el form
+
+    }
+
+    function updatePass() {
+      $newPsw = password_hash($_POST['psw'], PASSWORD_DEFAULT);
+      // 1. Leemos el archivo de usuarios que está en JSON
+      $usersList = getUsers();
+
+      // 2. Buscamos el usuario a Actualizar
+      foreach ($usersList as $key => $user) {
+        if ($user['user'] == $_SESSION['user']) {
+          $usersList[$key]['psw'] = $newPsw;
+          break;
+        }
+      }
+
+      // 3. Volver a guardar a todos los usuarios con éste último
+      file_put_contents('data/users.json', json_encode($usersList));
+    }
 
  ?>

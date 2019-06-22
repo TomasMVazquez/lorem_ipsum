@@ -16,7 +16,7 @@ if ($_POST) {
     if (isset($_POST['remember'])) {
       setcookie("user",$emailOrUserInPost,time()+60*60*24*30);
     }
-
+    
 
     $_SESSION = getUserData($emailOrUserInPost);
 

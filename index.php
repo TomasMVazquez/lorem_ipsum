@@ -62,7 +62,7 @@ $title="Lorem ipsum | Home";
 
 
 <div class="wide">
-  <div id="demo" class="carousel slide" data-ride="carousel">
+  <div id="demo2" class="carousel slide" data-ride="carousel">
 
     <ul class="carousel-indicators">
       <li data-target="#demo" data-slide-to="0" class="active"></li>
@@ -94,10 +94,10 @@ $title="Lorem ipsum | Home";
       </div>
     </div>
 
-    <a class="carousel-control-prev" href="#demo" data-slide="prev">
+    <a class="carousel-control-prev" href="#demo2" role="button" data-slide="prev">
       <span class="carousel-control-prev-icon"></span>
     </a>
-    <a class="carousel-control-next" href="#demo" data-slide="next">
+    <a class="carousel-control-next" href="#demo2" role="button" data-slide="next">
       <span class="carousel-control-next-icon"></span>
     </a>
   </div>
