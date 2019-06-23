@@ -17,6 +17,12 @@
     $lastNameInPost = trim($_POST['lastName']);
     $emailInPost = trim($_POST['email']);
     $countryInPost = trim($_POST['pais']);
+    if (isset($_POST['categorias'])) {
+      $categoriasInPost = $_POST['categorias'];
+    }
+    if (isset($_POST['notificaciones'])) {
+      $notifInPost = $_POST['notificaciones'];
+    }
     $pswInPost = trim($_POST['psw']);
     $pswRepeatInPost = trim($_POST['psw-repeat']);
 
@@ -153,7 +159,19 @@
                   <?php foreach ($categorias as $unaCategoria) : ?>
                     <div class="containerUnSwitchCat col-6 col-md-4 col-xl-4">
                       <label class="switch">
-                        <input type="checkbox" name="categorias[]" value="<?= $unaCategoria ?>" checked>
+                        <input type="checkbox" name="categorias[]" value="<?= $unaCategoria ?>"
+                        <?php if ($_POST): ?>
+                          <?php if (isset($categoriasInPost)): ?>
+                            <?php foreach ($categoriasInPost as $unaCatInPost): ?>
+                              <?php if ($unaCatInPost == $unaCategoria): ?>
+                                checked
+                              <?php endif; ?>
+                            <?php endforeach; ?>
+                          <?php endif; ?>
+                        <?php else: ?>
+                          checked
+                        <?php endif; ?>
+                        >
                         <span class="slider round"></span>
                       </label>
                       <em><?= $unaCategoria ?></em>
@@ -163,7 +181,19 @@
                   <?php foreach ($categorias as $unaCategoria) : ?>
                     <div class="containerUnSwitchCat col-6 col-md-4 col-xl-6">
                       <label class="switch">
-                        <input type="checkbox" name="categorias[]" value="<?= $unaCategoria ?>" checked>
+                        <input type="checkbox" name="categorias[]" value="<?= $unaCategoria ?>"
+                        <?php if ($_POST): ?>
+                          <?php if (isset($categoriasInPost)): ?>
+                            <?php foreach ($categoriasInPost as $unaCatInPost): ?>
+                              <?php if ($unaCatInPost == $unaCategoria): ?>
+                                checked
+                              <?php endif; ?>
+                            <?php endforeach; ?>
+                          <?php endif; ?>
+                        <?php else: ?>
+                          checked
+                        <?php endif; ?>
+                        >
                         <span class="slider round"></span>
                       </label>
                       <em class="switchText"><?= $unaCategoria ?></em>
@@ -177,7 +207,15 @@
                 <?php foreach ($notificaciones as $unaNotificacion) : ?>
                   <div class="containerUnSwitchNot col-12">
                     <label class="switch">
-                      <input type="checkbox" name="notificaciones[]" value="<?= $unaNotificacion ?>" checked>
+                      <input type="checkbox" name="notificaciones[]" value="<?= $unaNotificacion ?>"
+                      <?php if ($_POST): ?>
+                        <?php if (isset($notifInPost)): ?>
+                          checked
+                        <?php endif; ?>
+                      <?php else: ?>
+                        checked
+                      <?php endif; ?>
+                       >
                       <span class="slider round"></span>
                     </label>
                     <em class="switchText">Quiero recibir <?= $unaNotificacion ?></em>
