@@ -16,7 +16,7 @@ if ($_POST) {
     if (isset($_POST['remember'])) {
       setcookie("user",$emailOrUserInPost,time()+60*60*24*30);
     }
-    
+
 
     $_SESSION = getUserData($emailOrUserInPost);
 
@@ -40,7 +40,7 @@ if ($_POST) {
           <!-- CONTENEDOR CAMPOS A COMPLETAR -->
           <div class="container">
             <label for="emailOrUser"><b>Email o Usuario</b></label>
-            <input type="text" placeholder="Ingresar Email o Usuario" name="emailOrUser" value="<?= isset($emailOrUserInPost) ? $emailOrUserInPost : ''; ?>" style="<?= isset($errorsInLogIn['inEmailUser']) ? 'border: solid 1px #f1b0b7;' : '' ?> " required>
+            <input type="text" placeholder="Ingresar Email o Usuario" name="emailOrUser" value="<?= isset($emailOrUserInPost) ? $emailOrUserInPost : ''; ?>" style="<?= isset($errorsInLogIn['inEmailUser']) ? 'border: solid 1.5px #BD3131;' : '' ?> " required>
             <!-- MENSAJE ERROR MAIL USER -->
             <?php if ( isset($errorsInLogIn['inEmailUser']) ) : ?>
             <div class="alert alert-danger">
@@ -49,20 +49,20 @@ if ($_POST) {
             <?php endif; ?>
 
             <label for="psw"><b>Password</b></label>
-            <input type="password" placeholder="Ingresar Contraseña" name="psw" style="<?= isset($errorsInLogIn['inPsw']) ? 'border: solid 1px #f1b0b7;' : '' ?> " required>
+            <input type="password" placeholder="Ingresar Contraseña" name="psw" style="<?= isset($errorsInLogIn['inPsw']) ? 'border: solid 1.5px #BD3131;' : '' ?> " required>
             <!-- MENSAJE ERROR PASS -->
             <?php if ( isset($errorsInLogIn['inPsw']) ) : ?>
             <div class="alert alert-danger">
               <?= $errorsInLogIn['inPsw'] ?>
             </div>
             <?php endif; ?>
-
+            <span class="psw">
+              <a class="btn btn-light" href="#">OLVIDÉ MI CONTRASEÑA</a>
+            </span>
             <label>
               <input type="checkbox" checked="checked" name="remember" value="ok"> Recordarme
             </label>
-            <span class="psw">
-              <a class="btn btn-light" href="#">Recuperar Contraseña</a>
-            </span>
+
 
           </div>
 
@@ -71,9 +71,9 @@ if ($_POST) {
             <button class="btn-secondary volver" type="button">Volver</button>
             <button class="btn-primary" type="submit">Ingresar</button>
           </div>
-          <span class="psw">
-            <a class="btn btn-light" href="register.php">Aún no tengo cuenta</a>
-          </span>
+          <div class="container btnForm">
+            <a class="btn btn-secondary btn-block reg" href="register.php">Aún no tengo cuenta</a>
+          </div>
         </form>
         <!-- TERMINA FORMULARIO -->
         </div>

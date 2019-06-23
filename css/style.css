@@ -199,8 +199,9 @@ h4 {
 .btn-light {
   color: #666;
   background-color: #fff;
-  font-size: 0.5em;
-  margin: 0.5em;
+  font-size: 0.8em;
+  padding: 10px 0 0 0;
+  /* margin: 0.5em; */
 }
 
 .btn-light:hover {
@@ -213,6 +214,7 @@ h4 {
     border-radius: 0rem;
     box-shadow: 0px 2px 2px #ccc;
 }
+
 
 
 /* ---------------------------------------------------------------------------------  INDEX */
@@ -260,6 +262,16 @@ margin-bottom: 0em;
 }
 /*hasta aca va el estilo del index*/
 
+/* --------------------------------------------------------------------------------- ERRORES EN LOGIN Y REGISTER */
+
+.alert-danger {
+  border-radius: 0;
+  color:#BD3131;
+  background-color: #F7DFDC;
+  font-weight: bold;
+
+}
+
 /* --------------------------------------------------------------------------------- LOGIN */
 .container {
   padding: 8px;
@@ -292,6 +304,14 @@ input[type=text]:focus, input[type=email]:focus, input[type=password]:focus {
 span.psw {
   display: flex;
   flex-direction: row-reverse;
+}
+
+.reg {
+  font-size: 0.8em;
+  background-color: #E2E2E2;
+  border-color: #CCCCCC;
+  padding: 10px;
+  letter-spacing: 0.25em;
 }
 
 /* ------------------  Botones en formulario ------------------  */

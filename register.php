@@ -93,7 +93,7 @@
             <!-- FIN CONTENEDOR IMAGEN AVATAR -->
             <div class="container col-12 col-md-8 col-xl-8">
               <label for="user"><b>Usuario</b></label>
-              <input type="text" placeholder="Ingresar Usuario" name="user" value="<?= isset($userInPost) ? $userInPost : ''; ?>" style="<?= isset($errorsRegister['inUser']) ? 'border: solid 1px #f1b0b7;' : '' ?> ">
+              <input type="text" placeholder="Ingresar Usuario" name="user" value="<?= isset($userInPost) ? $userInPost : ''; ?>" style="<?= isset($errorsRegister['inUser']) ? 'border: solid 1.5px #BD3131;' : '' ?> ">
               <!-- Manejo de errores usuario -->
               <?php if ( isset($errorsRegister['inUser']) ) : ?>
               <div class="alert alert-danger">
@@ -102,7 +102,7 @@
               <?php endif; ?>
 
               <label for="name"><b>Nombre</b></label>
-              <input type="text" placeholder="Ingresar Nombre" name="name" value="<?= isset($nameInPost) ? $nameInPost : ''; ?>" style="<?= isset($errorsRegister['inName']) ? 'border: solid 1px #f1b0b7;' : '' ?> ">
+              <input type="text" placeholder="Ingresar Nombre" name="name" value="<?= isset($nameInPost) ? $nameInPost : ''; ?>" style="<?= isset($errorsRegister['inName']) ? 'border: solid 1.5px #BD3131;' : '' ?> ">
               <!-- Manejo de errores Nombre-->
               <?php if ( isset($errorsRegister['inName']) ) : ?>
               <div class="alert alert-danger">
@@ -111,7 +111,7 @@
               <?php endif; ?>
 
               <label for="lastName"><b>Apellido</b></label>
-              <input type="text" placeholder="Ingresar Apellido" name="lastName" value="<?= isset($lastNameInPost) ? $lastNameInPost : ''; ?>" style="<?= isset($errorsRegister['inLastName']) ? 'border: solid 1px #f1b0b7;' : '' ?> ">
+              <input type="text" placeholder="Ingresar Apellido" name="lastName" value="<?= isset($lastNameInPost) ? $lastNameInPost : ''; ?>" style="<?= isset($errorsRegister['inLastName']) ? 'border: solid 1.5px #BD3131;' : '' ?> ">
               <!-- Manejo de errores apellido -->
               <?php if ( isset($errorsRegister['inLastName']) ) : ?>
               <div class="alert alert-danger">
@@ -120,7 +120,7 @@
               <?php endif; ?>
 
               <label for="email"><b>Email</b></label>
-              <input type="email" placeholder="Ingresar Email" name="email" value="<?= isset($emailInPost) ? $emailInPost : ''; ?>" style="<?= isset($errorsRegister['inEmail']) ? 'border: solid 1px #f1b0b7;' : '' ?> ">
+              <input type="email" placeholder="Ingresar Email" name="email" value="<?= isset($emailInPost) ? $emailInPost : ''; ?>" style="<?= isset($errorsRegister['inEmail']) ? 'border: solid 1.5px #BD3131;' : '' ?> ">
               <!-- Manejo de errores Email -->
               <?php if ( isset($errorsRegister['inEmail']) ) : ?>
               <div class="alert alert-danger">
@@ -129,7 +129,7 @@
               <?php endif; ?>
 
               <label for="pais"><b>Pais</b></label>
-              <select class="custom-select" name="pais" style="<?= isset($errorsRegister['inCountry']) ? 'border: solid 1px #f1b0b7;' : '' ?> ">
+              <select class="custom-select" name="pais" style="<?= isset($errorsRegister['inCountry']) ? 'border: solid 1.5px #BD3131;' : '' ?> ">
                 <option value="">Seleccionar pais</option>
                 <?php foreach ($arrayPaises as $pais): ?>
                   <?php if (isset($countryInPost) && $countryInPost == $pais["alpha2Code"]): ?>
@@ -227,7 +227,7 @@
             <hr>
             <div class="container col-12 col-md-12 col-xl-8">
               <label for="psw"><b>Contraseña</b></label>
-              <input type="password" placeholder="Ingresar Contraseña" name="psw" style="<?= isset($errorsRegister['inPsw']) ? 'border: solid 1px #f1b0b7;' : '' ?> ">
+              <input type="password" placeholder="Ingresar Contraseña" name="psw" style="<?= isset($errorsRegister['inPsw']) ? 'border: solid 1.5px #BD3131;' : '' ?> ">
               <!-- Manejo de errores de pass -->
               <?php if ( isset($errorsRegister['inPsw']) ) : ?>
 								<div class="alert alert-danger">
@@ -236,7 +236,7 @@
 							<?php endif; ?>
 
               <label for="psw-repeat"><b>Repetir Contraseña</b></label>
-              <input type="password" placeholder="Repetir Contraseña" name="psw-repeat" style="<?= isset($errorsRegister['inPswRepeat']) ? 'border: solid 1px #f1b0b7;' : '' ?> ">
+              <input type="password" placeholder="Repetir Contraseña" name="psw-repeat" style="<?= isset($errorsRegister['inPswRepeat']) ? 'border: solid 1.5px #BD3131;' : '' ?> ">
               <!-- manejo de errores de repetir pass -->
               <?php if ( isset($errorsRegister['inPswRepeat']) ) : ?>
 								<div class="alert alert-danger">
