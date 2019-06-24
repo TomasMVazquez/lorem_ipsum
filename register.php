@@ -128,9 +128,9 @@
               </div>
               <?php endif; ?>
 
-              <label for="pais"><b>Pais</b></label>
+              <label for="pais"><b>País</b></label>
               <select class="custom-select" name="pais" style="<?= isset($errorsRegister['inCountry']) ? 'border: solid 1.5px #BD3131;' : '' ?> ">
-                <option value="">Seleccionar pais</option>
+                <option value="">Seleccionar país</option>
                 <?php foreach ($arrayPaises as $pais): ?>
                   <?php if (isset($countryInPost) && $countryInPost == $pais["alpha2Code"]): ?>
                     <option value="<?= $pais["alpha2Code"] ?>" selected ><?= $pais["name"] ?></option>
@@ -153,7 +153,7 @@
           <div class="">
             <div class="col-12">
               <!-- SWITCH PARA QUE QUIERO VER -->
-              <label for="categorias"><b>Categorias</b></label>
+              <label for="categorias"><b>Categorías</b></label>
               <div class="container containerSwitch">
                 <?php if (count($categorias)>5): ?>
                   <?php foreach ($categorias as $unaCategoria) : ?>
@@ -174,7 +174,7 @@
                         >
                         <span class="slider round"></span>
                       </label>
-                      <em><?= $unaCategoria ?></em>
+                      <span class="switchText"><?= $unaCategoria ?></span>
                     </div>
                   <?php endforeach; ?>
                 <?php else: ?>
@@ -196,7 +196,7 @@
                         >
                         <span class="slider round"></span>
                       </label>
-                      <em class="switchText"><?= $unaCategoria ?></em>
+                      <span class="switchText"><?= $unaCategoria ?></span>
                     </div>
                   <?php endforeach; ?>
                 <?php endif; ?>
