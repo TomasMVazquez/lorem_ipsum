@@ -79,7 +79,7 @@ if ($_POST) {
                   <label for="email"><b>Email</b></label>
                   <input type="email" placeholder="Ingresar Email" name="email" value="<?= $_SESSION["email"] ?>">
 
-                  <label for="pais"><b>Pais</b></label>
+                  <label for="pais"><b>País</b></label>
                   <select class="custom-select" name="pais">
                     <?php foreach ($arrayPaises as $pais): ?>
                       <?php if ($_SESSION["pais"] == $pais["alpha2Code"]): ?>
@@ -106,7 +106,7 @@ if ($_POST) {
                           >
                           <span class="slider round"></span>
                         </label>
-                        <em class="switchText"><?= $unaCategoria ?></em>
+                        <span class="switchText switchTextPerfil"><?= $unaCategoria ?></span>
                       </div>
                     <?php endforeach; ?>
                   </div>
@@ -123,12 +123,16 @@ if ($_POST) {
                       </div>
                     <?php endforeach; ?>
                   </div>
-                  <div class="btnForm">
+                  <div class="btnForm" style="margin-top:20px">
                     <button class="btn-primary" type="submit">Actualizar</button>
                   </div>
                   <hr>
                   <div class="btnForm">
                     <button class="btn-secondary" type="button">Modificar Contraseña</button>
+                  </div>
+                  <hr>
+                  <div class="btnForm btnLogOut">
+                    <a class="btn btn-block log-out" href="log_out.php">Cerrar Sesión</a>
                   </div>
                 </div>
               </form>
