@@ -45,4 +45,11 @@ function getUserData($emailOrUser){
 require_once 'controller-login.php';
 require_once 'controller-register.php';
 require_once 'controller-perfil.php';
+
+// Función para hacer DEBUG
+function debug($dato) {
+  echo "<pre>";
+  var_dump($dato);
+  echo "</pre>";
+}
  ?>

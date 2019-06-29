@@ -25,7 +25,7 @@
     $nameInPost = trim($_POST['name']);
     $lastNameInPost = trim($_POST['lastName']);
     $emailInPost = trim($_POST['email']);
-    $countryInPost = trim($_POST['pais']);
+    $countryInPost = $_POST['pais'];
     if (isset($_POST['categorias'])) {
       $categoriasInPost = $_POST['categorias'];
     }

@@ -1,25 +1,19 @@
 [
     {
         "user": "Toms",
-        "name": "Tomas",
+        "name": "Tomas Manuel",
         "lastName": "Vazquez",
         "email": "tomivazquez@hotmail.com",
         "pais": "AR",
         "categorias": [
             "Maquillajes",
             "Labiales",
-            "Shampoos",
             "Cremas",
-            "Mascaras",
-            "Tonificadores",
-            "Algo",
-            "Otros"
+            "Tonificadores"
         ],
-        "notificaciones": [
-            "noticias"
-        ],
+        "notificaciones": null,
         "psw": "$2y$10$QoHfyXCCQAVeio\/48PkT8un6.\/siz.Kvt6B9yOKo0Cbo\/G6rVHZ\/e",
-        "imgProfile": "imgs\/img_avatar4.png"
+        "imgProfile": "data\/avatars\/img-5d17861c8dd05.jpeg"
     },
     {
         "user": "Toms2",

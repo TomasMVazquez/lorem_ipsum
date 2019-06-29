@@ -20,23 +20,32 @@ if ($_POST) {
   $nameInPost = trim($_POST['name']);
   $lastNameInPost = trim($_POST['lastName']);
   $emailInPost = trim($_POST['email']);
+  $countryInPost = $_POST['pais'];
+  if (isset($_POST['categorias'])) {
+    $categoriasInPost = $_POST['categorias'];
+  }
+  if (isset($_POST['notificaciones'])) {
+    $notifInPost = $_POST['notificaciones'];
+  }
 
+  //Validamos errores
   $errorsUpdate = profileUpdateValidate();
 
+  //Si no hay errores guardamos
   if (!$errorsUpdate) {
+
     if ($_FILES['avatar']['name']!='') {
       $imgName = saveImage($_FILES['avatar']);
       $_POST['imgProfile'] = $imgName;
     }else {
-      $_POST['imgProfile'] = 'imgs/img_avatar4.png';
+      $_POST['imgProfile'] = $_SESSION['userLogged']['imgProfile'];
     }
 
-    updateUser();
+    //Guardamos los cambios
+    updateUser($_SESSION['userLogged']['user']);
 
-    $_SESSION = getUserData($emailInPost);
-
-    header('location: perfil.php');
-    exit;
+    //Refrescamos
+    reLogin(getUserData($_SESSION['userLogged']['user']));
   }
 }
  ?>
@@ -76,14 +85,39 @@ if ($_POST) {
 
                 <div class="container">
 
+                  <label for="user"><b>Usuario</b></label>
+                  <input type="text" placeholder="Ingresar Usuario" name="user" value="<?= $user["user"] ?>"
+                   disabled>
+
                   <label for="name"><b>Nombre</b></label>
-                  <input type="text" placeholder="Ingresar Nombre" name="name" value="<?= $user["name"] ?>">
+                  <input type="text" placeholder="Ingresar Nombre" name="name" value="<?= $user["name"] ?>"
+                  style="<?= isset($errorsUpdate['inName']) ? 'border: solid 1.5px #BD3131;' : '' ?> ">
+                  <!-- Manejo de errores usuario -->
+                  <?php if ( isset($errorsUpdate['inName']) ) : ?>
+                  <div class="alert alert-danger">
+                    <?= $errorsUpdate['inName'] ?>
+                  </div>
+                  <?php endif; ?>
 
                   <label for="lastName"><b>Apellido</b></label>
-                  <input type="text" placeholder="Ingresar Apellido" name="lastName" value="<?= $user["lastName"] ?>">
+                  <input type="text" placeholder="Ingresar Apellido" name="lastName" value="<?= $user["lastName"] ?>"
+                  style="<?= isset($errorsUpdate['inLastName']) ? 'border: solid 1.5px #BD3131;' : '' ?> ">
+                  <!-- Manejo de errores usuario -->
+                  <?php if ( isset($errorsUpdate['inLastName']) ) : ?>
+                  <div class="alert alert-danger">
+                    <?= $errorsUpdate['inLastName'] ?>
+                  </div>
+                  <?php endif; ?>
 
                   <label for="email"><b>Email</b></label>
-                  <input type="email" placeholder="Ingresar Email" name="email" value="<?= $user["email"] ?>">
+                  <input type="email" placeholder="Ingresar Email" name="email" value="<?= $user["email"] ?>"
+                  style="<?= isset($errorsUpdate['inEmail']) ? 'border: solid 1.5px #BD3131;' : '' ?> ">
+                  <!-- Manejo de errores usuario -->
+                  <?php if ( isset($errorsUpdate['inEmail']) ) : ?>
+                  <div class="alert alert-danger">
+                    <?= $errorsUpdate['inEmail'] ?>
+                  </div>
+                  <?php endif; ?>
 
                   <label for="pais"><b>País</b></label>
                   <select class="custom-select" name="pais">
@@ -102,12 +136,22 @@ if ($_POST) {
                       <div class="containerUnSwitch col-12">
                         <label class="switch">
                           <input type="checkbox" name="categorias[]" value="<?= $unaCategoria ?>"
-                            <?php if (isset($user['categorias'])) : ?>
-                              <?php foreach ($user['categorias'] as $categoria) : ?>
-                                <?php if ($categoria == $unaCategoria) : ?>
-                                  checked
-                                <?php endif; ?>
-                              <?php endforeach; ?>
+                            <?php if ($_POST): ?>
+                              <?php if (isset($categoriasInPost)): ?>
+                                <?php foreach ($categoriasInPost as $unaCatInPost): ?>
+                                  <?php if ($unaCatInPost == $unaCategoria): ?>
+                                    checked
+                                  <?php endif; ?>
+                                <?php endforeach; ?>
+                              <?php endif; ?>
+                            <?php else: ?>
+                              <?php if (isset($user['categorias'])) : ?>
+                                <?php foreach ($user['categorias'] as $categoria) : ?>
+                                  <?php if ($categoria == $unaCategoria) : ?>
+                                    checked
+                                  <?php endif; ?>
+                                <?php endforeach; ?>
+                              <?php endif; ?>
                             <?php endif; ?>
                           >
                           <span class="slider round"></span>
@@ -122,7 +166,18 @@ if ($_POST) {
                       <div class="containerUnSwitch col-12">
                         <label class="switch">
                           <input type="checkbox" name="notificaciones[]" value="<?= $unaNotificacion ?>"
-                          <?php if (isset($user['notificaciones'])) : ?> checked <?php endif; ?>>
+                            <?php if ($_POST): ?>
+                              <?php if (isset($categoriasInPost)): ?>
+                                <?php foreach ($categoriasInPost as $unaCatInPost): ?>
+                                  <?php if ($unaCatInPost == $unaCategoria): ?>
+                                    checked
+                                  <?php endif; ?>
+                                <?php endforeach; ?>
+                              <?php endif; ?>
+                            <?php else: ?>
+                              <?php if (isset($user['notificaciones'])) : ?> checked <?php endif; ?>
+                            <?php endif; ?>
+                          >
                           <span class="slider round"></span>
                         </label>
                         <em class="switchText">Quiero recibir <?= $unaNotificacion ?></em>

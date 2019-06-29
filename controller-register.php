@@ -104,24 +104,4 @@
 		file_put_contents('data/users.json', json_encode($usersList,JSON_PRETTY_PRINT));
 	}
 
-  // function emailExists($email){
-	// 	$users = getUsers();
-	// 	foreach ($users as $oneUser) {
-	// 		if ($oneUser['email'] == $email) {
-	// 			return true;
-	// 		}
-	// 	}
-	// 	return false;
-  // }
-  //
-  // function userExists($user){
-	// 	$users = getUsers();
-	// 	foreach ($users as $oneUser) {
-	// 		if ($oneUser['user'] == $user) {
-	// 			return true;
-	// 		}
-	// 	}
-	// 	return false;
-  // }
-
  ?>
