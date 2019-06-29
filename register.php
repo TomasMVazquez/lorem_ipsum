@@ -1,15 +1,24 @@
 <?php
   $title="Lorem ipsum | Registro";
+  // Traigo las funciones que controlan mi sistema
+  require_once 'controller-general.php';
 
+  //Verificamos si esta logeado y si lo esta lo direccionamos al Perfil
+  if ( isLogged() ) {
+    header('location: perfil.php');
+    exit;
+  }
+
+  //Buscamos los paises en la API
   $paises = file_get_contents('https://restcountries.eu/rest/v2/all');
+  //Los pasamos a un array
   $arrayPaises = json_decode($paises,true);
 
+  //Creamos las categorias
   $categorias = ["Maquillajes","Labiales","Shampoos","Cremas","Mascaras","Tonificadores","Algo","Otros"];
   $notificaciones = ["noticias"];
 
-  // Traigo las funciones que controlan mi sistema de Registro Login y Perfil
-  require_once 'register-controller.php';
-
+  //Verificamos el POST
   if ($_POST) {
 
     $userInPost = trim($_POST['user']);
@@ -31,6 +40,7 @@
 
     //Si no hay errores
     if (!$errorsRegister) {
+      //Revisamos la imagen
       if ($_FILES['avatar']['name']!='') {
         $imgName = saveImage($_FILES['avatar']);
         $_POST['imgProfile'] = $imgName;
@@ -41,18 +51,13 @@
 
       //seteamos la cookie si tiene Recordarme
       if (isset($_POST['remember'])) {
-        setcookie("user",$emailInPost,time()+60*60*24*30);
+        setcookie("user",$userInPost,time()+60*60*24*30);
       }
-
       //Guardamos el usuario en nuestro Json
       saveUser();
-
-      $_SESSION = getUserData($emailInPost);
-
-      header('location: index.php');
-      exit;
+      //Logeamos al usuario
+      login(getUserData($emailInPost));
     }
-
 }
 
 ?>

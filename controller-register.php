@@ -1,5 +1,4 @@
 <?php
-require_once 'controller.php';
 
 // VALIDACIONES --------------------------------------------------------------------REGISTER
   function registerValidate(){
@@ -19,7 +18,8 @@ require_once 'controller.php';
     // Validamos nombre de usuario
     if ( empty($user)) {
       $errors['inUser'] = 'Debes completar un nombre de usuario';
-    }elseif (userExists($user)) {
+    }elseif (getUserData($user)) {
+      //uso la misma funcion que me trae el usuario de la base para validar si ya existe el dato
       $errors['inUser'] = 'Ese usuario ya existe, favor de elegir otro nombre de usuario';
     }
 
@@ -37,7 +37,8 @@ require_once 'controller.php';
 			$errors['inEmail'] = 'El campo correo electrónico es obligatorio';
 		} elseif ( !filter_var($email, FILTER_VALIDATE_EMAIL) ) {
       $errors['inEmail'] = 'Escribí un formato de correo válido';
-		} elseif ( emailExists($email) ) {
+		} elseif ( getUserData($email) ) {
+      //uso la misma funcion que me trae el usuario de la base para validar si ya existe el dato
 			$errors['inEmail'] = 'Ese email ya esta registrado';
 		}
 
@@ -103,24 +104,24 @@ require_once 'controller.php';
 		file_put_contents('data/users.json', json_encode($usersList,JSON_PRETTY_PRINT));
 	}
 
-  function emailExists($email){
-		$users = getUsers();
-		foreach ($users as $oneUser) {
-			if ($oneUser['email'] == $email) {
-				return true;
-			}
-		}
-		return false;
-  }
-
-  function userExists($user){
-		$users = getUsers();
-		foreach ($users as $oneUser) {
-			if ($oneUser['user'] == $user) {
-				return true;
-			}
-		}
-		return false;
-  }
+  // function emailExists($email){
+	// 	$users = getUsers();
+	// 	foreach ($users as $oneUser) {
+	// 		if ($oneUser['email'] == $email) {
+	// 			return true;
+	// 		}
+	// 	}
+	// 	return false;
+  // }
+  //
+  // function userExists($user){
+	// 	$users = getUsers();
+	// 	foreach ($users as $oneUser) {
+	// 		if ($oneUser['user'] == $user) {
+	// 			return true;
+	// 		}
+	// 	}
+	// 	return false;
+  // }
 
  ?>

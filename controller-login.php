@@ -1,8 +1,6 @@
 <?php
-require_once 'controller.php';
 
 // VALIDACIONES --------------------------------------------------------------------LOG IN
-
 function logInValidate(){
   // Creo un array de errores vacío
   $errors = [];
@@ -11,6 +9,7 @@ function logInValidate(){
   $emailOrUser = trim($_POST['emailOrUser']);
   $psw = trim($_POST['psw']);
 
+  //Valido datos ingresados
   if (!userExists($emailOrUser)) {
     $errors['inEmailUser'] = 'Ese email o usuario no existe en nuestra base de Datos';
   }else if(!validatePsw($emailOrUser,$psw)){
@@ -21,30 +20,23 @@ function logInValidate(){
 }
 
 function userExists($emailOrUser){
-  $users = getUsers();
-  //Recorremos todos los usuarios
-  foreach ($users as $oneUser) {
-    //Validamos si el email o el usuario existe
-    if ($oneUser['email'] == $emailOrUser || $oneUser['user'] == $emailOrUser) {
-      return true;
-    }
+  //Como ya tengo una funcion que me busca por usuario, repito y me fijo si trae algo
+  if (getUserData($emailOrUser)) {
+    return true;
+  }else {
+    return false;
   }
-  return false;
 }
 
 function validatePsw($emailOrUser,$psw){
-  $users = getUsers();
-  foreach ($users as $oneUser) {
-    //Validamos si el email o el usuario existe
-    if ($oneUser['email'] == $emailOrUser || $oneUser['user'] == $emailOrUser) {
-      if (password_verify($psw,$oneUser['psw'])){
-        return true;
-      }
-    }
+  //Como ya tengo una funcion que me trae el usuario
+  $oneUser = getUserData($emailOrUser);
+  //Reviso psw
+  if (password_verify($psw,$oneUser['psw'])){
+    return true;
+  }else {
+    return false;
   }
-  return false;
 }
-
-
 
  ?>

@@ -1,8 +1,13 @@
 <?php
 $title="Lorem ipsum | LogIn";
+// Traigo las funciones que controlan mi sistema
+require_once 'controller-general.php';
 
-// Traigo las funciones que controlan mi sistema de Registro y Login
-require_once 'login-controller.php';
+//Verificamos si esta logeado y si lo esta lo direccionamos al Perfil
+if ( isLogged() ) {
+  header('location: perfil.php');
+  exit;
+}
 
 if ($_POST) {
 
@@ -11,19 +16,14 @@ if ($_POST) {
   $errorsInLogIn = logInValidate();
 
   if (!$errorsInLogIn) {
-
     //seteamos la cookie si tiene Recordarme
     if (isset($_POST['remember'])) {
       setcookie("user",$emailOrUserInPost,time()+60*60*24*30);
     }
 
-
-    $_SESSION = getUserData($emailOrUserInPost);
-
-    header('location: index.php');
-    exit;
+    //Logeamos al usuario
+    login(getUserData($emailOrUserInPost));
   }
-
 }
 ?>
 <!DOCTYPE html>

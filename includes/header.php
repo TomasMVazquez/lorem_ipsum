@@ -1,10 +1,11 @@
 <?php
-//Empiezo la session en el header para que este en todos las pag
-session_start();
 // Traigo las funciones que controlan mi sistema
-require_once 'controller.php';
-validateCookie();
+require_once 'controller-general.php';
 
+//Verifico si esta logeado
+if ( isLogged() ) {
+  $user = $_SESSION['userLogged'];
+}
 
   $menu = [
     "Quienes Somos" => "index.php#nosotres",
@@ -37,9 +38,9 @@ validateCookie();
        <div class="col-7 perfilHeader">
          <div class="dropdown">
            <a class="nav-link dropdown-toggle p-0"  href="#" id="navbardrop" data-toggle="dropdown">
-             <?php if (isset($_SESSION['name'])) {
-               echo "Bienvenide " . $_SESSION['name'];
-               $imgPerfil = $_SESSION['imgProfile'];
+             <?php if (isset($user['name'])) {
+               echo "Bienvenide " . $user['name'];
+               $imgPerfil = $user['imgProfile'];
              }else{
                echo "No estas logeado";
                $imgPerfil = 'imgs/img_avatar4.png';

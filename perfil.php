@@ -1,13 +1,19 @@
 <?php
 $title="Lorem ipsum | Perfil";
+// Traigo las funciones que controlan mi sistema
+require_once 'controller-general.php';
+
+//Verificamos si NO esta logeado y si lo esta lo direccionamos al LOGIN
+if ( !isLogged() ) {
+  header('location: log_in.php');
+  exit;
+}
 
 $categorias = ["Maquillajes","Labiales","Shampoos","Cremas","Mascaras","Tonificadores","Algo","Otros"];
 $notificaciones = ["noticias"];
-
+//Traigo los pasises de la API y las pasos a un array
 $paises = file_get_contents('https://restcountries.eu/rest/v2/all');
 $arrayPaises = json_decode($paises,true);
-// Traigo las funciones que controlan mi sistema de Registro Login y Perfil
-require_once 'register-controller.php';
 
 if ($_POST) {
 
@@ -49,7 +55,7 @@ if ($_POST) {
           <aside class="containerAside col-12 col-md-6 col-lg-4">
             <div class="aside">
               <br>
-              <h2>Bienvenid@ <?= $_SESSION["name"] ?></h2>
+              <h2>Bienvenid@ <?= $user["name"] ?></h2>
 
               <!-- PONEMOS UN FORMULARIO AUTOCOMPLETADO PARA QUE SI QUIERE LO PUEDA EDITAR -->
               <form class="profile" method="post" enctype="multipart/form-data">
@@ -57,7 +63,7 @@ if ($_POST) {
                 <!-- CONTENEDOR IMAGEN AVATAR -->
                 <div class="imgContainerProfile">
                   <label for="avatar"><b>Imagen de Perfil</b>
-                    <img src="<?= $_SESSION["imgProfile"] ?>" alt="Avatar" class="avatar" style="cursor:pointer">
+                    <img src="<?= $user["imgProfile"] ?>" alt="Avatar" class="avatar" style="cursor:pointer">
                   </label>
                   <input id="avatar" type="file" name="avatar" class="custom-file-input">
                   <?php if ( isset($errorsRegister['inAvatar']) ) : ?>
@@ -71,18 +77,18 @@ if ($_POST) {
                 <div class="container">
 
                   <label for="name"><b>Nombre</b></label>
-                  <input type="text" placeholder="Ingresar Nombre" name="name" value="<?= $_SESSION["name"] ?>">
+                  <input type="text" placeholder="Ingresar Nombre" name="name" value="<?= $user["name"] ?>">
 
                   <label for="lastName"><b>Apellido</b></label>
-                  <input type="text" placeholder="Ingresar Apellido" name="lastName" value="<?= $_SESSION["lastName"] ?>">
+                  <input type="text" placeholder="Ingresar Apellido" name="lastName" value="<?= $user["lastName"] ?>">
 
                   <label for="email"><b>Email</b></label>
-                  <input type="email" placeholder="Ingresar Email" name="email" value="<?= $_SESSION["email"] ?>">
+                  <input type="email" placeholder="Ingresar Email" name="email" value="<?= $user["email"] ?>">
 
                   <label for="pais"><b>País</b></label>
                   <select class="custom-select" name="pais">
                     <?php foreach ($arrayPaises as $pais): ?>
-                      <?php if ($_SESSION["pais"] == $pais["alpha2Code"]): ?>
+                      <?php if ($user["pais"] == $pais["alpha2Code"]): ?>
                         <option value="<?= $pais["alpha2Code"] ?>" selected ><?= $pais["name"] ?></option>
                       <?php else: ?>
                         <option value="<?= $pais["alpha2Code"] ?>"><?= $pais["name"] ?></option>
@@ -96,8 +102,8 @@ if ($_POST) {
                       <div class="containerUnSwitch col-12">
                         <label class="switch">
                           <input type="checkbox" name="categorias[]" value="<?= $unaCategoria ?>"
-                            <?php if (isset($_SESSION['categorias'])) : ?>
-                              <?php foreach ($_SESSION['categorias'] as $categoria) : ?>
+                            <?php if (isset($user['categorias'])) : ?>
+                              <?php foreach ($user['categorias'] as $categoria) : ?>
                                 <?php if ($categoria == $unaCategoria) : ?>
                                   checked
                                 <?php endif; ?>
@@ -116,7 +122,7 @@ if ($_POST) {
                       <div class="containerUnSwitch col-12">
                         <label class="switch">
                           <input type="checkbox" name="notificaciones[]" value="<?= $unaNotificacion ?>"
-                          <?php if (isset($_SESSION['notificaciones'])) : ?> checked <?php endif; ?>>
+                          <?php if (isset($user['notificaciones'])) : ?> checked <?php endif; ?>>
                           <span class="slider round"></span>
                         </label>
                         <em class="switchText">Quiero recibir <?= $unaNotificacion ?></em>
