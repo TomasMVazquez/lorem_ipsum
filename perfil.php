@@ -189,7 +189,7 @@ if ($_POST) {
                   </div>
                   <hr>
                   <div class="btnForm">
-                    <button class="btn-secondary" type="button">Modificar Contraseña</button>
+                    <button class="btn-secondary" type="button" href="change_pass.php">Modificar Contraseña</button>
                   </div>
                   <hr>
                   <div class="btnForm btnLogOut">
