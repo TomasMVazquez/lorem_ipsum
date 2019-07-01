@@ -58,8 +58,7 @@ if ( isLogged() ) {
           
             <?php else: ?>
               <div style="text-align: right;">
-                  <?= "Bienvenide ". $user['name']?>
-                  <p><i class="fas fa-sign-in-alt mr-2"></i><a href="log_in.php">¡Ingresá al sistema!</a></p>
+                 Bienvenide<p><i class="fas fa-sign-in-alt mr-2"></i><a href="log_in.php">¡Ingresá al sistema!</a></p>
               </div>
            </div> 
             <?php endif ?>
