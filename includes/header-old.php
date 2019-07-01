@@ -13,8 +13,7 @@ if ( isLogged() ) {
       "Cósmetica Capilar" => "productos.php",
       "Corporales" => "corporales.php",
     ],
-    /*"Registrate" => "register.php",
-    "Perfil" => "perfil.php",*/
+    "Ingresar" => "log_in.php",
     "Faqs" => "faqs.php",
     "Contacto" => "#contacto-aqui",
   ]
@@ -38,32 +37,22 @@ if ( isLogged() ) {
 
        <div class="col-7 perfilHeader">
          <div class="dropdown">
-            
-            <?php if (isset($user['name'])): ?>
-            <a class="nav-link dropdown-toggle p-0"  href="#" id="navbardrop" data-toggle="dropdown">
-              <?= "Bienvenide ". $user['name'];
-               $imgPerfil = $user['imgProfile']; ?>
-              
-            </a>
-            
-            <div class="dropdown-menu ">
-               <a class="dropdown-item" href="perfil.php">Mi cuenta</a> 
-               <a class="dropdown-item" href="perfil.php">Ver Favoritos</a>
-               <a class="dropdown-item" href="log_out.php">Cerrar Sesión</a>
-            </div>
-
-            </div>
-
-            <div class="img"><img src="<?= $imgPerfil ?>" alt="imagen de perfil del usuario logeado"></div>
-          
-            <?php else: ?>
-              <div style="text-align: right;">
-                  <?= "Bienvenide ". $user['name']?>
-                  <p><i class="fas fa-sign-in-alt mr-2"></i><a href="log_in.php">¡Ingresá al sistema!</a></p>
-              </div>
-           </div> 
-            <?php endif ?>
-          
+           <a class="nav-link dropdown-toggle p-0"  href="#" id="navbardrop" data-toggle="dropdown">
+             <?php if (isset($user['name'])) {
+               echo "Bienvenide " . $user['name'];
+               $imgPerfil = $user['imgProfile'];
+             }else{
+               echo "No estas logeado";
+               $imgPerfil = 'imgs/img_avatar4.png';
+             } ?>
+           </a>
+           <div class="dropdown-menu ">
+             <!-- <a class="dropdown-item" href="perfil.php">Editar tu cuenta</a> -->
+             <a class="dropdown-item" href="perfil.php">Ver Favoritos</a>
+             <a class="dropdown-item" href="log_out.php">Cerrar Sesión</a>
+           </div>
+         </div>
+         <img src="<?= $imgPerfil ?>" alt="imagen de perfil del usuario logeado">
        </div>
 
           <form class="searchHeader" action="/action_page.php">
@@ -77,11 +66,6 @@ if ( isLogged() ) {
      <!-- Navbar links con submenu -->
      <div class="collapse navbar-collapse" id="collapsibleNavbar">
        <ul class="navbar-nav mt-3">
-
-
-
-          
-
          <?php foreach ($menu as $boton => $seccion): ?>
 
            <!-- Esta parte es para el desplegable -->
@@ -100,34 +84,13 @@ if ( isLogged() ) {
 
              <?php else: ?>
                <!-- Si no es desplegable -->
-
-               <li class="nav-item"><a class="nav-link" href="<?= $seccion?>"><?= $boton ?></a></li>
-              
+               <?php if (isset($_SESSION['name']) && $boton == "Ingresar"): ?>
+                 <li class="nav-item"><a class="nav-link" href="perfil.php">Mi cuenta</a></li>
+               <?php else: ?>
+                 <li class="nav-item"><a class="nav-link" href="<?= $seccion?>"><?= $boton ?></a></li>
+              <?php endif; ?>
            <?php endif; ?>
          <?php endforeach; ?>
-
-         <?php if (!isset($user) ): ?>
-                 <li class="nav-item"><a class="nav-link" href="perfil.php">Registrese</a></li>
-
-         <?php endif; ?>
-
-         <li class=" text-center perfilMobile">
-               <?php if (isset($user['name'])): ?>
-                <a class="nav-link dropdown-toggle p-1" href="#" id="navbardrop" data-toggle="dropdown">
-                  <?= "Bienvenide ". $user['name'];?>
-                </a>
-
-                <div class="dropdown-menu ">
-                   <a class="dropdown-item" href="perfil.php">Mi cuenta</a> 
-                   <a class="dropdown-item" href="perfil.php">Ver Favoritos</a>
-                   <a class="dropdown-item" href="log_out.php">Cerrar Sesión</a>
-                </div>
-
-                <?php else: ?>
-                  <div style="text-align: right;">
-                    <i class="fas fa-sign-in-alt mr-2"></i><a href="log_in.php">¡Ingresá al sistema!</a>
-                <?php endif ?>
-          </li>
        </ul>
      </div>
 

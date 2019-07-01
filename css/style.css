@@ -438,6 +438,29 @@ input:checked + .slider:before {
   text-align: center;
   margin: 12px 0 12px 0;
 }
+
+
+.imgContainerProfile .imgPerfil{
+  width: 200px;
+  min-height: 200px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 100%;
+  margin:10px 0 0 0;
+}
+
+.imgContainerProfile .imgPerfil img{
+  display: block;
+  width: 100%;
+  left: 50%;
+  top:50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translateX(-50%, -50%);
+  position: absolute;
+  margin:10px 0 0 0;
+}
+
+
 .containerAside{
   display: flex;
   flex-direction: column;
@@ -495,14 +518,37 @@ header{
 .mainHeader{
   width: 100%;
   text-align: center;
-  padding: 10px 0;
+  padding: 10px 0 0 0;
 }
 
+.perfilHeader .img img{
+  display: none;
+}
+
+ .clmPerfil{
+    display: none;
+    flex-direction: column;
+    align-items: flex-end;
+    color: #fff;
+    justify-content: space-between!important;
+    padding: 15px 20px;
+  }
+
+.perfilMobile {
+    border-top: 1px solid #333;
+  
+    background: #222;
+}
+
+.dropdown-menu {
+    text-align: center!important;
+}
+/*
 .perfilHeader{
   display: none;
 }
 
-/*
+
 .socialMedia{
   display: flex;
   width: 100%;
@@ -708,13 +754,14 @@ footer a:hover{
   }
 
   .clmPerfil{
-    display: flex;
+    display: none;
     flex-direction: column;
     align-items: flex-end;
     color: #fff;
     justify-content: space-between!important;
     padding: 15px 20px;
   }
+
 /*
   .perfilHeader{
     width: 100%;
@@ -830,12 +877,26 @@ footer a:hover{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    justify-content: center;
   }
+
   .imgContainerProfile label{
     display: flex;
     flex-direction: column;
     align-items: center;
   }
+
+  .imgContainerProfile .imgPerfil{
+  width: 250px;
+  min-height: 250px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 100%;
+  margin:10px 0 0 0;
+}
+
+
+
   .imgContainerProfile img.avatar{
     width: 40%;
   }
@@ -876,6 +937,11 @@ footer a:hover{
       justify-content: space-between;
       padding: 20px;
     }
+
+
+  .perfilMobile{
+    display: none;
+  }
 
     .searchHeader {
     align-self: flex-end;
@@ -1011,12 +1077,36 @@ form button.volver{
     display: flex;
     flex-direction: row-reverse;
     align-items: flex-start;
-    padding: 20px 0;
+    padding: 10px 0;
  }
 .perfilHeader {
   padding: 0 8px;
 }
 
+
+.perfilHeader .img{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 70px;
+  min-height: 70px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 100%;
+  margin:0 0 0 10px;
+}
+
+.perfilHeader .img img{
+  display: block;
+  width: 100%;
+  left: 50%;
+  top:50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translateX(-50%, -50%);
+  position: absolute;
+}
+/*
 .perfilHeader img{
         display: block;
         width: 40px;
@@ -1024,7 +1114,7 @@ form button.volver{
         border-radius: 50%;
         margin: 0 0 0 15px;
  }
-
+*/
  .searchHeader {
      align-self: flex-start!important;
      margin: 0;

@@ -72,7 +72,10 @@ if ($_POST) {
                 <!-- CONTENEDOR IMAGEN AVATAR -->
                 <div class="imgContainerProfile">
                   <label for="avatar"><b>Imagen de Perfil</b>
-                    <img src="<?= $user["imgProfile"] ?>" alt="Avatar" class="avatar" style="cursor:pointer">
+                    <div class="imgPerfil">
+                      <img src="<?= $user["imgProfile"] ?>" alt="Avatar"  style="cursor:pointer">
+                    </div>
+                    
                   </label>
                   <input id="avatar" type="file" name="avatar" class="custom-file-input">
                   <?php if ( isset($errorsRegister['inAvatar']) ) : ?>

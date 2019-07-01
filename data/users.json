@@ -81,5 +81,27 @@
         ],
         "psw": "$2y$10$YHF1Gffj4geLNklZi59xkOMFfO5LIDpK7PYXKQ7akGzLYdZLMJuEe",
         "imgProfile": "data\/avatars\/img-5d176fe95b8a2.jpg"
+    },
+    {
+        "user": "ishmar82",
+        "name": "Andre",
+        "lastName": "Maldonado",
+        "email": "ishmar.disenio@gmail.com",
+        "pais": "AR",
+        "categorias": [
+            "Maquillajes",
+            "Labiales",
+            "Shampoos",
+            "Cremas",
+            "Mascaras",
+            "Tonificadores",
+            "Algo",
+            "Otros"
+        ],
+        "notificaciones": [
+            "noticias"
+        ],
+        "psw": "$2y$10$S3YJ6hrRAGcMKmUDQh004eBVblr4N88xi7Pljo\/xjHiZYkwTBt9.6",
+        "imgProfile": "data\/avatars\/img-5d17c7f242339.jpg"
     }
 ]
