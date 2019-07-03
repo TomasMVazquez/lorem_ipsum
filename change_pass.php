@@ -3,7 +3,7 @@
 $title="Lorem ipsum | Modificar Contraseña";
 
 require_once 'controller-general.php';
- 
+
 if ($_POST) {
 
   $pswInPost = trim($_POST['newPsw']);
@@ -74,6 +74,7 @@ if ($_POST) {
               <?php if ( isset($errorsInRepass['inNewPswRepeat']) ) : ?>
 								<div class="alert alert-danger">
 									<?= $errorsInRepass['inNewPswRepeat']; ?>
+
 								</div>
 							<?php endif; ?>
             </div>
@@ -81,8 +82,8 @@ if ($_POST) {
         </div>
           <div class="container">
             <div class="btnForm">
-              <button class="btn-secondary volver" type="button" >Volver</button>
               <button class="btn-primary" type="submit">Guardar Cambios</button>
+              <a class="btn btn-secondary volver"  href="perfil.php">Volver</a>
             </div>
           </div>
 

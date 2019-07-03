@@ -103,5 +103,23 @@
         ],
         "psw": "$2y$10$S3YJ6hrRAGcMKmUDQh004eBVblr4N88xi7Pljo\/xjHiZYkwTBt9.6",
         "imgProfile": "data\/avatars\/img-5d17c7f242339.jpg"
+    },
+    {
+        "user": "Marsopa",
+        "name": "Mar\u00eda Sol",
+        "lastName": "Palma",
+        "email": "msolpalma@gmail.com",
+        "pais": "AR",
+        "categorias": [
+            "Maquillajes",
+            "Labiales",
+            "Cremas",
+            "Otros"
+        ],
+        "notificaciones": [
+            "noticias"
+        ],
+        "psw": "$2y$10$O02mjHc1g30URj8TgjrEHOv5NheyhXeW\/KdCkcx3j3BuR7xofTq3W",
+        "imgProfile": "data\/avatars\/img-5d1c100c98068.png"
     }
 ]
