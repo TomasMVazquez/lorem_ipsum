@@ -3,15 +3,24 @@
 $title="Lorem ipsum | Modificar Contraseña";
 
 require_once 'controller-general.php';
-
+ 
 if ($_POST) {
 
-  $pswInPost = trim($_POST['psw']);
-  $pswRepeatInPost = trim($_POST['psw-repeat']);
-  $errorsRegister = registerValidate();
-        saveUser();
+  $pswInPost = trim($_POST['newPsw']);
+  $pswRepeatInPost = trim($_POST['newPsw-repeat']);
+
+      if(!validateModifyPass()){
+
+        updatePass();
+        header('location: perfil.php');
+        exit;
+
+      }
+
 
 }
+
+
  ?>
 
 <!DOCTYPE html>
@@ -39,11 +48,11 @@ if ($_POST) {
 <!--Acá va el form de pass anterior-->
             <div class="container col-12 col-md-12 col-xl-8">
              <label for="psw"><b>Contraseña anterior</b></label>
-             <input type="password" placeholder="Ingresar Contraseña" name="psw" style="<?= isset($errorsInLogIn['inPsw']) ? 'border: solid 1.5px #BD3131;' : '' ?> " required>
+             <input type="password" placeholder="Ingresar Contraseña" name="psw" style="<?= isset($errorsInRepass['inPsw']) ? 'border: solid 1.5px #BD3131;' : '' ?> " required>
 <!-- MENSAJE ERROR PASS-            -->
-             <?php if ( isset($errorsInLogIn['inPsw']) ) : ?>
+             <?php if ( isset($errorsInRepass['inPsw']) ) : ?>
              <div class="alert alert-danger">
-             <?= $errorsInLogIn['inPsw'] ?>
+             <?= $errorsInRepass['inPsw'] ?>
              </div>
              <?php endif; ?>
 
@@ -51,20 +60,20 @@ if ($_POST) {
 <!--desde acá va el formulario de contraseña nueva -->
               <div class="container col-12 col-md-12 col-xl-8">
               <label for="psw"><b>Nueva contraseña</b></label>
-              <input type="password" placeholder="Ingresar Contraseña" name="psw" style="<?= isset($errorsRegister['inPsw']) ? 'border: solid 1.5px #BD3131;' : '' ?> ">
+              <input type="password" placeholder="Ingresar nueva contraseña" name="newPsw" style="<?= isset($errorsInRepass['inNewPsw']) ? 'border: solid 1.5px #BD3131;' : '' ?> ">
               <!-- Manejo de errores de pass -->
-              <?php if ( isset($errorsRegister['inPsw']) ) : ?>
+              <?php if ( isset($errorsInRepass['inNewPsw']) ) : ?>
 								<div class="alert alert-danger">
-									<?= $errorsRegister['inPsw']; ?>
+									<?= $errorsInRepass['inNewPsw']; ?>
 								</div>
 							<?php endif; ?>
 
               <label for="psw-repeat"><b>Repetir contraseña</b></label>
-              <input type="password" placeholder="Repetir Contraseña" name="psw-repeat" style="<?= isset($errorsRegister['inPswRepeat']) ? 'border: solid 1.5px #BD3131;' : '' ?> ">
+              <input type="password" placeholder="Repetir nueva contraseña" name="newPsw-repeat" style="<?= isset($errorsInRepass['inNewPswRepeat']) ? 'border: solid 1.5px #BD3131;' : '' ?> ">
               <!-- manejo de errores de repetir pass -->
-              <?php if ( isset($errorsRegister['inPswRepeat']) ) : ?>
+              <?php if ( isset($errorsInRepass['inNewPswRepeat']) ) : ?>
 								<div class="alert alert-danger">
-									<?= $errorsRegister['inPswRepeat']; ?>
+									<?= $errorsInRepass['inNewPswRepeat']; ?>
 								</div>
 							<?php endif; ?>
             </div>

@@ -75,7 +75,7 @@ if ($_POST) {
                     <div class="imgPerfil">
                       <img src="<?= $user["imgProfile"] ?>" alt="Avatar"  style="cursor:pointer">
                     </div>
-                    
+
                   </label>
                   <input id="avatar" type="file" name="avatar" class="custom-file-input">
                   <?php if ( isset($errorsRegister['inAvatar']) ) : ?>
@@ -192,7 +192,7 @@ if ($_POST) {
                   </div>
                   <hr>
                   <div class="btnForm">
-                    <button class="btn-secondary" type="button" href="change_pass.php">Modificar Contraseña</button>
+                    <a class="btn btn-secondary" href="change_pass.php">Modificar Contraseña</a>
                   </div>
                   <hr>
                   <div class="btnForm btnLogOut">

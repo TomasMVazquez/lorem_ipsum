@@ -90,14 +90,40 @@
     }
 
     function validateModifyPass(){
+      $errorsInRepass = [];
+      $oldPsw = $_POST['psw'];
+      $newPsw = $_POST['newPsw'];
+      $newPswRepeat = $_POST['newPsw-repeat'];
+
+      if (!validatePsw($_SESSION['userLogged'], $oldPsw)){
+        $errorsInRepass['inOldPsw']= 'Su contraseña original no coincide';
+
+      }
+
+      if ($newPsw!=$newPswRepeat){
+        $errorsInRepass['inRepeatPsw']= 'Las contraseñas no coinciden';
+      }
+
+      if ( empty($newPsw) ) {
+        $errorsInRepass['inNewPsw'] = 'La contraseña no puede estar vacía';
+      } elseif ( strlen($newPsw) < 6 ) {
+        $errorsInRepass['inNewPsw'] = 'La contraseña debe tener más de 5 caracteres';
+      } elseif (strpos($newPsw," ") > 0) {
+        $errorsInRepass['inNewPsw'] = 'La contraseña no debe tener espacios';
+      } elseif (strpos($newPsw,"DH") === false) {
+        $errorsInRepass['inNewPsw'] = 'La contraseña debe contener en algun lugar DH';
+      }
+
+      return $errorsInRepass;
+
       //Validar que la contrasena actual sea igual a la que se encuentra en el JsonSerializable
-      //Si esta ok tiene que seguir con el updatePass
+      //Si esta ok tie  ne que seguir con el updatePass
       //Sino tirar error y que lo muestre en el form
 
     }
 
     function updatePass() {
-      $newPsw = password_hash($_POST['psw'], PASSWORD_DEFAULT);
+      $newPsw = password_hash($_POST['newPsw'], PASSWORD_DEFAULT);
       // 1. Leemos el archivo de usuarios que está en JSON
       $usersList = getUsers();
 
@@ -110,7 +136,7 @@
       }
 
       // 3. Volver a guardar a todos los usuarios con éste último
-      file_put_contents('data/users.json', json_encode($usersList));
+      file_put_contents('data/users.json', json_encode($usersList,JSON_PRETTY_PRINT));
     }
 
  ?>
