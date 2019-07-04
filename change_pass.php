@@ -89,8 +89,8 @@ if ($_POST) {
             </div>
         </div>
           <div class="container">
-            <div class="btnForm">
-              <button class="btn-primary" type="submit">Guardar Cambios</button>
+            <div class="btnForm flex-row-reverse">
+              <button class="btn btn-primary col-6" type="submit">Guardar Cambios</button>
               <a class="btn btn-secondary volver"  href="perfil.php">Volver</a>
             </div>
           </div>
