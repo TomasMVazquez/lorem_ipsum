@@ -143,7 +143,7 @@ if ( isLogged() ) {
                 </div>
 
                 <?php else: ?>
-                  <div style="text-align: right;">
+                  <div >
                     <i class="fas fa-sign-in-alt mr-2"></i><a href="log_in.php">¡Ingresá al sistema!</a>
                 <?php endif ?>
           </li>

@@ -208,12 +208,12 @@ h4 {
   color: #000;
   background-color: #fff;
 }
-
+/*
 .dropdown-menu {
     border: 1px solid rgba(0, 0, 0, 0);
     border-radius: 0rem;
-    box-shadow: 0px 2px 2px #ccc;
-}
+   box-shadow: 0px 2px 2px #ccc;
+}*/
 
 
 
@@ -545,12 +545,16 @@ header{
 
 .perfilMobile {
     border-top: 1px solid #333;
-  
     background: #222;
+    padding: 7px 0;
+    color:#fff;
 }
 
 .dropdown-menu {
     text-align: center!important;
+    
+    border: 1px solid rgba(0, 0, 0, 0);
+    border-radius: 0rem;
 }
 /*
 .perfilHeader{
@@ -1145,6 +1149,11 @@ form button.volver{
 
 .navbar-expand-md .navbar-collapse {
     justify-content: flex-end;
+}
+
+.dropdown-menu {
+    
+    box-shadow: 0px 2px 2px #ccc;
 }
 /* --------------------------------------------------------------------------------- En Construccion */
 
