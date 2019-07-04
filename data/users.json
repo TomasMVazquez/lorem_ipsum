@@ -143,5 +143,16 @@
         ],
         "psw": "$2y$10$IWk4pHYG9jd.fIiA1Lteo.KFlcQkYHW0KXaVijxwhLLMw6GGWfHA.",
         "imgProfile": "data\/avatars\/img-5d1d326d8252a.png"
+    },
+    {
+        "user": "TomasManuel",
+        "name": "Tomas",
+        "lastName": "Manuel",
+        "email": "tomas.vazquez@assurant.com",
+        "pais": "AR",
+        "psw": "$2y$10$SY\/3x5sJSuUCoyX9JQ9BKOTeoqzLLnox6uyJtUL28beUOgS0bJdly",
+        "imgProfile": "data\/avatars\/img-5d1e2ef01a25c.png",
+        "categorias": null,
+        "notificaciones": null
     }
 ]

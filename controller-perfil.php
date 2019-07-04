@@ -91,9 +91,11 @@
 // funcion para validar re-pass
     function validateModifyPass(){
       $errorsInRepass = [];
+
       $oldPsw = $_POST['psw'];
       $newPsw = $_POST['newPsw'];
       $newPswRepeat = $_POST['newPsw-repeat'];
+
       $user = $_SESSION['userLogged'];
 
       if (empty ($oldPsw)){
@@ -117,10 +119,6 @@
         $errorsInRepass['inRepeatPsw']= 'Las contraseñas no coinciden';
       }
 
-
-      //Validar que la contrasena actual sea igual a la que se encuentra en el JsonSerializable
-      //Si esta ok tie  ne que seguir con el updatePass
-      //Sino tirar error y que lo muestre en el form
           return $errorsInRepass;
     }
 

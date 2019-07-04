@@ -1,8 +1,13 @@
 <?php
+require_once 'controller-general.php';
 
 $title="Lorem ipsum | Modificar Contraseña";
 
-require_once 'controller-general.php';
+if ( !isLogged() ) {
+  header('location: log_in.php');
+  exit;
+}
+
 
 if ($_POST) {
 
@@ -61,7 +66,7 @@ if ($_POST) {
           </div>
 
 <!--desde acá va el formulario de contraseña nueva -->
-              
+
           <div class="container col-12 col-md-12 col-lg-8">
               <label for="psw"><b>Nueva contraseña</b></label>
               <input type="password" placeholder="Ingresar nueva contraseña" name="newPsw" style="<?= isset($errorsInRepass['inNewPsw']) ? 'border: solid 1.5px #BD3131;' : '' ?> ">
