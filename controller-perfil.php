@@ -131,7 +131,7 @@
 
       // 2. Buscamos el usuario a Actualizar
       foreach ($usersList as $key => $user) {
-         if ($user['user'] == $_SESSION['user']) {
+         if ($user['user'] == $_SESSION['userLogged']['user']) {
           $usersList[$key]['psw'] = $newPsw;
           break;
         }
