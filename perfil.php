@@ -188,11 +188,11 @@ if ($_POST) {
                     <?php endforeach; ?>
                   </div>
                   <div class="btnForm" style="margin-top:20px">
-                    <button class="btn-primary" type="submit">Actualizar</button>
+                    <button class="btn btn-primary" type="submit">Actualizar</button>
                   </div>
                   <hr>
                   <div class="btnForm">
-                    <a class="btn btn-secondary" href="change_pass.php">Modificar Contraseña</a>
+                    <a class="btn btn-secondary w-100" href="change_pass.php">Modificar Contraseña</a>
                   </div>
                   <hr>
                   <div class="btnForm btnLogOut">
