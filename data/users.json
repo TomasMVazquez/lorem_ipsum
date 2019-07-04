@@ -121,5 +121,27 @@
         ],
         "psw": "$2y$10$O02mjHc1g30URj8TgjrEHOv5NheyhXeW\/KdCkcx3j3BuR7xofTq3W",
         "imgProfile": "data\/avatars\/img-5d1c100c98068.png"
+    },
+    {
+        "user": "andreuchi",
+        "name": "andre",
+        "lastName": "maldo",
+        "email": "andreamaldonado.dg@gmail.com",
+        "pais": "AF",
+        "categorias": [
+            "Maquillajes",
+            "Labiales",
+            "Shampoos",
+            "Cremas",
+            "Mascaras",
+            "Tonificadores",
+            "Algo",
+            "Otros"
+        ],
+        "notificaciones": [
+            "noticias"
+        ],
+        "psw": "$2y$10$IWk4pHYG9jd.fIiA1Lteo.KFlcQkYHW0KXaVijxwhLLMw6GGWfHA.",
+        "imgProfile": "data\/avatars\/img-5d1d326d8252a.png"
     }
 ]

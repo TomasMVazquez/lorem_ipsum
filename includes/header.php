@@ -54,7 +54,27 @@ if ( isLogged() ) {
 
             </div>
 
-            <div class="img"><img src="<?= $imgPerfil ?>" alt="imagen de perfil del usuario logeado"></div>
+            
+            <!--<svg>
+              <defs>
+                <linearGradient id="gradient" x1="0" y1="00%" x2 ="0" y2="100%">
+                  <stop stop-color="black" offset="0"/>
+                  <stop stop-color="white" offset="1"/>
+                </linearGradient>
+
+                <mask id="masking" maskUnits="objectBoundingBox" maskContentUnits="objectBoundingBox">
+                  <rect y="0.3" width="1" height=".7" fill="url(#gradient)" />
+                  <circle cx=".5" cy=".5" r=".35" fill="white" />
+                </mask>
+              </defs>
+            </svg>
+
+            <img src="imgs/imagen1.jpg" width="50" class="avatar">-->
+            
+
+            <div class="img">
+             
+            <img src="<?= $imgPerfil ?>" alt="imagen de perfil del usuario logeado"></div>
           
             <?php else: ?>
               <div style="text-align: right;">
@@ -106,7 +126,7 @@ if ( isLogged() ) {
          <?php endforeach; ?>
 
          <?php if (!isset($user) ): ?>
-                 <li class="nav-item"><a class="nav-link" href="perfil.php">Registrese</a></li>
+                 <li class="nav-item"><a class="nav-link" href="register.php">Registrese</a></li>
 
          <?php endif; ?>
 
