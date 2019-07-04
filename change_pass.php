@@ -9,14 +9,15 @@ if ($_POST) {
   $pswInPost = trim($_POST['newPsw']);
   $pswRepeatInPost = trim($_POST['newPsw-repeat']);
 
+  $errorsInRepass = validateModifyPass();
+
+
       if(!validateModifyPass()){
 
         updatePass();
         header('location: perfil.php');
         exit;
-
       }
-
 
 }
 
@@ -48,11 +49,11 @@ if ($_POST) {
 <!--Acá va el form de pass anterior-->
             <div class="container col-12 col-md-12 col-xl-8">
              <label for="psw"><b>Contraseña anterior</b></label>
-             <input type="password" placeholder="Ingresar Contraseña" name="psw" style="<?= isset($errorsInRepass['inPsw']) ? 'border: solid 1.5px #BD3131;' : '' ?> " required>
+             <input type="password" placeholder="Ingresar Contraseña" name="psw" style="<?= isset($errorsInRepass['inOldPsw']) ? 'border: solid 1.5px #BD3131;' : '' ?> " required>
 <!-- MENSAJE ERROR PASS-            -->
-             <?php if ( isset($errorsInRepass['inPsw']) ) : ?>
+             <?php if ( isset($errorsInRepass['inOldPsw']) ) : ?>
              <div class="alert alert-danger">
-             <?= $errorsInRepass['inPsw'] ?>
+             <?= $errorsInRepass['inOldPsw'] ?>
              </div>
              <?php endif; ?>
 

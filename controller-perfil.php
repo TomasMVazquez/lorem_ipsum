@@ -88,20 +88,18 @@
       header('location: perfil.php');
       exit;
     }
-
+// funcion para validar re-pass
     function validateModifyPass(){
       $errorsInRepass = [];
       $oldPsw = $_POST['psw'];
       $newPsw = $_POST['newPsw'];
       $newPswRepeat = $_POST['newPsw-repeat'];
+      $user = $_SESSION['userLogged'];
 
-      if (!validatePsw($_SESSION['userLogged'], $oldPsw)){
+      if (empty ($oldPsw)){
+        $errorsInRepass['inOldPsw']= 'La contraseña no puede estar vacía';
+      }elseif(!validatePsw($user['email'], $oldPsw)){
         $errorsInRepass['inOldPsw']= 'Su contraseña original no coincide';
-
-      }
-
-      if ($newPsw!=$newPswRepeat){
-        $errorsInRepass['inRepeatPsw']= 'Las contraseñas no coinciden';
       }
 
       if ( empty($newPsw) ) {
@@ -113,13 +111,17 @@
       } elseif (strpos($newPsw,"DH") === false) {
         $errorsInRepass['inNewPsw'] = 'La contraseña debe contener en algun lugar DH';
       }
+      if (empty($newPsw)){
+        $errorsInRepass['inRepeatPsw'] = 'La contraseña no puede estar vacía';
+      }elseif($newPsw!=$newPswRepeat){
+        $errorsInRepass['inRepeatPsw']= 'Las contraseñas no coinciden';
+      }
 
-      return $errorsInRepass;
 
       //Validar que la contrasena actual sea igual a la que se encuentra en el JsonSerializable
       //Si esta ok tie  ne que seguir con el updatePass
       //Sino tirar error y que lo muestre en el form
-
+          return $errorsInRepass;
     }
 
     function updatePass() {
@@ -129,7 +131,7 @@
 
       // 2. Buscamos el usuario a Actualizar
       foreach ($usersList as $key => $user) {
-        if ($user['user'] == $_SESSION['user']) {
+         if ($user['user'] == $_SESSION['user']) {
           $usersList[$key]['psw'] = $newPsw;
           break;
         }
